@@ -54,12 +54,10 @@ group :development do
   gem 'spring'
   gem 'factory_bot_rails'
   gem 'guard-rspec', require: false
-  gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'parallel_tests'
   gem 'rspec-mocks'
   gem 'pry'
-  gem 'byebug'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
   gem 'spring-commands-rspec'
@@ -68,7 +66,6 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'guard-rails'
