@@ -8,7 +8,7 @@
 
 Customer.create!(name:  "Example Customer",
              email: "exale@example.com",
-             cell: 89991112233,
+             cell: 1862857925,
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,

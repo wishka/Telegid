@@ -28466,3 +28466,766 @@ Processing by BlogPagesController#about as HTML
 Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.6ms | Allocations: 9671)
 
 
+Started GET "/about" for ::1 at 2022-04-30 20:09:29 +0300
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 8 pending migrations:
+
+20211221182300_create_customers.rb
+20211221204719_add_index_to_customers_email.rb
+20211221205035_add_password_digest_to_customers.rb
+20220104022435_add_remember_digest_to_customers.rb
+20220106194856_add_admin_to_customers.rb
+20220106222455_add_activation_to_customers.rb
+20220107134136_add_reset_to_customers.rb
+20220110013735_add_blacklist_to_customers.rb
+
+
+):
+  
+activerecord (6.1.5.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.5.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.5.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.5.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.5.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.5.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2022-04-30 20:09:36 +0300
+  [1m[35m (90.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6136111788801728475)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCustomers (20211221182300)
+  [1m[36mTRANSACTION (41.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (36.1ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211221182300"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToCustomersEmail (20211221204719)
+  [1m[36mTRANSACTION (41.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211221204719"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordDigestToCustomers (20211221205035)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "customers" ADD "password_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211221205035"]]
+  [1m[36mTRANSACTION (40.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRememberDigestToCustomers (20220104022435)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "customers" ADD "remember_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220104022435"]]
+  [1m[36mTRANSACTION (42.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToCustomers (20220106194856)
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "customers" ADD "admin" boolean DEFAULT FALSE[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106194856"]]
+  [1m[36mTRANSACTION (108.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActivationToCustomers (20220106222455)
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "activation_digest" character varying[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "customers" ADD "activated" boolean DEFAULT FALSE[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "customers" ADD "activated_at" timestamp[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106222455"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddResetToCustomers (20220107134136)
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_digest" character varying[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_sent_at" timestamp[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220107134136"]]
+  [1m[36mTRANSACTION (42.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddBlacklistToCustomers (20220110013735)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "customers" ADD "blacklist" boolean DEFAULT FALSE[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220110013735"]]
+  [1m[36mTRANSACTION (42.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6136111788801728475)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/about" for ::1 at 2022-04-30 20:09:37 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPagesController#about as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/about.html.haml within layouts/application
+  Rendered blog_pages/about.html.haml within layouts/application (Duration: 7.4ms | Allocations: 3409)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (3.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 31.7ms | Allocations: 11465)
+  Rendered layouts/_footer.html.haml (Duration: 26.4ms | Allocations: 15430)
+  Rendered layout layouts/application.html.haml (Duration: 970.3ms | Allocations: 143703)
+Completed 200 OK in 996ms (Views: 968.8ms | ActiveRecord: 5.7ms | Allocations: 147364)
+
+
+Started GET "/login" for ::1 at 2022-04-30 20:09:42 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 5205.4ms | Allocations: 1351266)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (16.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 55.7ms | Allocations: 3655)
+  Rendered layouts/_footer.html.haml (Duration: 0.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.haml (Duration: 5293.7ms | Allocations: 1360463)
+Completed 200 OK in 5307ms (Views: 5275.8ms | ActiveRecord: 20.7ms | Allocations: 1361732)
+
+
+Started POST "/login" for ::1 at 2022-04-30 20:09:52 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"exale@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."email" = $1 LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 36.5ms | Allocations: 11677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 14.7ms | Allocations: 893)
+  Rendered layouts/_footer.html.haml (Duration: 0.4ms | Allocations: 106)
+  Rendered layout layouts/application.html.haml (Duration: 74.2ms | Allocations: 17959)
+Completed 200 OK in 122ms (Views: 75.7ms | ActiveRecord: 3.9ms | Allocations: 19427)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (1.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "cell", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Example Customer"], ["email", "exale@example.com"], ["cell", 111], ["created_at", "2022-04-30 17:12:39.979514"], ["updated_at", "2022-04-30 17:12:39.979514"], ["password_digest", "$2a$12$ONq62LC9qkZEFhuMRZo9NucNCihJNndqg0Bg4n85j9gqw6NqUQ8tO"], ["admin", true], ["activation_digest", "$2a$12$Sn5lQTq/swN0xlEiiEZr6ei56KaCcwkAbRM.BGb/EaBLMJllhDg/q"], ["activated", true], ["activated_at", "2022-04-30 17:12:39.570779"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (158.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_development"[0m
+  [1m[35m (108.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_test"[0m
+  [1m[35m (337.1ms)[0m  [1m[35mCREATE DATABASE "developer_development" ENCODING = 'unicode'[0m
+  [1m[35m (150.8ms)[0m  [1m[35mCREATE DATABASE "developer_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:20:59.126612"], ["updated_at", "2022-04-30 17:20:59.126612"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:20:59.147125"], ["updated_at", "2022-04-30 17:20:59.147125"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (66.9ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:20:59.417401"], ["updated_at", "2022-04-30 17:20:59.417401"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-04-30 17:20:59.426986"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:20:59.435448"], ["updated_at", "2022-04-30 17:20:59.435448"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "cell", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Example Customer"], ["email", "exale@example.com"], ["cell", 1862857925], ["created_at", "2022-04-30 17:20:59.865317"], ["updated_at", "2022-04-30 17:20:59.865317"], ["password_digest", "$2a$12$hATZ9F7NnQwej/o7SnWfJ.9mSKM9JM6SeNZZiKTfwgtLShkniF3tq"], ["admin", true], ["activation_digest", "$2a$12$KO/O5wMYhtXoU58I2MKrHeQzhOJA6FyovCqNRNwyXfucmn1JlARG2"], ["activated", true], ["activated_at", "2022-04-30 17:20:59.476008"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (78.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_development"[0m
+  [1m[35m (58.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_test"[0m
+  [1m[35m (145.2ms)[0m  [1m[35mCREATE DATABASE "developer_development" ENCODING = 'unicode'[0m
+  [1m[35m (149.7ms)[0m  [1m[35mCREATE DATABASE "developer_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:23:18.044807"], ["updated_at", "2022-04-30 17:23:18.044807"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:23:18.056582"], ["updated_at", "2022-04-30 17:23:18.056582"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:23:18.263061"], ["updated_at", "2022-04-30 17:23:18.263061"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-04-30 17:23:18.276040"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:23:18.286253"], ["updated_at", "2022-04-30 17:23:18.286253"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "cell", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Example Customer"], ["email", "exale@example.com"], ["cell", 1862857925], ["created_at", "2022-04-30 17:23:18.696819"], ["updated_at", "2022-04-30 17:23:18.696819"], ["password_digest", "$2a$12$xzE6OjTa2LRNCL6gpw1AuuI/XXvP4F3N2c230YD7sHhnXtn1zElKO"], ["admin", true], ["activation_digest", "$2a$12$quPjc1h4fcBpUcHSK.NQPOSYPJ4h0wgNt49.6weY6sTph6YhG3JLS"], ["activated", true], ["activated_at", "2022-04-30 17:23:18.354922"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6136111788801728475)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6136111788801728475)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (78.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_development"[0m
+  [1m[35m (57.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_test"[0m
+  [1m[35m (164.4ms)[0m  [1m[35mCREATE DATABASE "developer_development" ENCODING = 'unicode'[0m
+  [1m[35m (163.9ms)[0m  [1m[35mCREATE DATABASE "developer_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (7.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:23:56.700714"], ["updated_at", "2022-04-30 17:23:56.700714"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:23:56.729165"], ["updated_at", "2022-04-30 17:23:56.729165"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (35.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:23:56.991630"], ["updated_at", "2022-04-30 17:23:56.991630"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-04-30 17:23:57.000884"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:23:57.008304"], ["updated_at", "2022-04-30 17:23:57.008304"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (1.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "cell", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Example Customer"], ["email", "exale@example.com"], ["cell", 1862857925], ["created_at", "2022-04-30 17:23:57.368812"], ["updated_at", "2022-04-30 17:23:57.368812"], ["password_digest", "$2a$12$oKFyixAD/lKOU6V4q/qcueCh/tAnbuDFWo91jlikwkkxEGu645r/O"], ["admin", true], ["activation_digest", "$2a$12$hv7nBpxID4md/g8sarz3Pe1JixD1sUVloKsnDOdQXTil.GADQhWIu"], ["activated", true], ["activated_at", "2022-04-30 17:23:57.038269"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (85.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_development"[0m
+  [1m[35m (61.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "developer_test"[0m
+  [1m[35m (172.7ms)[0m  [1m[35mCREATE DATABASE "developer_development" ENCODING = 'unicode'[0m
+  [1m[35m (171.9ms)[0m  [1m[35mCREATE DATABASE "developer_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:26:11.638878"], ["updated_at", "2022-04-30 17:26:11.638878"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:26:11.656273"], ["updated_at", "2022-04-30 17:26:11.656273"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_events" CASCADE[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "ahoy_events" ("id" bigserial primary key, "visit_id" bigint, "user_id" bigint, "name" character varying, "properties" jsonb, "time" timestamp)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_name_and_time" ON "ahoy_events" ("name", "time")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_properties" ON "ahoy_events" USING gin ("properties" jsonb_path_ops)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_user_id" ON "ahoy_events" ("user_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_ahoy_events_on_visit_id" ON "ahoy_events" ("visit_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ahoy_visits" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ahoy_visits" ("id" bigserial primary key, "visit_token" character varying, "visitor_token" character varying, "user_id" bigint, "ip" character varying, "user_agent" text, "referrer" text, "referring_domain" character varying, "landing_page" text, "browser" character varying, "os" character varying, "device_type" character varying, "country" character varying, "region" character varying, "city" character varying, "latitude" float, "longitude" float, "utm_source" character varying, "utm_medium" character varying, "utm_term" character varying, "utm_content" character varying, "utm_campaign" character varying, "app_version" character varying, "os_version" character varying, "platform" character varying, "started_at" timestamp)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE INDEX "index_ahoy_visits_on_user_id" ON "ahoy_visits" ("user_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ahoy_visits_on_visit_token" ON "ahoy_visits" ("visit_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers" CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "cell" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT FALSE, "activation_digest" character varying, "activated" boolean DEFAULT FALSE, "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp, "blacklist" boolean DEFAULT FALSE)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "layout" character varying, "floor" integer, "number_on_floor" integer, "status" character varying, "number" integer, "square" integer, "levels" integer, "plan" character varying, "rooms" integer, "kitchen" integer, "definition" character varying, "section" character varying, "section_id" character varying, "price" integer, "object" character varying, "step" character varying, "location" character varying, "complete" integer, "renovation" character varying, "living_area" integer, "common_square" integer, "second" boolean, "image_flat" character varying, "image_floor" character varying, "image_for_integration" character varying, "image_3d" character varying, "discount_max" integer, "discount_campaign" integer, "discount_id" integer, "discount_amount" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "role" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220110013735)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211221182300),
+(20211221204719),
+(20211221205035),
+(20220104022435),
+(20220106194856),
+(20220106222455),
+(20220107134136);
+
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-30 17:26:11.879379"], ["updated_at", "2022-04-30 17:26:11.879379"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-04-30 17:26:11.890660"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9402ec8f544266232144080e756a3b9888083f44"], ["created_at", "2022-04-30 17:26:11.898513"], ["updated_at", "2022-04-30 17:26:11.898513"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (2.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "cell", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Example Customer"], ["email", "exale@example.com"], ["cell", 1], ["created_at", "2022-04-30 17:26:12.347102"], ["updated_at", "2022-04-30 17:26:12.347102"], ["password_digest", "$2a$12$EJ8BY8ga0rsJxaS3zJkk2.TFNJk46c0BcEnNxlXpjvP5nFtmqjirO"], ["admin", true], ["activation_digest", "$2a$12$3oxbXwzIc33JbJJ60UZnR.xjA6dW/Z5Y4nZ8NhtvT8K6WDIMDYwlu"], ["activated", true], ["activated_at", "2022-04-30 17:26:11.928891"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-1@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Nilda Runolfsdottir"], ["email", "exale-1@example.com"], ["created_at", "2022-04-30 17:26:13.338821"], ["updated_at", "2022-04-30 17:26:13.338821"], ["password_digest", "$2a$12$KO45l5J9.97jSO.7g8N37OWbYZ8mlulH.Dqw6kdvL7TuTHwVJybsW"], ["activation_digest", "$2a$12$vwYQJ9l9ujAeFfMNswXkm.QsyjOnbACd7VKJSumPpp44CS/7kb7Ci"], ["activated", true], ["activated_at", "2022-04-30 17:26:13.072256"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-2@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Cleo Robel"], ["email", "exale-2@example.com"], ["created_at", "2022-04-30 17:26:13.873553"], ["updated_at", "2022-04-30 17:26:13.873553"], ["password_digest", "$2a$12$n6ngDZt9YuajD.R.z83siOs1gJN3uG6jNyyei11TAk168DhuuBz5e"], ["activation_digest", "$2a$12$y5g2ar0lsD/mbYZlH.zCuOGV6jorLgAABvN/QY/2c/Xb4nEtAExO."], ["activated", true], ["activated_at", "2022-04-30 17:26:13.605505"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-3@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Noe Dickens"], ["email", "exale-3@example.com"], ["created_at", "2022-04-30 17:26:14.416654"], ["updated_at", "2022-04-30 17:26:14.416654"], ["password_digest", "$2a$12$qii/mtxHUyUBkND4sCQoFeyNx/KP8BEyMYgSCKyS91g.SKmJurrdW"], ["activation_digest", "$2a$12$bHIVRK2uYWdkQRjFdlGOxuN0YUh.AjrHEpnGApQYxmajJCoQ.DkRK"], ["activated", true], ["activated_at", "2022-04-30 17:26:14.149210"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-4@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Mike Jast"], ["email", "exale-4@example.com"], ["created_at", "2022-04-30 17:26:14.949631"], ["updated_at", "2022-04-30 17:26:14.949631"], ["password_digest", "$2a$12$./50wfrpyDkGLE/lcWfrNOduXxnAvHhZIkDDrJ8Jbdyx4iuAf0DfW"], ["activation_digest", "$2a$12$Va7lJvGrgPczYVWDSW7pEu4awQ2dky7pC3GrBorsUFDVI31KAoN6y"], ["activated", true], ["activated_at", "2022-04-30 17:26:14.682846"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-5@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Sherron Marvin"], ["email", "exale-5@example.com"], ["created_at", "2022-04-30 17:26:15.483773"], ["updated_at", "2022-04-30 17:26:15.483773"], ["password_digest", "$2a$12$xU1wY8vmVcxJhG.doCF7s.V5LdHiK2v4EIdehUTSxsdkp1G1Ida0K"], ["activation_digest", "$2a$12$nRcg6kqmv/Pt./imJjKZ9e4AmiQkb7P07WlOsyJZ5QjvX486gXSA2"], ["activated", true], ["activated_at", "2022-04-30 17:26:15.218473"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-6@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Fausto Jones"], ["email", "exale-6@example.com"], ["created_at", "2022-04-30 17:26:16.015221"], ["updated_at", "2022-04-30 17:26:16.015221"], ["password_digest", "$2a$12$4KS6UCL0GjaKxrvnCK0IjefPF2XrPqzVGsbtjTbxZMVyxdSaQ4Evm"], ["activation_digest", "$2a$12$R.6yeVAKVClxpSqVXQM4BuOExMwuHyvVDtXmVwXjYOWScwh8mfnUC"], ["activated", true], ["activated_at", "2022-04-30 17:26:15.749491"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-7@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Silas Schuppe"], ["email", "exale-7@example.com"], ["created_at", "2022-04-30 17:26:16.549761"], ["updated_at", "2022-04-30 17:26:16.549761"], ["password_digest", "$2a$12$h7T5F2hTSWzpXUNXtjh5ju8kR1J3fe4XYzb4ies8LnN0wt8fDkUgq"], ["activation_digest", "$2a$12$Gh24TCiklRg1KZBJGqkd..rfSi7ZbGxLIORNGBKPvNBYYcyDF8Xgm"], ["activated", true], ["activated_at", "2022-04-30 17:26:16.286243"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-8@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "William Brekke Jr."], ["email", "exale-8@example.com"], ["created_at", "2022-04-30 17:26:17.090595"], ["updated_at", "2022-04-30 17:26:17.090595"], ["password_digest", "$2a$12$6H5v8NsDzUEd/s5NkLX.Tek25XaI85gW9D8C06ynhkBBYqaG7GH2y"], ["activation_digest", "$2a$12$r8Y70ruY1Pkic4PcULGsfOJFBC10v62kgch9hslv0WCcSH9hbaErG"], ["activated", true], ["activated_at", "2022-04-30 17:26:16.816060"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-9@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Rachele Hudson"], ["email", "exale-9@example.com"], ["created_at", "2022-04-30 17:26:17.625451"], ["updated_at", "2022-04-30 17:26:17.625451"], ["password_digest", "$2a$12$9GQ5c5nJv7Ws9d5JBKR04uafRrJ0.wXXOOEkfpGpru8jWOAjfZS3e"], ["activation_digest", "$2a$12$6mjtlk1XJmZuOo0miJcrPOwBFSHCHDKZ2NS.OLV14UlHwizhWj05i"], ["activated", true], ["activated_at", "2022-04-30 17:26:17.357582"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-10@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Amb. Roland Mraz"], ["email", "exale-10@example.com"], ["created_at", "2022-04-30 17:26:18.157995"], ["updated_at", "2022-04-30 17:26:18.157995"], ["password_digest", "$2a$12$hUPwfMaTYg0sNoSTHjFYYOef4Bk.XAbDOexP69x/hIFYb5iJ/7Qbu"], ["activation_digest", "$2a$12$/zoj/ml9aA.rEQEN6ms.H.oRIQ0Op8oPEC1l8Deo6LAkRr6lfLtMa"], ["activated", true], ["activated_at", "2022-04-30 17:26:17.891794"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-11@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Elvina Fisher"], ["email", "exale-11@example.com"], ["created_at", "2022-04-30 17:26:18.689778"], ["updated_at", "2022-04-30 17:26:18.689778"], ["password_digest", "$2a$12$waqXxmn/rS5qNszbia.fzuBkZ6RHJkLUlRUma1JLL2.oYPc9jqgZy"], ["activation_digest", "$2a$12$b/PCjbr3.tsznGKG2EFjOOgRf2wot9ZnCg1jBnXhE2BmuGX5mUwSu"], ["activated", true], ["activated_at", "2022-04-30 17:26:18.425036"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-12@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Jovita Kautzer CPA"], ["email", "exale-12@example.com"], ["created_at", "2022-04-30 17:26:19.220413"], ["updated_at", "2022-04-30 17:26:19.220413"], ["password_digest", "$2a$12$rD9vS1XYs2n0BjIGRf91nOA5QolM7b8YpUfudaKLrJJTCJQMeu7gO"], ["activation_digest", "$2a$12$2MajKqkA8RTlse1WBGEHmOW07scvogZFItqV9QfBh2R1A4j.S.vou"], ["activated", true], ["activated_at", "2022-04-30 17:26:18.955703"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-13@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shawn Goldner"], ["email", "exale-13@example.com"], ["created_at", "2022-04-30 17:26:19.755543"], ["updated_at", "2022-04-30 17:26:19.755543"], ["password_digest", "$2a$12$7Cp3PlIWLFohDAWPqwxcTu0q4O0xhCataMXK1AxFhg9DwX6MiGMv2"], ["activation_digest", "$2a$12$smnQ16aWygNH4ruyPvALAuXAN0lbiw44ElWbwkhkJfUPaYQXOFCFq"], ["activated", true], ["activated_at", "2022-04-30 17:26:19.485939"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-14@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Miss Shavonne Douglas"], ["email", "exale-14@example.com"], ["created_at", "2022-04-30 17:26:20.293251"], ["updated_at", "2022-04-30 17:26:20.293251"], ["password_digest", "$2a$12$e4II6pkMYstii/Pp0OcOVOrCpQEtbRXnsB7wzD09rlfa9mz8sHyPO"], ["activation_digest", "$2a$12$19KAy/GqKkHAYoCJwo3VQ.H1.sbhDrwDs.S1TWd3pUMLeoqpoSVD6"], ["activated", true], ["activated_at", "2022-04-30 17:26:20.028423"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-15@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Ty Waters"], ["email", "exale-15@example.com"], ["created_at", "2022-04-30 17:26:20.838308"], ["updated_at", "2022-04-30 17:26:20.838308"], ["password_digest", "$2a$12$liNpg0EJ6Y3L0SW1kS5H5.RgwaMeCf7V4rd8VCcTQxhXd9GSjFebW"], ["activation_digest", "$2a$12$1eUoOwMEzxkhKm1A9h0OherAmW8IVvBstmT6jxDSdIc7ZdYATbB7O"], ["activated", true], ["activated_at", "2022-04-30 17:26:20.561997"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-16@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dinorah Johnson"], ["email", "exale-16@example.com"], ["created_at", "2022-04-30 17:26:21.377845"], ["updated_at", "2022-04-30 17:26:21.377845"], ["password_digest", "$2a$12$vkbto6xSlMm.8DRUUl6zfuxnD3RFpDDsfahdGrInP753JPxL1Shu2"], ["activation_digest", "$2a$12$IFzbZBZVsekRNhf6YgefRuCWRA4osXwkph1oLT/avoToKu/yF.qxW"], ["activated", true], ["activated_at", "2022-04-30 17:26:21.109380"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-17@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Johnnie Weber DDS"], ["email", "exale-17@example.com"], ["created_at", "2022-04-30 17:26:21.917039"], ["updated_at", "2022-04-30 17:26:21.917039"], ["password_digest", "$2a$12$aK5.x2.iYwy8n28d94W5BOBN7RjQkAhBdDvXc39aIsbnUmfDhdSMu"], ["activation_digest", "$2a$12$unFVq1iSVkRj7sr26p7Fk.XZUO.CDkMdie2yRAbVOUXNcCglPEYxq"], ["activated", true], ["activated_at", "2022-04-30 17:26:21.652769"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-18@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Jarvis O'Conner"], ["email", "exale-18@example.com"], ["created_at", "2022-04-30 17:26:22.449411"], ["updated_at", "2022-04-30 17:26:22.449411"], ["password_digest", "$2a$12$ykI5c79/UwWI/eSzNJIH0OMNhD/zBsgLmnVEewraoR/3JqmLpjHD2"], ["activation_digest", "$2a$12$j555X0qPnLi5Bi8s3F/DUeLwn0rrO5f3TzsQ0epAk63V6gKYvHj0m"], ["activated", true], ["activated_at", "2022-04-30 17:26:22.183238"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-19@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Eve Schneider"], ["email", "exale-19@example.com"], ["created_at", "2022-04-30 17:26:23.005324"], ["updated_at", "2022-04-30 17:26:23.005324"], ["password_digest", "$2a$12$IJ68TBCqCRk6go5oAlpEw./B/k3isWbok7mqFIuGB0hUhF2jImQjC"], ["activation_digest", "$2a$12$n.P2zRaB/BbAMMVkQngyJ.hZKj.QuT3khLknWmxBa0DSGFniFE86i"], ["activated", true], ["activated_at", "2022-04-30 17:26:22.732311"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale-20@example.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Fabian Bahringer"], ["email", "exale-20@example.com"], ["created_at", "2022-04-30 17:26:23.537522"], ["updated_at", "2022-04-30 17:26:23.537522"], ["password_digest", "$2a$12$pORDV4TNhQQGdYSNmpT7reI73c0ERq4SVmAl9PGPBYuykLX8GX1Za"], ["activation_digest", "$2a$12$k7dCpJ5eBDvyu8W9O2mMPeA7tejZB7FmM09M2EyVJP083OtAtx96a"], ["activated", true], ["activated_at", "2022-04-30 17:26:23.272742"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6136111788801728475)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6136111788801728475)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER($1) LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/login" for ::1 at 2022-04-30 20:28:18 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 279.1ms | Allocations: 357790)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (3.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 141.5ms | Allocations: 19421)
+  Rendered layouts/_footer.html.haml (Duration: 58.0ms | Allocations: 15427)
+  Rendered layout layouts/application.html.haml (Duration: 603.6ms | Allocations: 420924)
+Completed 200 OK in 617ms (Views: 578.8ms | ActiveRecord: 27.9ms | Allocations: 424657)
+
+
+Started POST "/login" for ::1 at 2022-04-30 20:28:30 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"exale@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."email" = $1 LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/customers/1
+Completed 302 Found in 312ms (ActiveRecord: 1.7ms | Allocations: 2226)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 20:28:30 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (2.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 8.7ms | Allocations: 2905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (24.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 58.0ms | Allocations: 1062)
+  Rendered layouts/_footer.html.haml (Duration: 0.5ms | Allocations: 116)
+  Rendered layout layouts/application.html.haml (Duration: 121.7ms | Allocations: 9480)
+Completed 200 OK in 142ms (Views: 103.9ms | ActiveRecord: 26.7ms | Allocations: 11795)
+
+
+Started GET "/" for ::1 at 2022-04-30 20:28:35 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 428.6ms | Allocations: 117802)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 5.8ms | Allocations: 229)
+  Rendered layouts/_footer.html.haml (Duration: 0.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.haml (Duration: 460.4ms | Allocations: 123475)
+Completed 200 OK in 466ms (Views: 461.5ms | ActiveRecord: 1.8ms | Allocations: 124700)
+
+
