@@ -1,13 +1,18 @@
-%header.navbar.navbar-fixed-top.navbar-inverse
-  .container
-    = link_to "BlackListBlog", root_path, id: "logo"
-    %nav
-      %ul.nav.navbar-nav.navbar-right
-        %li= link_to "Home", root_path
-        %li= link_to "Help", help_path
-        %li= link_to "About", about_path
+/ Topbar Start
+.container-fluid.bg-dark.px-5.d-none.d-lg-block
+  .row.gx-0
+    .col-lg-4.text-center.text-lg-end
+      .d-inline-flex.align-items-center{:style => "height: 45px;"}
+
+
+      / Topbar End
+  %nav.navbar.navbar-expand-lg.navbar-dark.px-5.py-3.py-lg-0{:style => "margin-left: 45px;"}
+    %a.navbar-brand.p-0{:href => "/"}
+      %h1.m-0
+        %i.fas.fa-user-tie
+        Telegagid
+      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 40%;"}
         - if logged_in?
-          %li= link_to "Customers", customers_path
           %li.dropdown
             %a#dropdownMenuLink.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
               = current_customer.name
@@ -21,3 +26,8 @@
                 = link_to "Log out", logout_path, method: "delete"
         - else
           %li= link_to "Log in", login_path
+
+    %button.navbar-toggler{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.fa.fa-bars
+      %button.btn.text-primary.ms-3{"data-bs-target" => "#searchModal", "data-bs-toggle" => "modal", :type => "button"}
+        %i.fas.fa-search

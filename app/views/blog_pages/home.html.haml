@@ -1,11 +1,322 @@
 - provide(:title, 'Home')
-.center.jumbotron
-  %h1 Welcome to the Blog with Black List
+.container.center
+  %h4.ad-head.text-black.text-uppercase.mb-3
+    У нас вы можете разместить, продать
+    %br или найти канала, услугу или бота
+  #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
+    .carousel-inner
+      .carousel-item.active
+        %img
+          = image_pack_tag "carousel-1.jpg", class:"mimage"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-3{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Каналы
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              Купить или
+              %br найти канал
+            %a.btn.btn-outline-primary.py-md-3.px-md-5.me-3.animated.slideInLeft{:href => "quote.html"} Задать вопрос
+            %a.btn.btn-outline-success.py-md-3.px-md-5.animated.slideInRight{:href => ""} Написать нам
+            %br/
+            %a.btn.btn-outline-light.py-md-3.px-md-5.animated.slideInCenter{:href => ""} Написать нам
+      .carousel-item
+        %img
+          = image_pack_tag "carousel-2.jpg", class:"mimage"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-3{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Боты
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              Купить или
+              %br найти бота
+            %a.btn.btn-outline-primary.py-md-3.px-md-5.me-3.animated.slideInLeft{:href => "quote.html"} Задать вопрос
+            %a.btn.btn-outline-success.py-md-3.px-md-5.animated.slideInRight{:href => ""} Написать нам
+            %br/
+            %a.btn.btn-outline-light.py-md-3.px-md-5.animated.slideInCenter{:href => ""} Написать нам
+      .carousel-item
+        %img
+          = image_pack_tag "carousel-2.jpg", class:"mimage"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-3{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              Купить или
+              %br найти услугу
+            %a.btn.btn-outline-primary.py-md-3.px-md-5.me-3.animated.slideInLeft{:href => "quote.html"} Задать вопрос
+            %a.btn.btn-outline-success.py-md-3.px-md-5.animated.slideInRight{:href => ""} Написать нам
+            %br/
+            %a.btn.btn-outline-light.py-md-3.px-md-5.animated.slideInCenter{:href => ""} Написать нам
+    %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
+      %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+      %span.visually-hidden Предыдущее
+    %button.carousel-control-next{"data-bs-slide" => "next", "data-bs-target" => "#header-carousel", :type => "button"}
+      %span.carousel-control-next-icon{"aria-hidden" => "true"}
+      %span.visually-hidden Следующее
+/ Navbar & Carousel End
+/ Ad block
+#header-carousel.carouseladds.slide.carouseladds-fade{"data-bs-ride" => "carousel"}
+  .carousel-inner
+    .carousel-item.active
+      %img
+        = image_pack_tag "carousel-2.jpg", class:"w-100"
+      .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+        .p-3{:style => "max-width: 900px;"}
+          %h3.display-2.text-white.mb-md-4.animated.zoomIn
+            Место для
+            %br Вашей рекламы
+  / Ad block end
+  / Full Screen Search Start
+  #searchModal.modal.fade{:tabindex => "-1"}
+    .modal-dialog.modal-fullscreen
+      .modal-content{:style => "background: rgba(9, 30, 62, .7);"}
+        .modal-header.border-0
+          %button.btn.bg-white.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+        .modal-body.d-flex.align-items-center.justify-content-center
+          .input-group{:style => "max-width: 600px;"}
+            %input.form-control.bg-transparent.border-primary.p-3{:placeholder => "Type search keyword", :type => "text"}/
+            %button.btn.btn-primary.px-4
+              %i.bi.bi-search
+  / Full Screen Search End
+  / Team Start
+  #team.container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
+    .container.py-5
+      .section-title.text-center.position-relative.pb-3.mb-5.mx-auto{:style => "max-width: 600px;"}
+        %h5.fw-bold.text-primary.text-uppercase Обьявления
+        %h1.mb-0 Ваше объявление может быть здесь
+      .row.g-5
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img
+                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
+              .team-social
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-twitter.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-facebook-f.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-instagram.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-linkedin-in.fw-normal
+            .text-center.py-4
+              %h4.text-primary Название
+              %p.text-uppercase.m-0 Описание
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.6s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img
+                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
+              .team-social
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-twitter.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-facebook-f.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-instagram.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-linkedin-in.fw-normal
+            .text-center.py-4
+              %h4.text-primary Название
+              %p.text-uppercase.m-0 Описание
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.9s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img
+                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
+              .team-social
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-twitter.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-facebook-f.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-instagram.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-linkedin-in.fw-normal
+            .text-center.py-4
+              %h4.text-primary Название
+              %p.text-uppercase.m-0 Описание
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img
+                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
+              .team-social
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-twitter.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-facebook-f.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-instagram.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-linkedin-in.fw-normal
+            .text-center.py-4
+              %h4.text-primary Название
+              %p.text-uppercase.m-0 Описание
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img
+                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
+              .team-social
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-twitter.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-facebook-f.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-instagram.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-linkedin-in.fw-normal
+            .text-center.py-4
+              %h4.text-primary Название
+              %p.text-uppercase.m-0 Описание
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img
+                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
+              .team-social
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-twitter.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-facebook-f.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-instagram.fw-normal
+                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
+                  %i.fab.fa-linkedin-in.fw-normal
+            .text-center.py-4
+              %h4.text-primary Название
+              %p.text-uppercase.m-0 Описание
+  / Team End
+  / Pricing Plan Start
+  #price.container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
+    .container.py-5
+      .section-title.text-center.position-relative.pb-3.mb-5.mx-auto{:style => "max-width: 600px;"}
+        %h5.fw-bold.text-primary.text-uppercase Цены
+        %h1.mb-0 Мы предлагаем конкурентные цены для наших клиентов
+      .row.g-0
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.6s"}
+          .bg-light.rounded
+            .border-bottom.py-4.px-5.mb-4
+              %h4.text-primary.mb-1 Стандарт
+              %small.text-uppercase Базовый план
+            .p-5.pt-0
+              %h1.display-5.mb-3
+                %small.align-top{:style => "font-size: 22px; line-height: 45px;"}> $
+                49.00
+                %small.align-bottom{:style => "font-size: 16px; line-height: 40px;"} / Месяц
+              .d-flex.justify-content-between.mb-3
+                %span Поднятие в списке
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-3
+                %span Выделение цветом
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-3
+                %span Поддержка 24/7
+                %i.fa.fa-times.text-danger.pt-1
+              .d-flex.justify-content-between.mb-2
+                %span VIP публикация
+                %i.fa.fa-times.text-danger.pt-1
+              %a.btn.btn-primary.py-2.px-4.mt-4{:href => ""} Заказать сейчас
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
+          .bg-white.rounded.shadow.position-relative{:style => "z-index: 1;"}
+            .border-bottom.py-4.px-5.mb-4
+              %h4.text-primary.mb-1 Продвинутый
+              %small.text-uppercase Больше опций для бизнеса
+            .p-5.pt-0
+              %h1.display-5.mb-3
+                %small.align-top{:style => "font-size: 22px; line-height: 45px;"}> $
+                99.00
+                %small.align-bottom{:style => "font-size: 16px; line-height: 40px;"} / Месяц
+              .d-flex.justify-content-between.mb-3
+                %span Поднятие в списке
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-3
+                %span Выделение цветом
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-3
+                %span Поддержка 24/7
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-2
+                %span VIP публикация
+                %i.fa.fa-times.text-danger.pt-1
+              %a.btn.btn-primary.py-2.px-4.mt-4{:href => ""} Заказать сейчас
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.9s"}
+          .bg-light.rounded
+            .border-bottom.py-4.px-5.mb-4
+              %h4.text-primary.mb-1 Максимум
+              %small.text-uppercase Лучшее предложение
+            .p-5.pt-0
+              %h1.display-5.mb-3
+                %small.align-top{:style => "font-size: 22px; line-height: 45px;"}> $
+                149.00
+                %small.align-bottom{:style => "font-size: 16px; line-height: 40px;"} / Месяц
+              .d-flex.justify-content-between.mb-3
+                %span Поднятие в списке
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-3
+                %span Выделение цветом
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-3
+                %span Поддержка 24/7
+                %i.fa.fa-check.text-primary.pt-1
+              .d-flex.justify-content-between.mb-2
+                %span VIP публикация
+                %i.fa.fa-check.text-primary.pt-1
+              %a.btn.btn-primary.py-2.px-4.mt-4{:href => ""} Заказать сейчас
+  / Pricing Plan End
+  / Quote Start
+  .container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
+    .container.py-5
+      .row.g-5
+        .col-lg-7
+          .section-title.position-relative.pb-3.mb-5
+            %h5.fw-bold.text-primary.text-uppercase Оставить запрос
+            %h1.mb-0 Остались вопросы? задайте их сейчас
+          .row.gx-3
+            .col-sm-6.wow.zoomIn{"data-wow-delay" => "0.2s"}
+              %h5.mb-4
+                %i.fa.fa-reply.text-primary.me-3>
+                Ответим в течение суток
+            .col-sm-6.wow.zoomIn{"data-wow-delay" => "0.4s"}
+              %h5.mb-4
+                %i.fa.fa-phone-alt.text-primary.me-3>
+                Круглосуточная поддержка
+          %p.mb-4 Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.
+          .d-flex.align-items-center.mt-2.wow.zoomIn{"data-wow-delay" => "0.6s"}
+            .bg-primary.d-flex.align-items-center.justify-content-center.rounded{:style => "width: 60px; height: 60px;"}
+              %i.fas.fa-phone-alt.text-white
+            .ps-4
+              %h5.mb-2 Позвоните, чтобы узнать
+              %h4.text-primary.mb-0 +012 345 6789
+        .col-lg-5
+          .bg-primary.rounded.h-100.d-flex.align-items-center.p-5.wow.zoomIn{"data-wow-delay" => "0.9s"}
+            %form
+              .row.g-3
+                .col-xl-12
+                  %input.form-control.bg-light.border-0{:placeholder => "Имя", :style => "height: 55px;", :type => "text"}/
+                .col-12
+                  %input.form-control.bg-light.border-0{:placeholder => "Почта", :style => "height: 55px;", :type => "email"}/
+                .col-12
+                  %select.form-select.bg-light.border-0{:style => "height: 55px;"}
+                    %option{:selected => "selected"} Выбрать услугу
+                    %option{:value => "1"} Услуга 1
+                    %option{:value => "2"} Услуга 2
+                    %option{:value => "3"} Услуга 3
+                .col-12
+                  %textarea.form-control.bg-light.border-0{:placeholder => "Ваше сообщение", :rows => "3"}
+                .col-12
+                  %button.btn.btn-dark.w-100.py-3{:type => "submit"} Отправить
 
-  %h2
-    This is a
-    %a{:href => "https://github.com/wishka/BlackListBlog"} Home page
-    of Blog with Black List
+  - if current_customer.present?
 
+    /= link_to "Posts", posts_path
+    /= link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"
+    /= link_to "Send group message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=-634155082&text=group message", target: " _blank"
+    /= button_to "Send group message via controller", blog_pages_group_message_path
+    /= button_to "Send private message via controller", blog_pages_private_message_path
 
-  = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"
+    /= form_tag send_hello_path, method: :post do
+    /  = text_field_tag :content, nil, required: true
+    /  %hr
+    /  = submit_tag "Say hello"
+
+  - else
+    = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"

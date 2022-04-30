@@ -1,12 +1,73 @@
-%footer.footer
-  %small
-    The
-    %a{:href => "https://github.com/wishka/BlackListBlog"} Blog with BlackList
-    by
-    %a{:href => "https://github.com/wishka"} Andrew Kancev
-  %nav
-    %ul
-      %li= link_to "About", about_path
-      %li= link_to "Contact", contact_path
-      %li
-        %a{:href => "https://github.com/"} News
+.container-fluid.bg-dark.text-light.mt-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
+  .container
+    .row.gx-5
+      .col-lg-4.col-md-6.footer-about
+        .d-flex.flex-column.align-items-center.justify-content-center.text-center.h-100.bg-primary.p-4
+          %a.navbar-brand{:href => "index.html"}
+            %h1.m-0.text-white
+              %i.fas.fa-user-tie.me-2>
+              Telegagid
+          %p.mt-3.mb-4 Lorem diam sit erat dolor elitr et, diam lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd eos duo.
+          %form{:action => ""}
+            .input-group
+              %input.form-control.border-white.p-3{:placeholder => "Почта", :type => "text"}/
+              %button.btn.btn-dark Отправить
+      .col-lg-8.col-md-6
+        .row.gx-5
+          .col-lg-4.col-md-12.pt-0.pt-lg-5.mb-5
+            .section-title.section-title-sm.position-relative.pb-3.mb-4
+              %h3.text-light.mb-0 Быстрый переход
+            .link-animated.d-flex.flex-column.justify-content-start
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Домой
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                О нас
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Объявления
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Цены
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Как это работает
+              %a.text-light{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Обратная связь
+          .col-lg-4.col-md-12.pt-0.pt-lg-5.mb-5
+            .section-title.section-title-sm.position-relative.pb-3.mb-4
+              %h3.text-light.mb-0 Быстрый переход
+            .link-animated.d-flex.flex-column.justify-content-start
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Домой
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                О нас
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Объявления
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Цены
+              %a.text-light.mb-2{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Как это работает
+              %a.text-light{:href => "#"}
+                %i.bi.bi-arrow-right.text-primary.me-2>
+                Обратная связь
+.container-fluid.text-white{:style => "background: #061429;"}
+  .container.text-center
+    .row.justify-content-end
+      .col-lg-8.col-md-6
+        .d-flex.align-items-center.justify-content-center{:style => "height: 75px;"}
+          %p.mb-0
+            ©
+            = succeed "." do
+              %a.text-white.border-bottom{:href => "#"} Telegagid
+/ Footer End
+/ Back to Top
+%a.btn.btn-lg.btn-primary.btn-lg-square.rounded.back-to-top{:href => "#"}
+  %i.bi.bi-arrow-up
