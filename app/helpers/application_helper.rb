@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title = '')
-    base_title = "Blog with BlackList"
+    base_title = "TelegaGid"
     if page_title.empty?
       base_title
     else
