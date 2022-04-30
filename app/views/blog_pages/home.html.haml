@@ -3,6 +3,7 @@
   %h4.ad-head.text-black.text-uppercase.mb-3
     У нас вы можете разместить, продать
     %br или найти канала, услугу или бота
+
   #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
     .carousel-inner
       .carousel-item.active
@@ -54,7 +55,7 @@
 / Ad block
 #header-carousel.carouseladds.slide.carouseladds-fade{"data-bs-ride" => "carousel"}
   .carousel-inner
-    .carousel-item.active
+    .carousel-item.active.img-border
       %img
         = image_pack_tag "carousel-2.jpg", class:"w-100"
       .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
@@ -267,17 +268,17 @@
     .container.py-5
       .row.g-5
         .col-lg-7
-          .section-title.position-relative.pb-3.mb-5
+          #quote.section-title.position-relative.pb-3.mb-5
             %h5.fw-bold.text-primary.text-uppercase Оставить запрос
             %h1.mb-0 Остались вопросы? задайте их сейчас
           .row.gx-3
             .col-sm-6.wow.zoomIn{"data-wow-delay" => "0.2s"}
               %h5.mb-4
-                %i.fa.fa-reply.text-primary.me-3>
+                %i.fa.fa-reply.text-primary.me-3
                 Ответим в течение суток
             .col-sm-6.wow.zoomIn{"data-wow-delay" => "0.4s"}
               %h5.mb-4
-                %i.fa.fa-phone-alt.text-primary.me-3>
+                %i.fas.fa-phone-alt.text-primary.me-3
                 Круглосуточная поддержка
           %p.mb-4 Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.
           .d-flex.align-items-center.mt-2.wow.zoomIn{"data-wow-delay" => "0.6s"}
