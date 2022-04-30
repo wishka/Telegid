@@ -8,7 +8,6 @@
 
 Customer.create!(name:  "Example Customer",
              email: "exale@example.com",
-             cell: 1862857925,
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -19,10 +18,8 @@ Customer.create!(name:  "Example Customer",
   name  = Faker::Name.name
   email = "exale-#{n+1}@example.com"
   password = "password"
-  cell = Faker::PhoneNumber.cell_phone_in_e164
   Customer.create!(name:  name,
                email: email,
-               cell: cell,
                password:              password,
                password_confirmation: password,
                activated: true,
