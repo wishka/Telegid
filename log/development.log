@@ -29821,3 +29821,889 @@ Completed 200 OK in 202ms (Views: 198.1ms | ActiveRecord: 2.2ms | Allocations: 3
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6136111788801728475)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-04-30 23:17:15 +0300
+  [1m[35m (43.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2022-04-30 23:17:20 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/wishka/projects/Telegid/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 467a89f6e2bce4127784
+Version: webpack 4.46.0
+Time: 19990ms
+Built at: 30.04.2022 23:17:42
+                                                          Asset      Size       Chunks                         Chunk Names
+                                   css/application-6b7528c0.css   203 KiB  application  [emitted] [immutable]  application
+                               css/application-6b7528c0.css.map   435 KiB  application  [emitted] [dev]        application
+                         js/application-68b4214672bfede729e4.js   468 KiB  application  [emitted] [immutable]  application
+                     js/application-68b4214672bfede729e4.js.map   445 KiB  application  [emitted] [dev]        application
+                           js/waypoints-0aaed46018e615613b5a.js  15.5 KiB    waypoints  [emitted] [immutable]  waypoints
+                       js/waypoints-0aaed46018e615613b5a.js.map  14.2 KiB    waypoints  [emitted] [dev]        waypoints
+                                 js/wow-3f2c99b4bf9279beef0e.js  20.4 KiB          wow  [emitted] [immutable]  wow
+                             js/wow-3f2c99b4bf9279beef0e.js.map  23.1 KiB          wow  [emitted] [dev]        wow
+                                                  manifest.json  3.67 KiB               [emitted]              
+        media/images/about-375ed93a3c75edb9ed80aa3c81c677a8.jpg  49.4 KiB               [emitted]              
+       media/images/blog-1-5150f0b19ffe23a265194efde4715b54.jpg  21.7 KiB               [emitted]              
+       media/images/blog-2-ea6300b3228592aaca85c71497a61df0.jpg  28.3 KiB               [emitted]              
+       media/images/blog-3-b8d953c4371c38939cfe9b79a65236ce.jpg  24.8 KiB               [emitted]              
+   media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg  94.9 KiB               [emitted]              
+   media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg  73.6 KiB               [emitted]              
+      media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico  1.12 KiB               [emitted]              
+      media/images/feature-b8fa3a1d15793321bc06dd3c04b6a69e.jpg  58.1 KiB               [emitted]              
+       media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg  19.3 KiB               [emitted]              
+       media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg  16.2 KiB               [emitted]              
+       media/images/team-3-e665709987982790ed540a886c2118ba.jpg  31.3 KiB               [emitted]              
+media/images/testimonial-1-6c1e18bc9e206669b4a3cf505da20de7.jpg  3.37 KiB               [emitted]              
+media/images/testimonial-2-d99a5ca6260ec28a6aed1f02e6f1edf2.jpg  3.43 KiB               [emitted]              
+media/images/testimonial-3-27812fe3410affb0526b360ac1d9baa1.jpg  2.99 KiB               [emitted]              
+media/images/testimonial-4-1d8a1837cb0616b9a1c59de29d09955c.jpg  3.19 KiB               [emitted]              
+         media/images/user-86c8bfca017e69c36503fa6ba874e454.jpg  2.83 KiB               [emitted]              
+     media/images/vendor-1-c7968ab73fd6096f33f7d277c6045988.jpg  2.47 KiB               [emitted]              
+     media/images/vendor-2-ac5fe70b2c7cfc31f84f4eb652477397.jpg  2.59 KiB               [emitted]              
+     media/images/vendor-3-6581936e641e3ae3ca9ce11623db7dbe.jpg  2.53 KiB               [emitted]              
+     media/images/vendor-4-78c35201b36b25cf4ed42f309dd73b0d.jpg  2.57 KiB               [emitted]              
+     media/images/vendor-5-7a1abab49b25385fd98d45386fb64108.jpg  2.62 KiB               [emitted]              
+     media/images/vendor-6-b0fa6b0785119e43bf80d546e74c0dd7.jpg  2.69 KiB               [emitted]              
+     media/images/vendor-7-f378d166503b027b065e5858da2b9f98.jpg  2.19 KiB               [emitted]              
+     media/images/vendor-8-fdd05d32d3f8ee8f3b467db9dec43285.jpg  2.96 KiB               [emitted]              
+     media/images/vendor-9-f5c67c1eeae746cb66183b4409022c16.jpg  2.36 KiB               [emitted]              
+Entrypoint application = css/application-6b7528c0.css js/application-68b4214672bfede729e4.js css/application-6b7528c0.css.map js/application-68b4214672bfede729e4.js.map
+Entrypoint waypoints = js/waypoints-0aaed46018e615613b5a.js js/waypoints-0aaed46018e615613b5a.js.map
+Entrypoint wow = js/wow-3f2c99b4bf9279beef0e.js js/wow-3f2c99b4bf9279beef0e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/images sync recursive ^\.\/.*$] ./app/javascript/images sync ^\.\/.*$ 1000 bytes {application} [built]
+[./app/javascript/images/about.jpg] 101 bytes {application} [optional] [built]
+[./app/javascript/images/blog-1.jpg] 102 bytes {application} [optional] [built]
+[./app/javascript/images/blog-2.jpg] 102 bytes {application} [optional] [built]
+[./app/javascript/images/blog-3.jpg] 102 bytes {application} [optional] [built]
+[./app/javascript/images/carousel-1.jpg] 106 bytes {application} [optional] [built]
+[./app/javascript/images/carousel-2.jpg] 106 bytes {application} [optional] [built]
+[./app/javascript/images/favicon.ico] 103 bytes {application} [optional] [built]
+[./app/javascript/images/feature.jpg] 103 bytes {application} [optional] [built]
+[./app/javascript/packs/application.js] 599 bytes {application} [built]
+[./app/javascript/packs/waypoints.min.js] 11.6 KiB {waypoints} [built]
+[./app/javascript/packs/wow.js] 16.2 KiB {wow} [built]
+[./app/javascript/stylesheets/application.scss] 39 bytes {application} [built]
+    + 81 hidden modules
+Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!app/javascript/stylesheets/application.scss:
+    Entrypoint mini-css-extract-plugin = *
+    [./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {mini-css-extract-plugin} [built]
+        + 1 hidden module
+
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Compiled all packs in /Users/wishka/projects/Telegid/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 467a89f6e2bce4127784
+Version: webpack 4.46.0
+Time: 19413ms
+Built at: 30.04.2022 23:17:42
+                                                          Asset      Size       Chunks                         Chunk Names
+                                   css/application-6b7528c0.css   203 KiB  application  [emitted] [immutable]  application
+                               css/application-6b7528c0.css.map   435 KiB  application  [emitted] [dev]        application
+                         js/application-68b4214672bfede729e4.js   468 KiB  application  [emitted] [immutable]  application
+                     js/application-68b4214672bfede729e4.js.map   445 KiB  application  [emitted] [dev]        application
+                           js/waypoints-0aaed46018e615613b5a.js  15.5 KiB    waypoints  [emitted] [immutable]  waypoints
+                       js/waypoints-0aaed46018e615613b5a.js.map  14.2 KiB    waypoints  [emitted] [dev]        waypoints
+                                 js/wow-3f2c99b4bf9279beef0e.js  20.4 KiB          wow  [emitted] [immutable]  wow
+                             js/wow-3f2c99b4bf9279beef0e.js.map  23.1 KiB          wow  [emitted] [dev]        wow
+                                                  manifest.json  3.67 KiB               [emitted]              
+        media/images/about-375ed93a3c75edb9ed80aa3c81c677a8.jpg  49.4 KiB               [emitted]              
+       media/images/blog-1-5150f0b19ffe23a265194efde4715b54.jpg  21.7 KiB               [emitted]              
+       media/images/blog-2-ea6300b3228592aaca85c71497a61df0.jpg  28.3 KiB               [emitted]              
+       media/images/blog-3-b8d953c4371c38939cfe9b79a65236ce.jpg  24.8 KiB               [emitted]              
+   media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg  94.9 KiB               [emitted]              
+   media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg  73.6 KiB               [emitted]              
+      media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico  1.12 KiB               [emitted]              
+      media/images/feature-b8fa3a1d15793321bc06dd3c04b6a69e.jpg  58.1 KiB               [emitted]              
+       media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg  19.3 KiB               [emitted]              
+       media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg  16.2 KiB               [emitted]              
+       media/images/team-3-e665709987982790ed540a886c2118ba.jpg  31.3 KiB               [emitted]              
+media/images/testimonial-1-6c1e18bc9e206669b4a3cf505da20de7.jpg  3.37 KiB               [emitted]              
+media/images/testimonial-2-d99a5ca6260ec28a6aed1f02e6f1edf2.jpg  3.43 KiB               [emitted]              
+media/images/testimonial-3-27812fe3410affb0526b360ac1d9baa1.jpg  2.99 KiB               [emitted]              
+media/images/testimonial-4-1d8a1837cb0616b9a1c59de29d09955c.jpg  3.19 KiB               [emitted]              
+         media/images/user-86c8bfca017e69c36503fa6ba874e454.jpg  2.83 KiB               [emitted]              
+     media/images/vendor-1-c7968ab73fd6096f33f7d277c6045988.jpg  2.47 KiB               [emitted]              
+     media/images/vendor-2-ac5fe70b2c7cfc31f84f4eb652477397.jpg  2.59 KiB               [emitted]              
+     media/images/vendor-3-6581936e641e3ae3ca9ce11623db7dbe.jpg  2.53 KiB               [emitted]              
+     media/images/vendor-4-78c35201b36b25cf4ed42f309dd73b0d.jpg  2.57 KiB               [emitted]              
+     media/images/vendor-5-7a1abab49b25385fd98d45386fb64108.jpg  2.62 KiB               [emitted]              
+     media/images/vendor-6-b0fa6b0785119e43bf80d546e74c0dd7.jpg  2.69 KiB               [emitted]              
+     media/images/vendor-7-f378d166503b027b065e5858da2b9f98.jpg  2.19 KiB               [emitted]              
+     media/images/vendor-8-fdd05d32d3f8ee8f3b467db9dec43285.jpg  2.96 KiB               [emitted]              
+     media/images/vendor-9-f5c67c1eeae746cb66183b4409022c16.jpg  2.36 KiB               [emitted]              
+Entrypoint application = css/application-6b7528c0.css js/application-68b4214672bfede729e4.js css/application-6b7528c0.css.map js/application-68b4214672bfede729e4.js.map
+Entrypoint waypoints = js/waypoints-0aaed46018e615613b5a.js js/waypoints-0aaed46018e615613b5a.js.map
+Entrypoint wow = js/wow-3f2c99b4bf9279beef0e.js js/wow-3f2c99b4bf9279beef0e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/images sync recursive ^\.\/.*$] ./app/javascript/images sync ^\.\/.*$ 1000 bytes {application} [built]
+[./app/javascript/images/about.jpg] 101 bytes {application} [optional] [built]
+[./app/javascript/images/blog-1.jpg] 102 bytes {application} [optional] [built]
+[./app/javascript/images/blog-2.jpg] 102 bytes {application} [optional] [built]
+[./app/javascript/images/blog-3.jpg] 102 bytes {application} [optional] [built]
+[./app/javascript/images/carousel-1.jpg] 106 bytes {application} [optional] [built]
+[./app/javascript/images/carousel-2.jpg] 106 bytes {application} [optional] [built]
+[./app/javascript/images/favicon.ico] 103 bytes {application} [optional] [built]
+[./app/javascript/images/feature.jpg] 103 bytes {application} [optional] [built]
+[./app/javascript/packs/application.js] 599 bytes {application} [built]
+[./app/javascript/packs/waypoints.min.js] 11.6 KiB {waypoints} [built]
+[./app/javascript/packs/wow.js] 16.2 KiB {wow} [built]
+[./app/javascript/stylesheets/application.scss] 39 bytes {application} [built]
+    + 81 hidden modules
+Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!app/javascript/stylesheets/application.scss:
+    Entrypoint mini-css-extract-plugin = *
+    [./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {mini-css-extract-plugin} [built]
+        + 1 hidden module
+
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCustomer Load (3.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 23476.9ms | Allocations: 74521)
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 27024.1ms | Allocations: 185475)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 15.7ms | Allocations: 8644)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.6ms | Allocations: 202)
+  Rendered layouts/_footer.html.haml (Duration: 22.4ms | Allocations: 15813)
+  Rendered layout layouts/application.html.haml (Duration: 27250.4ms | Allocations: 239551)
+  Rendered layouts/_footer.html.haml (Duration: 23.0ms | Allocations: 15943)
+  Rendered layout layouts/application.html.haml (Duration: 23731.5ms | Allocations: 142615)
+Completed 200 OK in 27282ms (Views: 27211.0ms | ActiveRecord: 51.9ms | Allocations: 243519)
+
+
+Completed 200 OK in 23739ms (Views: 23701.0ms | ActiveRecord: 32.6ms | Allocations: 143272)
+
+
+Started DELETE "/logout" for ::1 at 2022-04-30 23:20:28 +0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms | Allocations: 1940)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:20:28 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 645.0ms | Allocations: 26622)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 103)
+  Rendered layouts/_footer.html.haml (Duration: 0.5ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 1660.8ms | Allocations: 69493)
+Completed 200 OK in 1664ms (Views: 1662.7ms | ActiveRecord: 0.0ms | Allocations: 70006)
+
+
+Started GET "/signup" for ::1 at 2022-04-30 23:20:35 +0300
+Processing by CustomersController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering customers/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (Duration: 5.3ms | Allocations: 2451)
+  Rendered customers/_form.html.haml (Duration: 1411.1ms | Allocations: 371021)
+  Rendered customers/new.html.haml within layouts/application (Duration: 1420.7ms | Allocations: 373393)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 136)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 128)
+  Rendered layout layouts/application.html.haml (Duration: 1454.5ms | Allocations: 378991)
+Completed 200 OK in 1463ms (Views: 1460.1ms | ActiveRecord: 0.0ms | Allocations: 380390)
+
+
+Started GET "/login" for ::1 at 2022-04-30 23:20:50 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 38.6ms | Allocations: 14139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 128)
+  Rendered layouts/_footer.html.haml (Duration: 1.9ms | Allocations: 128)
+  Rendered layout layouts/application.html.haml (Duration: 64.4ms | Allocations: 20906)
+Completed 200 OK in 71ms (Views: 69.4ms | ActiveRecord: 0.0ms | Allocations: 22092)
+
+
+Started POST "/login" for ::1 at 2022-04-30 23:21:02 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"exale@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (42.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."email" = $1 LIMIT $2[0m  [["email", "exale@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/customers/1
+Completed 302 Found in 376ms (ActiveRecord: 42.7ms | Allocations: 1719)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:21:02 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 9.3ms | Allocations: 2889)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 3.4ms | Allocations: 1066)
+  Rendered layouts/_footer.html.haml (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 32.7ms | Allocations: 9455)
+Completed 200 OK in 38ms (Views: 32.2ms | ActiveRecord: 2.2ms | Allocations: 10946)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:24:19 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (2.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 0.8ms | Allocations: 99)
+  Rendered layout layouts/application.html.haml (Duration: 251.1ms | Allocations: 13194)
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 2.2ms | Allocations: 14453)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$state-danger-text".
+        on line 540:12 of app/assets/stylesheets/custom.scss
+>>     color: $state-danger-text;
+
+   -----------^
+):
+    27:     %script{:crossorigin => "anonymous", :integrity => "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", :src => "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"}
+    28: 
+    29:     %link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous")/
+    30:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    31:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    32:     = stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css'
+    33:   %body.container.horizontal-gradient
+  
+app/assets/stylesheets/custom.scss:540
+app/views/layouts/application.html.haml:30
+Started GET "/customers/1" for ::1 at 2022-04-30 23:25:03 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.haml (Duration: 61.3ms | Allocations: 9470)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 1.4ms | Allocations: 10800)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$gray-lighter".
+        on line 564:30 of app/assets/stylesheets/custom.scss
+>>     border-bottom: 1px solid $gray-lighter;
+
+   -----------------------------^
+):
+    27:     %script{:crossorigin => "anonymous", :integrity => "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", :src => "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"}
+    28: 
+    29:     %link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous")/
+    30:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    31:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    32:     = stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css'
+    33:   %body.container.horizontal-gradient
+  
+app/assets/stylesheets/custom.scss:564
+app/views/layouts/application.html.haml:30
+Started GET "/customers/1" for ::1 at 2022-04-30 23:25:30 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 0.3ms | Allocations: 100)
+  Rendered layout layouts/application.html.haml (Duration: 50.9ms | Allocations: 9949)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.1ms | Allocations: 11273)
+
+
+  
+ActionView::Template::Error (Error: The target selector was not found.
+       Use "@extend .has-error !optional" to avoid this error.
+        on line 538 of app/assets/stylesheets/custom.scss
+>>   @extend .has-error;
+
+   ----------^
+):
+    27:     %script{:crossorigin => "anonymous", :integrity => "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", :src => "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"}
+    28: 
+    29:     %link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous")/
+    30:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    31:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    32:     = stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css'
+    33:   %body.container.horizontal-gradient
+  
+app/assets/stylesheets/custom.scss:538
+app/views/layouts/application.html.haml:30
+Started GET "/customers/1" for ::1 at 2022-04-30 23:28:06 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 0.3ms | Allocations: 100)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (22.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 25.6ms | Allocations: 1062)
+  Rendered layouts/_footer.html.haml (Duration: 0.8ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 355.1ms | Allocations: 31035)
+Completed 200 OK in 361ms (Views: 334.4ms | ActiveRecord: 23.2ms | Allocations: 32393)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:32:35 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 8.6ms | Allocations: 2899)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (23.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 103.4ms | Allocations: 13567)
+  Rendered layout layouts/application.html.haml (Duration: 198.7ms | Allocations: 33744)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 24.0ms | Allocations: 35870)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `customer' for #<ActionView::Base:0x0000000000c698>
+Did you mean?  @customer):
+    13:         Telegagid
+    14:       %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 40%;"}
+    15:         - if logged_in?
+    16:           - if current_customer.admin? && !current_customer?(customer)
+    17:             | #{link_to "Customers", customers_path}
+    18:           %li
+    19:             %a
+  
+app/views/layouts/_header.html.haml:16
+app/views/layouts/application.html.haml:34
+Started GET "/customers/1" for ::1 at 2022-04-30 23:33:04 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 5.7ms | Allocations: 2897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (38.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 77.2ms | Allocations: 8993)
+  Rendered layouts/_footer.html.haml (Duration: 37.7ms | Allocations: 15715)
+  Rendered layout layouts/application.html.haml (Duration: 191.3ms | Allocations: 45111)
+Completed 200 OK in 199ms (Views: 155.5ms | ActiveRecord: 39.5ms | Allocations: 47233)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:33:14 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 411.7ms | Allocations: 117703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.8ms | Allocations: 285)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 136)
+  Rendered layout layouts/application.html.haml (Duration: 439.7ms | Allocations: 123426)
+Completed 200 OK in 445ms (Views: 441.3ms | ActiveRecord: 1.8ms | Allocations: 124569)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:33:17 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (12.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 11.6ms | Allocations: 6088)
+  Rendered customers/index.html.haml within layouts/application (Duration: 44.7ms | Allocations: 10747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 225)
+  Rendered layouts/_footer.html.haml (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 80.2ms | Allocations: 16402)
+Completed 200 OK in 96ms (Views: 69.4ms | ActiveRecord: 13.6ms | Allocations: 17920)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:33:49 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (2.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 8.7ms | Allocations: 6077)
+  Rendered customers/index.html.haml within layouts/application (Duration: 18.4ms | Allocations: 9434)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 10.8ms | Allocations: 8141)
+  Rendered layouts/_footer.html.haml (Duration: 26.2ms | Allocations: 15679)
+  Rendered layout layouts/application.html.haml (Duration: 117.9ms | Allocations: 50606)
+Completed 200 OK in 129ms (Views: 119.1ms | ActiveRecord: 3.5ms | Allocations: 52834)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:34:19 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 9.2ms | Allocations: 6077)
+  Rendered customers/index.html.haml within layouts/application (Duration: 19.3ms | Allocations: 9431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 118.3ms | Allocations: 8127)
+  Rendered layouts/_footer.html.haml (Duration: 72.6ms | Allocations: 15725)
+  Rendered layout layouts/application.html.haml (Duration: 269.3ms | Allocations: 50605)
+Completed 200 OK in 277ms (Views: 270.2ms | ActiveRecord: 2.0ms | Allocations: 52831)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:34:39 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 9.5ms | Allocations: 6081)
+  Rendered customers/index.html.haml within layouts/application (Duration: 17.7ms | Allocations: 9437)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 8.4ms | Allocations: 8150)
+  Rendered layouts/_footer.html.haml (Duration: 56.1ms | Allocations: 15680)
+  Rendered layout layouts/application.html.haml (Duration: 151.2ms | Allocations: 50615)
+Completed 200 OK in 159ms (Views: 152.1ms | ActiveRecord: 2.5ms | Allocations: 52848)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:35:09 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 7.9ms | Allocations: 6077)
+  Rendered customers/index.html.haml within layouts/application (Duration: 16.2ms | Allocations: 9433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 6.8ms | Allocations: 7969)
+  Rendered layouts/_footer.html.haml (Duration: 15.2ms | Allocations: 15714)
+  Rendered layout layouts/application.html.haml (Duration: 81.0ms | Allocations: 50469)
+Completed 200 OK in 88ms (Views: 82.0ms | ActiveRecord: 2.0ms | Allocations: 52698)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:36:02 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 8.8ms | Allocations: 6077)
+  Rendered customers/index.html.haml within layouts/application (Duration: 18.0ms | Allocations: 9431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 9.2ms | Allocations: 8174)
+  Rendered layouts/_footer.html.haml (Duration: 24.6ms | Allocations: 15679)
+  Rendered layout layouts/application.html.haml (Duration: 122.6ms | Allocations: 50606)
+Completed 200 OK in 131ms (Views: 123.4ms | ActiveRecord: 2.3ms | Allocations: 52831)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:36:29 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 10.2ms | Allocations: 6077)
+  Rendered customers/index.html.haml within layouts/application (Duration: 19.3ms | Allocations: 9431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 7.4ms | Allocations: 8220)
+  Rendered layouts/_footer.html.haml (Duration: 24.0ms | Allocations: 15679)
+  Rendered layout layouts/application.html.haml (Duration: 108.2ms | Allocations: 50652)
+Completed 200 OK in 116ms (Views: 109.7ms | ActiveRecord: 2.3ms | Allocations: 52878)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:36:35 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 8.2ms | Allocations: 2803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 3.2ms | Allocations: 1073)
+  Rendered layouts/_footer.html.haml (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 28.2ms | Allocations: 9377)
+Completed 200 OK in 42ms (Views: 27.9ms | ActiveRecord: 2.4ms | Allocations: 10793)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:36:37 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (3.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 0.4ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (25.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 27.8ms | Allocations: 1073)
+  Rendered layouts/_footer.html.haml (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 62.8ms | Allocations: 6771)
+Completed 200 OK in 73ms (Views: 38.0ms | ActiveRecord: 29.0ms | Allocations: 8044)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:36:52 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 346.7ms | Allocations: 117715)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.7ms | Allocations: 298)
+  Rendered layouts/_footer.html.haml (Duration: 1.0ms | Allocations: 136)
+  Rendered layout layouts/application.html.haml (Duration: 438.1ms | Allocations: 123451)
+Completed 200 OK in 444ms (Views: 440.6ms | ActiveRecord: 1.5ms | Allocations: 124625)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:37:30 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (41.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 0.7ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 5.7ms | Allocations: 1074)
+  Rendered layouts/_footer.html.haml (Duration: 0.3ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 96.3ms | Allocations: 6773)
+Completed 200 OK in 147ms (Views: 96.9ms | ActiveRecord: 43.5ms | Allocations: 8044)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:37:41 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 424.4ms | Allocations: 28647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 287)
+  Rendered layouts/_footer.html.haml (Duration: 0.7ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 465.4ms | Allocations: 34353)
+Completed 200 OK in 467ms (Views: 464.7ms | ActiveRecord: 1.6ms | Allocations: 34892)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:40:17 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 194.4ms | Allocations: 27438)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.7ms | Allocations: 295)
+  Rendered layouts/_footer.html.haml (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 559.7ms | Allocations: 58259)
+Completed 200 OK in 562ms (Views: 559.6ms | ActiveRecord: 1.0ms | Allocations: 58794)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:40:31 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (4.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 228.4ms | Allocations: 27440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 294)
+  Rendered layouts/_footer.html.haml (Duration: 0.4ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 262.6ms | Allocations: 33157)
+Completed 200 OK in 265ms (Views: 259.7ms | ActiveRecord: 4.0ms | Allocations: 33692)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:42:11 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (3.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 354.2ms | Allocations: 116978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.9ms | Allocations: 8316)
+  Rendered layouts/_footer.html.haml (Duration: 162.6ms | Allocations: 15708)
+  Rendered layout layouts/application.html.haml (Duration: 576.5ms | Allocations: 158421)
+Completed 200 OK in 593ms (Views: 586.6ms | ActiveRecord: 3.0ms | Allocations: 159842)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:42:54 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 390.5ms | Allocations: 116401)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 28.2ms | Allocations: 8291)
+  Rendered layouts/_footer.html.haml (Duration: 254.6ms | Allocations: 15703)
+  Rendered layout layouts/application.html.haml (Duration: 773.5ms | Allocations: 157790)
+Completed 200 OK in 780ms (Views: 776.1ms | ActiveRecord: 1.0ms | Allocations: 159177)
+
+
+Started GET "/" for ::1 at 2022-04-30 23:50:39 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 419.3ms | Allocations: 32196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 12.8ms | Allocations: 294)
+  Rendered layouts/_footer.html.haml (Duration: 0.7ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 1226.3ms | Allocations: 62095)
+Completed 200 OK in 1246ms (Views: 1234.8ms | ActiveRecord: 36.7ms | Allocations: 62626)
+
+
+Started GET "/customers" for ::1 at 2022-04-30 23:51:01 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (2.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 9.6ms | Allocations: 6081)
+  Rendered customers/index.html.haml within layouts/application (Duration: 23.3ms | Allocations: 9444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 242)
+  Rendered layouts/_footer.html.haml (Duration: 0.5ms | Allocations: 136)
+  Rendered layout layouts/application.html.haml (Duration: 76.8ms | Allocations: 15155)
+Completed 200 OK in 108ms (Views: 81.7ms | ActiveRecord: 4.8ms | Allocations: 18146)
+
+
+Started GET "/customers/1" for ::1 at 2022-04-30 23:51:05 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (7.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 6.2ms | Allocations: 2819)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 3.7ms | Allocations: 1073)
+  Rendered layouts/_footer.html.haml (Duration: 1.7ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 32.4ms | Allocations: 9392)
+Completed 200 OK in 48ms (Views: 32.0ms | ActiveRecord: 8.5ms | Allocations: 10808)
+
+
+Started GET "/customers/1" for ::1 at 2022-05-01 00:00:06 +0300
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (2.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/show.html.haml within layouts/application
+  Rendered customers/show.html.haml within layouts/application (Duration: 4.4ms | Allocations: 2890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 16.4ms | Allocations: 9084)
+  Rendered layouts/_footer.html.haml (Duration: 24.6ms | Allocations: 15699)
+  Rendered layout layouts/application.html.haml (Duration: 111.0ms | Allocations: 45163)
+Completed 200 OK in 168ms (Views: 114.6ms | ActiveRecord: 37.8ms | Allocations: 51672)
+
+
+Started GET "/" for ::1 at 2022-05-01 00:00:07 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 584.8ms | Allocations: 117733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.2ms | Allocations: 305)
+  Rendered layouts/_footer.html.haml (Duration: 0.8ms | Allocations: 136)
+  Rendered layout layouts/application.html.haml (Duration: 612.4ms | Allocations: 123478)
+Completed 200 OK in 618ms (Views: 615.0ms | ActiveRecord: 1.7ms | Allocations: 124620)
+
+
+Started GET "/customers" for ::1 at 2022-05-01 00:00:09 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (3.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 39.2ms | Allocations: 6070)
+  Rendered customers/index.html.haml within layouts/application (Duration: 61.0ms | Allocations: 10453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.8ms | Allocations: 239)
+  Rendered layouts/_footer.html.haml (Duration: 0.7ms | Allocations: 135)
+  Rendered layout layouts/application.html.haml (Duration: 210.8ms | Allocations: 16274)
+Completed 200 OK in 221ms (Views: 208.3ms | ActiveRecord: 5.6ms | Allocations: 17786)
+
+
+Started GET "/customers" for ::1 at 2022-05-01 00:00:36 +0300
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendering layout layouts/application.html.haml
+  Rendering customers/index.html.haml within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."blacklist" = $1[0m  [["blacklist", false]]
+  ↳ app/views/customers/index.html.haml:4
+  Rendered collection of customers/_customer.html.haml [21 times] (Duration: 10.6ms | Allocations: 4474)
+  Rendered customers/index.html.haml within layouts/application (Duration: 16.6ms | Allocations: 7828)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 30.1ms | Allocations: 8248)
+  Rendered layouts/_footer.html.haml (Duration: 168.5ms | Allocations: 15717)
+  Rendered layout layouts/application.html.haml (Duration: 289.8ms | Allocations: 49127)
+Completed 200 OK in 300ms (Views: 293.6ms | ActiveRecord: 2.0ms | Allocations: 51352)
+
+

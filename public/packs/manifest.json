@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-6b7528c0.css",
   "application.css.map": "/packs/css/application-6b7528c0.css.map",
-  "application.js": "/packs/js/application-5dad68d64331f3239cdf.js",
-  "application.js.map": "/packs/js/application-5dad68d64331f3239cdf.js.map",
+  "application.js": "/packs/js/application-68b4214672bfede729e4.js",
+  "application.js.map": "/packs/js/application-68b4214672bfede729e4.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-6b7528c0.css"
       ],
       "js": [
-        "/packs/js/application-5dad68d64331f3239cdf.js"
+        "/packs/js/application-68b4214672bfede729e4.js"
       ],
       "css.map": [
         "/packs/css/application-6b7528c0.css.map"
       ],
       "js.map": [
-        "/packs/js/application-5dad68d64331f3239cdf.js.map"
+        "/packs/js/application-68b4214672bfede729e4.js.map"
       ]
     },
     "waypoints": {
@@ -41,6 +41,7 @@
   "media/images/blog-3.jpg": "/packs/media/images/blog-3-b8d953c4371c38939cfe9b79a65236ce.jpg",
   "media/images/carousel-1.jpg": "/packs/media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg",
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
+  "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
   "media/images/feature.jpg": "/packs/media/images/feature-b8fa3a1d15793321bc06dd3c04b6a69e.jpg",
   "media/images/team-1.jpg": "/packs/media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg",
   "media/images/team-2.jpg": "/packs/media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg",

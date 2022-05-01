@@ -11,12 +11,14 @@
       %h1.m-0
         %i.fas.fa-user-tie
         Telegagid
-      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 40%;"}
+      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 30%;"}
         - if logged_in?
           %li
             %a
-              = link_to current_customer.name, current_customer, class: "btn btn-secondary"
-              = link_to "Log out", logout_path, method: "delete", class: "btn btn-danger"
+              - if current_customer.admin? && !current_customer?(@customer)
+                | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
+              | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}
+              | #{link_to "Log out", logout_path, method: "delete", class: "btn btn-danger"}
         - else
           %li= link_to "Log in", login_path
 
