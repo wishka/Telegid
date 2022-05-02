@@ -33158,3 +33158,210 @@ Processing by BlogPagesController#home as HTML
 Completed 200 OK in 337ms (Views: 333.8ms | ActiveRecord: 0.8ms | Allocations: 164732)
 
 
+Started GET "/" for ::1 at 2022-05-02 13:38:07 +0300
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (331.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 1684.9ms | Allocations: 134875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 22.2ms | Allocations: 8509)
+  Rendered layouts/_footer.html.haml (Duration: 183.4ms | Allocations: 15709)
+  Rendered layout layouts/application.html.haml (Duration: 2925.6ms | Allocations: 211540)
+Completed 200 OK in 2969ms (Views: 2501.7ms | ActiveRecord: 437.1ms | Allocations: 215271)
+
+
+Started GET "/" for ::1 at 2022-05-02 13:41:19 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 274.0ms | Allocations: 121918)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 29.5ms | Allocations: 13180)
+  Rendered layout layouts/application.html.haml (Duration: 340.6ms | Allocations: 152293)
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 1.1ms | Allocations: 153711)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check / Topbar Start
+.container-fluid.bg-dark.px-5.d-block
+  .row.gx-0
+    .col-lg-4.text-center.text-lg-end
+      .d-inline-flex.align-items-center{:style => "height: 45px;"}
+
+
+      / Topbar End
+  %nav.navbar.navbar-expand-lg.navbar-dark.px-5.py-3.py-lg-0{:style => "margin-left: 45px;"}
+    %a.navbar-brand.p-0{:href => root_path}
+      %h1.m-0
+        %i.fas.fa-user-tie
+        Telegagid
+      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 30%;"}
+        - if logged_in?
+          %li
+            %a
+              = link_to "Posts", posts_path
+                - if current_customer.admin? && !current_customer?(@customer)
+                  | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
+                | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}
+                | #{link_to "Log out", logout_path, method: "delete", class: "btn btn-danger"}
+        - else
+          %li= link_to "Log in", login_path
+
+    %button.navbar-toggler{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.fas.fa-bars
+      %button.btn.text-primary.ms-3{"data-bs-target" => "#searchModal", "data-bs-toggle" => "modal", :type => "button"}
+        %i.fas.fa-search
+
+):
+1:    / Topbar Start
+2:    .container-fluid.bg-dark.px-5.d-block
+3:      .row.gx-0
+4:        .col-lg-4.text-center.text-lg-end
+5:          .d-inline-flex.align-items-center{:style => "height: 45px;"}
+6:    
+7:    
+8:          / Topbar End
+9:      %nav.navbar.navbar-expand-lg.navbar-dark.px-5.py-3.py-lg-0{:style => "margin-left: 45px;"}
+10:        %a.navbar-brand.p-0{:href => root_path}
+11:          %h1.m-0
+12:            %i.fas.fa-user-tie
+13:            Telegagid
+14:          %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 30%;"}
+15:            - if logged_in?
+16:              %li
+17:                %a
+18:                  = link_to "Posts", posts_path
+19:                    - if current_customer.admin? && !current_customer?(@customer)
+20:                      | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
+21:                    | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}
+22:                    | #{link_to "Log out", logout_path, method: "delete", class: "btn btn-danger"}
+23:            - else
+24:              %li= link_to "Log in", login_path
+25:    
+26:        %button.navbar-toggler{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
+27:          %span.fas.fa-bars
+28:          %button.btn.text-primary.ms-3{"data-bs-target" => "#searchModal", "data-bs-toggle" => "modal", :type => "button"}
+29:            %i.fas.fa-search
+  
+app/views/layouts/_header.html.haml:23: else without rescue is useless
+app/views/layouts/_header.html.haml:30: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_header.html.haml:23: else without rescue is useless
+app/views/layouts/_header.html.haml:30: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_header.html.haml:23: else without rescue is useless
+app/views/layouts/_header.html.haml:30: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_header.html.haml:23: else without rescue is useless
+app/views/layouts/_header.html.haml:30: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_header.html.haml:23: else without rescue is useless
+app/views/layouts/_header.html.haml:30: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/_header.html.haml:23: else without rescue is useless
+app/views/layouts/_header.html.haml:30: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.haml:34
+Started GET "/" for ::1 at 2022-05-02 13:42:04 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 343.7ms | Allocations: 121932)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 19.7ms | Allocations: 8384)
+  Rendered layouts/_footer.html.haml (Duration: 42.1ms | Allocations: 15699)
+  Rendered layout layouts/application.html.haml (Duration: 456.0ms | Allocations: 163410)
+Completed 200 OK in 463ms (Views: 458.5ms | ActiveRecord: 1.9ms | Allocations: 164813)
+
+
+Started GET "/posts" for ::1 at 2022-05-02 13:42:10 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering posts/index.html.haml within layouts/application
+  [1m[36mPost Load (112.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:13
+  Rendered posts/index.html.haml within layouts/application (Duration: 142.4ms | Allocations: 7789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered layouts/_header.html.haml (Duration: 5.3ms | Allocations: 1028)
+  Rendered layouts/_footer.html.haml (Duration: 0.5ms | Allocations: 136)
+  Rendered layout layouts/application.html.haml (Duration: 181.5ms | Allocations: 14309)
+Completed 200 OK in 193ms (Views: 59.8ms | ActiveRecord: 126.6ms | Allocations: 16111)
+
+
+Started GET "/" for ::1 at 2022-05-02 13:42:47 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 43.4ms | Allocations: 29455)
+  Rendered layout layouts/application.html.haml (Duration: 43.9ms | Allocations: 29530)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 30924)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within a tag that already has content is illegal.):
+    313:     /= button_to "Send private message via controller", blog_pages_privat_message_path
+    314: 
+    315:     /= form_tag send_message_path, method: :post do
+    316:       = text_field_tag :content, nil, required: true
+    317:       %hr
+    318:       = submit_tag "Say hello"
+    319: 
+  
+app/views/blog_pages/home.html.haml:316
+Started GET "/" for ::1 at 2022-05-02 13:43:00 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 284.4ms | Allocations: 120794)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 16.6ms | Allocations: 8410)
+  Rendered layouts/_footer.html.haml (Duration: 45.5ms | Allocations: 15716)
+  Rendered layout layouts/application.html.haml (Duration: 380.5ms | Allocations: 162354)
+Completed 200 OK in 388ms (Views: 384.3ms | ActiveRecord: 1.1ms | Allocations: 163742)
+
+

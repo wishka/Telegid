@@ -15,6 +15,7 @@
         - if logged_in?
           %li
             %a
+              = link_to "Posts", posts_path
               - if current_customer.admin? && !current_customer?(@customer)
                 | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
               | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}

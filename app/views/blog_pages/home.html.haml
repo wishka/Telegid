@@ -307,16 +307,15 @@
 
   - if current_customer.present?
 
-    = link_to "Posts", posts_path
-    = link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"
-    = link_to "Send group message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=-634155082&text=group message", target: " _blank"
-    = button_to "Send group message via controller", blog_pages_group_message_path
-    = button_to "Send private message via controller", blog_pages_privat_message_path
+    /= link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"
+    /= link_to "Send group message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=-634155082&text=group message", target: " _blank"
+    /= button_to "Send group message via controller", blog_pages_group_message_path
+    /= button_to "Send private message via controller", blog_pages_privat_message_path
 
-    = form_tag send_message_path, method: :post do
-      = text_field_tag :content, nil, required: true
-      %hr
-      = submit_tag "Say hello"
+    /= form_tag send_message_path, method: :post do
+    /  = text_field_tag :content, nil, required: true
+    /  %hr
+    /  = submit_tag "Say hello"
 
     %script{:async => "", "data-auth-url" => "https://telegagid.herokuapp.com/",
     "data-radius" => "20", "data-request-access" => "write",
