@@ -37,6 +37,8 @@ gem 'simple_form'
 gem 'trix-rails', require: 'trix'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
