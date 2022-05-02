@@ -33365,3 +33365,231 @@ Processing by BlogPagesController#home as HTML
 Completed 200 OK in 388ms (Views: 384.3ms | ActiveRecord: 1.1ms | Allocations: 163742)
 
 
+Started GET "/" for ::1 at 2022-05-02 14:16:54 +0300
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (25.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 296.8ms | Allocations: 129493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 88.5ms | Allocations: 12694)
+  Rendered layouts/_footer.html.haml (Duration: 162.8ms | Allocations: 15733)
+  Rendered layout layouts/application.html.haml (Duration: 732.0ms | Allocations: 186475)
+Completed 200 OK in 770ms (Views: 715.0ms | ActiveRecord: 34.1ms | Allocations: 190206)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:17:16 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 407.1ms | Allocations: 116765)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 17.6ms | Allocations: 12408)
+  Rendered layouts/_footer.html.haml (Duration: 37.5ms | Allocations: 15714)
+  Rendered layout layouts/application.html.haml (Duration: 507.9ms | Allocations: 162346)
+Completed 200 OK in 515ms (Views: 511.6ms | ActiveRecord: 1.9ms | Allocations: 163794)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:17:27 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 395.4ms | Allocations: 116774)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 17.9ms | Allocations: 12409)
+  Rendered layouts/_footer.html.haml (Duration: 30.6ms | Allocations: 15729)
+  Rendered layout layouts/application.html.haml (Duration: 495.4ms | Allocations: 162366)
+Completed 200 OK in 503ms (Views: 497.3ms | ActiveRecord: 1.7ms | Allocations: 163766)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:17:35 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 351.5ms | Allocations: 116752)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 66.1ms | Allocations: 12415)
+  Rendered layouts/_footer.html.haml (Duration: 36.9ms | Allocations: 15716)
+  Rendered layout layouts/application.html.haml (Duration: 628.4ms | Allocations: 162337)
+Completed 200 OK in 638ms (Views: 634.1ms | ActiveRecord: 1.3ms | Allocations: 163737)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:17:58 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 235.1ms | Allocations: 116734)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.4ms | Allocations: 12409)
+  Rendered layouts/_footer.html.haml (Duration: 28.2ms | Allocations: 15718)
+  Rendered layout layouts/application.html.haml (Duration: 307.0ms | Allocations: 162308)
+Completed 200 OK in 312ms (Views: 308.0ms | ActiveRecord: 1.9ms | Allocations: 163698)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:18:34 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 242.8ms | Allocations: 116759)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 80.8ms | Allocations: 12408)
+  Rendered layouts/_footer.html.haml (Duration: 32.8ms | Allocations: 15715)
+  Rendered layout layouts/application.html.haml (Duration: 403.1ms | Allocations: 162325)
+Completed 200 OK in 411ms (Views: 407.2ms | ActiveRecord: 1.4ms | Allocations: 163715)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:18:50 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 205.6ms | Allocations: 116753)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 25.2ms | Allocations: 6622)
+  Rendered layout layouts/application.html.haml (Duration: 268.5ms | Allocations: 140600)
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 1.1ms | Allocations: 141970)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    10:       %h1.m-0
+    11:         %i.fas.fa-user-tie
+    12:         Telegagid
+    13:           %script{:async => "", "data-auth-url" => "https://telegagid.herokuapp.com/",
+    14:           "data-radius" => "20", "data-request-access" => "write",
+    15:           "data-size" => "large", "data-telegram-login" => "Rails_tele_bot",
+    16:           :src => "https://telegram.org/js/telegram-widget.js?19"}
+  
+app/views/layouts/_header.html.haml:13
+app/views/layouts/application.html.haml:34
+Started GET "/" for ::1 at 2022-05-02 14:27:59 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 251.8ms | Allocations: 121519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 9.6ms | Allocations: 8398)
+  Rendered layouts/_footer.html.haml (Duration: 17.9ms | Allocations: 15732)
+  Rendered layout layouts/application.html.haml (Duration: 306.3ms | Allocations: 163081)
+Completed 200 OK in 314ms (Views: 312.6ms | ActiveRecord: 17.5ms | Allocations: 164469)
+
+
+Started GET "/" for ::1 at 2022-05-02 14:28:23 +0300
+Processing by BlogPagesController#home as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering blog_pages/home.html.haml within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:18:in `current_customer'
+  Rendered blog_pages/home.html.haml within layouts/application (Duration: 324.9ms | Allocations: 120618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 20.6ms | Allocations: 8397)
+  Rendered layouts/_footer.html.haml (Duration: 73.7ms | Allocations: 15716)
+  Rendered layout layouts/application.html.haml (Duration: 468.2ms | Allocations: 162178)
+Completed 200 OK in 473ms (Views: 469.4ms | ActiveRecord: 1.6ms | Allocations: 163568)
+
+
