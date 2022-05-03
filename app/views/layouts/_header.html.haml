@@ -4,7 +4,6 @@
     .col-lg-4.text-center.text-lg-end
       .d-inline-flex.align-items-center{:style => "height: 45px;"}
 
-
       / Topbar End
   %nav.navbar.navbar-expand-lg.navbar-dark.px-5.py-3.py-lg-0{:style => "margin-left: 45px;"}
     %a.navbar-brand.p-0{:href => root_path}
@@ -15,6 +14,7 @@
         - if logged_in?
           %li
             %a
+              = link_to "Posts", posts_path
               - if current_customer.admin? && !current_customer?(@customer)
                 | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
               | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}
@@ -23,6 +23,6 @@
           %li= link_to "Log in", login_path
 
     %button.navbar-toggler{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
-      %span.fa.fa-bars
+      %span.fas.fa-bars
       %button.btn.text-primary.ms-3{"data-bs-target" => "#searchModal", "data-bs-toggle" => "modal", :type => "button"}
         %i.fas.fa-search

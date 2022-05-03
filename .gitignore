@@ -1,6 +1,11 @@
 .DS_Store
 .browserslistrc
+master.key
+credentials.yml.enc
 
 # Node build artifacts
 node_modules
 npm-debug.log
+
+tmp
+test

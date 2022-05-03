@@ -3,67 +3,81 @@
   %h4.ad-head.text-black.text-uppercase.mb-3
     У нас вы можете разместить, продать
     %br или найти канала, услугу или бота
-
   #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
     .carousel-inner
       .carousel-item.active
         %img
-          = image_pack_tag "carousel-1.jpg", class:"mimage"
+          = image_pack_tag "carousel-1.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-3{:style => "max-width: 900px;"}
+          .p-1{:style => "max-width: 900px;"}
             %h4.text-black.text-uppercase.mb-3.animated.slideInDown Каналы
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              Купить или
+              № 1 Купить или
               %br найти канал
-            %a.btn.btn-outline-primary.py-md-3.px-md-5.me-3.animated.slideInLeft{:href => "#quote"} Задать вопрос
-            %a.btn.btn-outline-success.py-md-3.px-md-5.animated.slideInRight{:href => ""} Написать нам
-            %br/
-            %a.btn.btn-outline-light.py-md-3.px-md-5.animated.slideInCenter{:href => ""} Написать нам
       .carousel-item
         %img
-          = image_pack_tag "carousel-2.jpg", class:"mimage"
+          = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-3{:style => "max-width: 900px;"}
+          .p-1{:style => "max-width: 900px;"}
             %h4.text-black.text-uppercase.mb-3.animated.slideInDown Боты
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              Купить или
+              № 2 Купить или
               %br найти бота
-            %a.btn.btn-outline-primary.py-md-3.px-md-5.me-3.animated.slideInLeft{:href => "#quote"} Задать вопрос
-            %a.btn.btn-outline-success.py-md-3.px-md-5.animated.slideInRight{:href => ""} Написать нам
-            %br/
-            %a.btn.btn-outline-light.py-md-3.px-md-5.animated.slideInCenter{:href => ""} Написать нам
       .carousel-item
         %img
-          = image_pack_tag "carousel-2.jpg", class:"mimage"
+          = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-3{:style => "max-width: 900px;"}
+          .p-1{:style => "max-width: 900px;"}
             %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              Купить или
+              № 3 Купить или
               %br найти услугу
-            %a.btn.btn-outline-primary.py-md-3.px-md-5.me-3.animated.slideInLeft{:href => "#quote"} Задать вопрос
-            %a.btn.btn-outline-success.py-md-3.px-md-5.animated.slideInRight{:href => ""} Написать нам
-            %br/
-            %a.btn.btn-outline-light.py-md-3.px-md-5.animated.slideInCenter{:href => ""} Написать нам
+      .carousel-item
+        %img
+          = image_pack_tag "carousel-2.jpg", class:"w-100"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-1{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              № 4 Купить или
+              %br найти услугу
+      .carousel-item
+        %img
+          = image_pack_tag "carousel-2.jpg", class:"w-100"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-1{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              № 5 Купить или
+              %br найти услугу
+      .carousel-item
+        %img
+          = image_pack_tag "carousel-2.jpg", class:"w-100"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-1{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              № 6 Купить или
+              %br найти услугу
+      .carousel-item
+        %img
+          = image_pack_tag "carousel-2.jpg", class:"w-100"
+        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+          .p-1{:style => "max-width: 900px;"}
+            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
+            %h3.display-4.text-white.mb-md-4.animated.zoomIn
+              № 7 Купить или
+              %br найти услугу
     %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
       %span.carousel-control-prev-icon{"aria-hidden" => "true"}
       %span.visually-hidden Предыдущее
     %button.carousel-control-next{"data-bs-slide" => "next", "data-bs-target" => "#header-carousel", :type => "button"}
       %span.carousel-control-next-icon{"aria-hidden" => "true"}
       %span.visually-hidden Следующее
-/ Navbar & Carousel End
-/ Ad block
-#header-carousel.carouseladds.slide.carouseladds-fade{"data-bs-ride" => "carousel"}
-  .carousel-inner
-    .carousel-item.active.img-border
-      %img
-        = image_pack_tag "carousel-2.jpg", class:"w-100"
-      .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-        .p-3{:style => "max-width: 900px;"}
-          %h3.display-2.text-white.mb-md-4.animated.zoomIn
-            Место для
-            %br Вашей рекламы
-  / Ad block end
+      / Navbar & Carousel End
+
+  %h3 Поисковик
+
   / Full Screen Search Start
   #searchModal.modal.fade{:tabindex => "-1"}
     .modal-dialog.modal-fullscreen
@@ -308,16 +322,27 @@
 
   - if current_customer.present?
 
-    /= link_to "Posts", posts_path
     /= link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"
     /= link_to "Send group message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=-634155082&text=group message", target: " _blank"
     /= button_to "Send group message via controller", blog_pages_group_message_path
-    /= button_to "Send private message via controller", blog_pages_private_message_path
+    /= button_to "Send private message via controller", blog_pages_privat_message_path
 
-    /= form_tag send_hello_path, method: :post do
+    /= form_tag send_message_path, method: :post do
     /  = text_field_tag :content, nil, required: true
     /  %hr
     /  = submit_tag "Say hello"
+
+    %script{:async => "", "data-auth-url" => "https://telegagid.herokuapp.com/",
+    "data-radius" => "20", "data-request-access" => "write",
+    "data-size" => "large", "data-telegram-login" => "Rails_tele_bot",
+    :src => "https://telegram.org/js/telegram-widget.js?19"}
+
+    /= params[:id]
+    /= params[:first_name]
+    /= params[:last_name]
+    /= params[:username]
+    /= params[:auth_date]
+    /= params[:hash]
 
   - else
     = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"

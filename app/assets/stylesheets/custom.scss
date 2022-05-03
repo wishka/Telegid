@@ -26,12 +26,10 @@ body {
 
 .mimage {
   display: inline-block;
-  width: 50%;
-  height: 50%;
-  margin-left: 25%;
+  width: 75%;
+  height: 75%;
+  margin-left: 15%;
   margin-top: 12%;
-  border: 2px;
-  border-color: red yellow green blue;
 }
 @-webkit-keyframes sk-rotateplane {
     0% {
@@ -270,7 +268,7 @@ h6,
 
 .ad-head {
   text-align: center;
-
+  vertical-align: middle;
 }
 /*** Section Title ***/
 .section-title::before {
@@ -518,7 +516,7 @@ h6,
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 25%;
   @include box_sizing;
 }
 

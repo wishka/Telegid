@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -37,6 +38,8 @@ gem 'simple_form'
 gem 'trix-rails', require: 'trix'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
