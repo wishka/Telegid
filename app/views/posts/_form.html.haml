@@ -1,22 +1,15 @@
-= form_for @post do |f|
-  - if @post.errors.any?
+= form_with(model: post, local: true) do |f|
+  - if @post && @post.errors.any?
     #error_explanation
       %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
       %ul
         - @post.errors.full_messages.each do |message|
           %li= message
+  .field
+    = f.hidden_field :room_id, value: room.id
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.label :customer
-    = f.text_field :customer
-  .field
-    = f.label :room
-    = f.text_field :room
+  .input-group
+    = f.text_area :content, placeholder: 'Type your message...', class: 'form-control', style: 'width: 100%'
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Add message', class: 'btn btn-outline-success', style: 'width: 100%'

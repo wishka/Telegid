@@ -1,5 +1,5 @@
-= form_for @room do |f|
-  - if @room.errors.any?
+= form_with(model: room, local: true) do |f|
+  - if @room && @room.errors.any?
     #error_explanation
       %h2= "#{pluralize(@room.errors.count, "error")} prohibited this room from being saved:"
       %ul
@@ -8,6 +8,6 @@
 
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Создать', class: 'btn btn-primary btn-block', style: "width: 100%"

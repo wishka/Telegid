@@ -1,21 +1,29 @@
-%h1 Listing rooms
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @rooms.each do |room|
-      %tr
-        %td= room.name
-        %td= link_to 'Show', room
-        %td= link_to 'Edit', edit_room_path(room)
-        %td= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Room', new_room_path
+%h1 Список объявлений
+.container-fluid
+  .row
+    .col-3
+      = render 'form', room: Room.new
+      %hr
+      - @rooms.each do |room|
+        = link_to room do
+          .card.mb-2
+            .card-body
+              = room.name
+              = link_to 'Delete', room, method: :delete, data: { confirm: 'Are you sure?' }
+    .col-9
+      - if @room.present?
+        .chat-room
+          = @room.name
+          = @room.posts.each do |post|
+            .message.mb-2
+              .content-container
+                .author
+                  - if post.customer == current_customer
+                    = 'me'
+                  - else
+                    | #{post.customer.name}
+                  .content
+                    = post.content
+                    = link_to 'Delete', post, method: :delete
+          .chat-box
+            = render 'posts/form', post: Post.new, room: @room

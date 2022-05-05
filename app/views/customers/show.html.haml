@@ -1,7 +1,7 @@
 - provide(:title, @customer.name)
 .row
   %aside.col-md-4
-    %section.user_info
+    %section.customer_info
       %h1
       %p Name:
       %b= @customer.name
@@ -10,4 +10,9 @@
       %p Phone
       %b= @customer.cell
 
-%h2= link_to 'Создать новое объявление'
+%h2= link_to 'Создать новое объявление', new_post_path
+.col-md-8
+  - if @customer.posts.any?
+    %h3
+      Posts (#{@customer.posts.count})
+    %ol.posts= render @posts

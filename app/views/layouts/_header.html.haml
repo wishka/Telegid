@@ -10,11 +10,12 @@
       %h1.m-0
         %i.fas.fa-user-tie
         Telegagid
-      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 30%;"}
+      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 10%;"}
         - if logged_in?
           %li
             %a
-              = link_to "Posts"
+              | #{link_to "Сообщения", posts_path, class: "btn btn-secondary"}
+              | #{link_to "Объявления",  rooms_path, class: "btn btn-secondary"}
               - if current_customer.admin? && !current_customer?(@customer)
                 | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
               | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}
