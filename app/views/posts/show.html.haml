@@ -6,6 +6,12 @@
 %p
   %b Content:
   = @post.content
+%p
+  %b Customer:
+  = @post.customer
+%p
+  %b Room:
+  = @post.room
 
 = link_to 'Edit', edit_post_path(@post)
 \|

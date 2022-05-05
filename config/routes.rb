@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'customers/new'
@@ -15,8 +16,12 @@ Rails.application.routes.draw do
   post 'blog_pages/privat_message', to: 'blog_pages#privat_message'
   post 'blog_pages/send_message', to: 'blog_pages#send_message', as: 'send_message'
   get "search", to: "search#search"
+  get 'search/typeahead/:term' => 'search#typeahead'
 
   resources :customers
+  resources :posts
+  resources :rooms
+
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 end

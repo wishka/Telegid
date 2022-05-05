@@ -5,7 +5,7 @@
       .d-inline-flex.align-items-center{:style => "height: 45px;"}
 
       / Topbar End
-  %nav.navbar.navbar-expand-lg.navbar-dark.px-5.py-3.py-lg-0{:style => "margin-left: 45px;"}
+  %nav.navbar.navbar-expand-lg.navbar-dark.px-5.py-3.py-lg-0
     %a.navbar-brand.p-0{:href => root_path}
       %h1.m-0
         %i.fas.fa-user-tie
@@ -14,7 +14,7 @@
         - if logged_in?
           %li
             %a
-              = link_to "Posts", posts_path
+              = link_to "Posts"
               - if current_customer.admin? && !current_customer?(@customer)
                 | #{link_to "Customers", customers_path, class: "btn btn-secondary"}
               | #{link_to current_customer.name, current_customer, class: "btn btn-secondary"}

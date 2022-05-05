@@ -552,3 +552,9 @@ input, textarea, select, .uneditable-input {
     border-bottom: 1px solid gray;
   }
 }
+
+.search_results em {
+  background-color: yellow;
+  font-style: normal;
+  font-weight: bold;
+}

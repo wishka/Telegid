@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'searchkick'
+gem 'bootstrap-typeahead-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
