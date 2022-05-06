@@ -25,16 +25,13 @@ class RoomsController < ApplicationController
   # POST /rooms or /rooms.json
   def create
     @room = Room.new(room_params)
+    @room.save
+    redirect_to request.referrer
 
-    respond_to do |format|
-      if @room.save
-        format.html { redirect_to room_url(@room), notice: "Room was successfully created." }
-        format.json { render :show, status: :created, location: @room }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
-      end
-    end
+    SendMessageJob.perform_later(@room)
+
+    text = "Post created: #{@room.name}"
+    TelegramMailer.send_group_message(text).deliver_now
   end
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
