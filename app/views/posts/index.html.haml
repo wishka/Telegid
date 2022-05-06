@@ -1,25 +1,44 @@
 %h1 Объявления
-
-%table
-  %thead
-    %tr
-      %th Содержание
-      %th Автор
-      %th Название
-      %th
-      %th
-      %th
-
-  %tbody
-    - @posts.each do |post|
+- if current_customer.admin? && !current_customer?(@customer)
+  %table
+    %thead
       %tr
-        %td= post.content
-        %td= post.customer.name
-        %td= post.room.id
-        %td= link_to 'Показать', post
-        %td= link_to 'Редактировать', edit_post_path(post)
-        %td= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Содержание
+        %th Автор
+        %th Название
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td= post.content
+          %td= post.customer.name
+          %td= post.room.id
+          %td= link_to 'Показать', post
+          %td= link_to 'Редактировать', edit_post_path(post)
+          %td= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' }
 
+  %br
+- else
+  %table
+    %thead
+      %tr
+        %th Содержание
+        %th Название
+        %th
+        %th
+        %th
+
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td= post.content
+          %td= post.room.name
+          %td= link_to 'Показать', post
+          %td= link_to 'Редактировать', edit_post_path(post)
+          %td= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' }
+
+  %br
 = link_to 'New Post', new_post_path

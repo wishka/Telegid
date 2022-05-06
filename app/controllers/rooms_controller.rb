@@ -19,6 +19,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    @room = Room.find(params[:id])
   end
 
   # POST /rooms or /rooms.json
@@ -67,6 +68,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name)
+      params.require(:room).permit(:name, :content, :image)
     end
 end

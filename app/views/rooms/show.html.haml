@@ -2,7 +2,9 @@
 
 %p
   %b Name:
+  = image_tag @room.image.url(:large), class: 'img-show' if @room.image?
   = @room.name
+  = @room.content
 
 = link_to 'Edit', edit_room_path(@room)
 \|

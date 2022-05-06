@@ -18,6 +18,7 @@
       - if @room.present?
         .chat-room
           = @room.name
+          = image_tag @room.image.url(:thumb), class: 'img-show' if @room.image?
           #messages
             = @room.posts.each do |post|
               = render 'posts/post', post: post
