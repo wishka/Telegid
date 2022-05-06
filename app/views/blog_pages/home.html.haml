@@ -8,6 +8,8 @@
       .carousel-item.active
         %img
           = image_pack_tag "carousel-1.jpg", class:"w-100"
+          - if current_customer.admin? && !current_customer?(@customer)
+            = link_to "Customers", customers_path, class: "btn btn-secondary"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
             %h4.text-black.text-uppercase.mb-3.animated.slideInDown Каналы
@@ -77,7 +79,7 @@
       / Navbar & Carousel End
 
     %br
-    	
+
     = render 'search/form'
 
   / Full Screen Search Start

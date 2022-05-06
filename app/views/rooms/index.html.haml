@@ -4,6 +4,7 @@
 .container-fluid
   .row
     .col-3.rooms-sidebar
+      %b Создать новое объявление
       = render 'form', room: Room.new
       %hr
       - @rooms.each do |room|
