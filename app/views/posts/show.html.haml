@@ -1,17 +1,14 @@
 %p#notice= notice
 
 %p
-  %b Title:
-  = @post.title
-%p
   %b Content:
   = @post.content
 %p
   %b Customer:
-  = @post.customer
+  = @post.customer.name
 %p
   %b Room:
-  = @post.room
+  = @post.room.name
 
 = link_to 'Edit', edit_post_path(@post)
 \|

@@ -1,12 +1,11 @@
-%h1 Listing posts
+%h1 Объявления
 
 %table
   %thead
     %tr
-      %th Title
-      %th Content
-      %th Customer
-      %th Room
+      %th Содержание
+      %th Автор
+      %th Название
       %th
       %th
       %th
@@ -14,13 +13,12 @@
   %tbody
     - @posts.each do |post|
       %tr
-        %td= post.title
         %td= post.content
-        %td= post.customer
-        %td= post.room
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= post.customer.name
+        %td= post.room.id
+        %td= link_to 'Показать', post
+        %td= link_to 'Редактировать', edit_post_path(post)
+        %td= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

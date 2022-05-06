@@ -1,9 +1,6 @@
 .message.mb-2
   .content-container
     .author
-      - if post.customer == current_customer
-        = 'me'
-      - else
         | #{post.customer.name}
       .content
         = post.content

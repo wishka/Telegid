@@ -6,8 +6,8 @@
         - @room.errors.full_messages.each do |message|
           %li= message
 
-  .field
+  .form-group.mb-3
     = f.label :name
     = f.text_field :name, class: 'form-control'
   .actions
-    = f.submit 'Создать', class: 'btn btn-primary btn-block', style: "width: 100%"
+    = f.submit 'Создать', class: 'btn btn-outline-primary btn-block', style: "width: 100%"

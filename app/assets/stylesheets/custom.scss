@@ -560,7 +560,10 @@ input, textarea, select, .uneditable-input {
 }
 .chat-room {
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  #messages {
+    height: 100%;
+  }
   .message {
 
     min-height: 59px;
@@ -592,7 +595,9 @@ input, textarea, select, .uneditable-input {
     bottom: 0;
     position: absolute;
     left: 28%;
-    width: calc(70% - 50px);
+    width: calc(70% - 100px);
+    background-color: white;
+    border-top: 1px solid #eee;
     input[type=text] {
       height: 45px;
       font-size: 18px;
@@ -601,5 +606,46 @@ input, textarea, select, .uneditable-input {
     .btn {
       height: 45px;
     }
+  }
+}
+.card.no-outline {
+  border: none;
+}
+
+.room-link {
+  &:hover {
+    text-decoration: none;
+  }
+  .room-card {
+    transition: background-color 0.5s ease;
+    border-radius: 20px;
+    &:hover {
+      background-color: #eee;
+    }
+    &.active {
+      background-color: black;
+      .name {
+        color: white;
+      }
+    }
+    .name {
+      font-weight: bold;
+    }
+  }
+}
+.rooms-sidebar {
+  border-right: 1px solid #eee;
+}
+body {
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+
+table thead tr th {
+  width: 15%;
+  &.act {
+    width: 10%;
   }
 }

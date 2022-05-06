@@ -26,6 +26,9 @@ class PostsController < ApplicationController
     @post.customer = current_customer
     @post.save
     redirect_to request.referrer
+
+    SendMessageJob.perform_later(@post)
+
     text = "Post created: #{@post.title} #{@post.content}"
     TelegramMailer.send_group_message(text).deliver_now
   end
@@ -67,4 +70,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content, :room_id)
     end
+
 end
