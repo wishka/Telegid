@@ -18,10 +18,16 @@ Rails.application.routes.draw do
   get "search", to: "search#search"
   get 'search/typeahead/:term' => 'search#typeahead'
 
-  resources :customers
+
+  resources :customers do
+    member do
+      get :following, :followers
+    end
+  end
   resources :posts
   resources :rooms
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :relationships,       only: [:create, :destroy]
 end

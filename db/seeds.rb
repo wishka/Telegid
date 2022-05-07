@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+Customer# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -25,3 +25,11 @@ Customer.create!(name:  "Example Customer",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+# Взаимоотношения
+customers = Customer.all
+customer  = customers.first
+following = customers[2..50]
+followers = customers[3..40]
+following.each { |followed| customer.follow(followed) }
+followers.each { |follower| follower.follow(customer) }

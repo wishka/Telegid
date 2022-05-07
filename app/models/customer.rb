@@ -12,6 +12,16 @@ class Customer < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: "follower_id",
+                                  dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship",
+                                   foreign_key: "followed_id",
+                                   dependent:   :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
+
   def Customer.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
@@ -69,14 +79,27 @@ class Customer < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  def add_to_blacklist
-    if @customer.update(blacklist: true)
-      redirect_to customers_path
-    end
+  # Возвращает ленту сообщений пользователя.
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :customer_id"
+    Post.where("customer_id IN (#{following_ids})
+                     OR customer_id = :customer_id", customer_id: id)
   end
 
-  def remove_from_blacklist
-    @customer.update(blacklist: false)
+  # Начать читать сообщения пользователя.
+  def follow(other_customer)
+    active_relationships.create(followed_id: other_customer.id)
+  end
+
+  # Перестать читать сообщения пользователя.
+  def unfollow(other_customer)
+    active_relationships.find_by(followed_id: other_customer.id).destroy
+  end
+
+  # Возвращает true, если текущий пользователь читает сообщения другого пользователя.
+  def following?(other_customer)
+    following.include?(other_customer)
   end
 
   private

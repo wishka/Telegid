@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
-  before_action :logged_in_customer, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_customer, only: [:index, :edit, :update, :destroy,
+                                            :following, :followers]
   before_action :correct_customer,   only: [:edit, :update]
   before_action :admin_customer,     only: :destroy
 
@@ -44,6 +45,18 @@ class CustomersController < ApplicationController
     Customer.find(params[:id]).destroy
     flash[:success] = "Customer deleted"
     redirect_to customers_rath
+  end
+
+  def following
+    @title = "Following"
+    @customer  = Customer.find(params[:id])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @customer  = Customer.find(params[:id])
+    render 'show_follow'
   end
 
   private

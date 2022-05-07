@@ -3,16 +3,21 @@
   %aside.col-md-4
     %section.customer_info
       %h1
-      %p Name:
+      %p Имя:
       %b= @customer.name
       %p Email
       %b= @customer.email
-      %p Phone
+      %p Телефон
       %b= @customer.cell
+
+%section.stats= render 'shared/stats'
+.col-md-8
+  = render 'follow_form' if logged_in?
+
 
 %h2= link_to 'Создать новое объявление', new_post_path
 .col-md-8
   - if @customer.posts.any?
     %h3
-      Posts (#{@customer.posts.count})
+      Сообщения (#{@customer.posts.count})
     %ol.posts= render @posts

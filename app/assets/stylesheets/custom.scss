@@ -227,8 +227,15 @@ h6,
         color: var(--primary);
     }
 }
-
-
+.mod {
+  margin-left: 7%;
+}
+.mod {
+  @media (max-width: 900px) {
+    display: inline-block;
+    margin-left: -15%;
+  }
+}
 /*** Carousel ***/
 .carousel-caption {
     top: 10%;
@@ -663,5 +670,28 @@ table thead tr th {
   width: 15%;
   &.act {
     width: 10%;
+  }
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid lightgrey;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
   }
 }

@@ -1,0 +1,10 @@
+- @customer ||= current_customer
+.stats
+  %a{:href => following_customer_path(@customer)}
+    %strong#following.stat
+      = @customer.following.count
+    Я читаю
+  %a{:href => followers_customer_path(@customer)}
+    %strong#followers.stat
+      = @customer.followers.count
+    Меня читают

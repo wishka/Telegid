@@ -2,9 +2,9 @@
   .content-container
     .author
       - if post.customer == current_customer
-        = 'me'
+        = 'вы'
       - else
-        | #{post.customer.name}
+        | #{link_to post.customer.name, customer_path}
       .content
         = post.content
-        = link_to 'Delete', post, method: :delete
+        = link_to 'Удалить', post, method: :delete

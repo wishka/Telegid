@@ -1,0 +1,19 @@
+- provide(:title, @title)
+.row
+  %aside.col-md-4
+    %section.customer_info
+      %h1= @customer.name
+      %span= link_to "показать профиль", @customer
+      %span
+        %b Posts:
+        = @customer.posts.count
+    %section.stats
+      = render 'shared/stats'
+      - if @customers
+        .customer_avatars
+          - @customers.each do |customer|
+            = link_to customer.name
+  .col-md-8
+    %h3= @title
+    - if @customers
+      %ul.customers.follow= render @customers
