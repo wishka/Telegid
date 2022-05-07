@@ -8,68 +8,52 @@
       .carousel-item.active
         %img
           = image_pack_tag "carousel-1.jpg", class:"w-100"
-          - if current_customer.admin? && !current_customer?(@customer)
-            = link_to "Customers", customers_path, class: "btn btn-secondary"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Каналы
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 1 Купить или
-              %br найти канал
+              = link_to 'Читать', '/rooms/1'
       .carousel-item
         %img
           = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Боты
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 2 Купить или
-              %br найти бота
+              = link_to 'Читать', rooms_path
       .carousel-item
         %img
           = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 3 Купить или
-              %br найти услугу
+              = link_to 'Читать', rooms_path
       .carousel-item
         %img
           = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 4 Купить или
-              %br найти услугу
+              = link_to 'Читать', rooms_path
       .carousel-item
         %img
           = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 5 Купить или
-              %br найти услугу
+              = link_to 'Читать', rooms_path
       .carousel-item
         %img
           = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 6 Купить или
-              %br найти услугу
+              = link_to 'Читать', rooms_path
       .carousel-item
         %img
           = image_pack_tag "carousel-2.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
-            %h4.text-black.text-uppercase.mb-3.animated.slideInDown Услуги
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              № 7 Купить или
-              %br найти услугу
+              = link_to 'Читать', rooms_path
     %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
       %span.carousel-control-prev-icon{"aria-hidden" => "true"}
       %span.visually-hidden Предыдущее
@@ -77,11 +61,10 @@
       %span.carousel-control-next-icon{"aria-hidden" => "true"}
       %span.visually-hidden Следующее
       / Navbar & Carousel End
-
     %br
-
-    = render 'search/form'
-
+      = form_tag results_path, method: :get, role: 'search' do
+        = text_field_tag :query, params[:query], class: 'seacrhfrom'
+        = submit_tag "Go!", name: nil, class: 'searchbtn'
   / Full Screen Search Start
   #searchModal.modal.fade{:tabindex => "-1"}
     .modal-dialog.modal-fullscreen
@@ -93,6 +76,7 @@
             %input.form-control.bg-transparent.border-primary.p-3{:placeholder => "Type search keyword", :type => "text"}/
             %button.btn.btn-primary.px-4
               %i.bi.bi-search
+
   / Full Screen Search End
   / Team Start
   #team.container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
@@ -100,109 +84,14 @@
       .section-title.text-center.position-relative.pb-3.mb-5.mx-auto{:style => "max-width: 600px;"}
         %h5.fw-bold.text-primary.text-uppercase Обьявления
         %h1.mb-0 Ваше объявление может быть здесь
-      .row.g-5
+      .row.g-5{:style => 'max-width: -webkit-fill-available'}
         .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
           .team-item.bg-light.rounded.overflow-hidden
             .team-img.position-relative.overflow-hidden
-              %img
-                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-              .team-social
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-twitter.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-facebook-f.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-instagram.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-linkedin-in.fw-normal
-            .text-center.py-4
-              %h4.text-primary Название
-              %p.text-uppercase.m-0 Описание
-        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.6s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img
-                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-              .team-social
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-twitter.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-facebook-f.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-instagram.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-linkedin-in.fw-normal
-            .text-center.py-4
-              %h4.text-primary Название
-              %p.text-uppercase.m-0 Описание
-        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.9s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img
-                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-              .team-social
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-twitter.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-facebook-f.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-instagram.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-linkedin-in.fw-normal
-            .text-center.py-4
-              %h4.text-primary Название
-              %p.text-uppercase.m-0 Описание
-        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img
-                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-              .team-social
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-twitter.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-facebook-f.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-instagram.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-linkedin-in.fw-normal
-            .text-center.py-4
-              %h4.text-primary Название
-              %p.text-uppercase.m-0 Описание
-        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img
-                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-              .team-social
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-twitter.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-facebook-f.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-instagram.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-linkedin-in.fw-normal
-            .text-center.py-4
-              %h4.text-primary Название
-              %p.text-uppercase.m-0 Описание
-        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img
-                = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-              .team-social
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-twitter.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-facebook-f.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-instagram.fw-normal
-                %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                  %i.fab.fa-linkedin-in.fw-normal
-            .text-center.py-4
-              %h4.text-primary Название
-              %p.text-uppercase.m-0 Описание
+              .text-center.py-4
+              %h4.text-primary
+              %p.text-uppercase.m-0
+
   / Team End
   / Pricing Plan Start
   #price.container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
@@ -344,7 +233,7 @@
     /= params[:id]
     /= params[:first_name]
     /= params[:last_name]
-    /= params[:username]
+    /= params[:customername]
     /= params[:auth_date]
     /= params[:hash]
 

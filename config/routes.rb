@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   post 'blog_pages/group_message', to: 'blog_pages#group_message'
   post 'blog_pages/privat_message', to: 'blog_pages#privat_message'
   post 'blog_pages/send_message', to: 'blog_pages#send_message', as: 'send_message'
-  get "search", to: "search#search"
-  get 'search/typeahead/:term' => 'search#typeahead'
+  get 'results', to: 'results#index', as: 'results'
 
 
   resources :customers do

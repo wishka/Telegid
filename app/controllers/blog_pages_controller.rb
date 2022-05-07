@@ -1,7 +1,7 @@
 class BlogPagesController < ApplicationController
 
   def home
-  
+    @rooms = Room.where('id = id').limit(6)
   end
 
   def help

@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    @room = Room.find(params[:id])
     @rooms = Room.all
     render 'index'
   end
@@ -30,7 +31,7 @@ class RoomsController < ApplicationController
 
     SendMessageJob.perform_later(@room)
 
-    text = "Post created: #{@room.name}"
+    text = "Новое объявление: #{@room.name}"
     TelegramMailer.send_group_message(text).deliver_now
   end
 
@@ -40,6 +41,8 @@ class RoomsController < ApplicationController
       if @room.update(room_params)
         format.html { redirect_to room_url(@room), notice: "Room was successfully updated." }
         format.json { render :show, status: :ok, location: @room }
+        text = "Объявление изменено: #{@room.name}"
+        TelegramMailer.send_group_message(text).deliver_now
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @room.errors, status: :unprocessable_entity }
@@ -54,6 +57,8 @@ class RoomsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: "Room was successfully destroyed." }
       format.json { head :no_content }
+      text = "Объявление удалено: #{@room.name}"
+      TelegramMailer.send_group_message(text).deliver_now
     end
   end
 

@@ -24,6 +24,9 @@ body {
   background: linear-gradient(to right, pink, blue);
 }
 
+text {
+  display: hidden;
+}
 .mimage {
   display: inline-block;
   width: 75%;
@@ -184,6 +187,7 @@ h6,
 
     .navbar-dark .navbar-brand h1 {
         color: var(--primary);
+        margin-left: 25% !important;
     }
 }
 
@@ -694,4 +698,19 @@ table thead tr th {
   strong {
     display: block;
   }
+}
+.seacrhfrom {
+  width: 70%;
+  height: 45px;
+  background: lightcyan;
+  border: #084fdc29;
+  border-radius: 15px 5px 5px 15px;
+}
+.searchbtn {
+  border-radius: 5px 15px 15px 5px;
+  width: 25%;
+  height: 45px;
+  background: deepskyblue;
+  font-family: cursive;
+  font-size: x-large;
 }
