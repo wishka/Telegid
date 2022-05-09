@@ -50,12 +50,14 @@ class CustomersController < ApplicationController
   def following
     @title = "Following"
     @customer  = Customer.find(params[:id])
+    @customers = @customer.following
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
     @customer  = Customer.find(params[:id])
+    @customers = @customer.followers
     render 'show_follow'
   end
 

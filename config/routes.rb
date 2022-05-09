@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   post 'blog_pages/privat_message', to: 'blog_pages#privat_message'
   post 'blog_pages/send_message', to: 'blog_pages#send_message', as: 'send_message'
   get 'results', to: 'results#index', as: 'results'
-
+  get 'price' => 'blog_pages#price'
+  get 'quote' => 'blog_pages#quote'
 
   resources :customers do
     member do

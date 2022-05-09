@@ -2,18 +2,19 @@
 .row
   %aside.col-md-4
     %section.customer_info
+      = @customer.name
       %h1= @customer.name
-      %span= link_to "показать профиль", @customer
+      %span= link_to "view my profile", @customer
       %span
         %b Posts:
         = @customer.posts.count
     %section.stats
       = render 'shared/stats'
-      - if @customers
+      - if @customers.any?
         .customer_avatars
           - @customers.each do |customer|
-            = link_to customer.name
+            = link_to customer.name, customer
   .col-md-8
     %h3= @title
-    - if @customers
+    - if @customers.any?
       %ul.customers.follow= render @customers

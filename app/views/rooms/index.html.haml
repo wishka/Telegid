@@ -21,7 +21,7 @@
           = @room.name
           = image_tag @room.image.url(:thumb), class: 'img-show' if @room.image?
           #messages
-            = @room.posts.each do |post|
+            - @room.posts.each do |post|
               = render 'posts/post', post: post
           .chat-box
             = render 'posts/form', post: Post.new, room: @room

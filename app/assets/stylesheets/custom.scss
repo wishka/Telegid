@@ -572,12 +572,12 @@ input, textarea, select, .uneditable-input {
 .chat-room {
   height: 100vh;
   overflow-y: scroll;
-  float: right !important;
+  float: right;
   #messages {
     height: 100%;
   }
-  .message {
 
+  .message {
     min-height: 59px;
     .content-container {
       display: inline-block;
@@ -595,7 +595,7 @@ input, textarea, select, .uneditable-input {
     }
     &.me {
       .content-container {
-        float: right;
+        float: left;
         .content {
           background-color: #007bff;
           color: white;
@@ -713,4 +713,25 @@ table thead tr th {
   background: deepskyblue;
   font-family: cursive;
   font-size: x-large;
+}
+.img-show {
+  display: block;
+  margin-bottom: 2em;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+.customers {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+  }
 }

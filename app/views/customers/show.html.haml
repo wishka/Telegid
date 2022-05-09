@@ -3,6 +3,7 @@
   %aside.col-md-4
     %section.customer_info
       %h1
+      %p= gravatar_for @customer
       %p Имя:
       %b= @customer.name
       %p Email
@@ -14,6 +15,7 @@
 .col-md-8
   = render 'follow_form' if logged_in?
 
+= link_to 'Изменить информацию', edit_customer_path
 
 %h2= link_to 'Создать новое объявление', new_post_path
 .col-md-8
