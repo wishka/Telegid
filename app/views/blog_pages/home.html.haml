@@ -62,6 +62,8 @@
       %span.visually-hidden Следующее
       / Navbar & Carousel End
     %br
+      %h2 Поиск по объявлениям
+
       = form_tag results_path, method: :get, role: 'search' do
         = text_field_tag :query, params[:query], class: 'seacrhfrom'
         = submit_tag "Go!", name: nil, class: 'searchbtn'

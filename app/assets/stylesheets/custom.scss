@@ -231,6 +231,11 @@ h6,
         color: var(--primary);
     }
 }
+
+.navbar-nav .dropdown-menu {
+  background: bottom;
+  margin-left: 20px;
+}
 .mod {
   margin-left: 7%;
 }
@@ -621,7 +626,7 @@ input, textarea, select, .uneditable-input {
   }
   @media (max-width: 900px) {
     .chat-box {
-      margin-top: -30%;
+      margin-top: -40%;
       position: absolute;
       bottom: auto;
       width: 75%;
@@ -712,7 +717,7 @@ table thead tr th {
   height: 45px;
   background: deepskyblue;
   font-family: cursive;
-  font-size: x-large;
+  font-size: inherit;
 }
 .img-show {
   display: block;
