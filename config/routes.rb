@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-
-
+  root 'blog_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'customers/new'
-  root 'blog_pages#home'
   get 'help'    =>  'blog_pages#help'
   get 'about'   =>  'blog_pages#about'
   get 'contact' =>  'blog_pages#contact'
@@ -26,6 +24,7 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :rooms
+  resources :microposts
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

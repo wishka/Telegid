@@ -1,8 +1,9 @@
 - provide(:title, 'Home')
 .container.center
   %h4.ad-head.text-black.text-uppercase.mb-3
-    У нас вы можете разместить, продать
-    %br или найти канала, услугу или бота
+    %h2.head-title У нас вы можете разместить, продать
+    %br
+    %h2.head-title или найти канала, услугу или бота
   #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
     .carousel-inner
       .carousel-item.active
@@ -62,7 +63,7 @@
       %span.visually-hidden Следующее
       / Navbar & Carousel End
     %br
-      %h2 Поиск по объявлениям
+      %h2.head-title Поиск по объявлениям
 
       = form_tag results_path, method: :get, role: 'search' do
         = text_field_tag :query, params[:query], class: 'seacrhfrom'
@@ -81,114 +82,10 @@
 
   / Full Screen Search End
   / Team Start
-  .container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
-  .container.py-5
-    .section-title.text-center.position-relative.pb-3.mb-5.mx-auto{:style => "max-width: 600px;"}
-      %h5.fw-bold.text-primary.text-uppercase Обьявления
-      %h1.mb-0 Ваше объявление может быть здесь
-    .row.g-5{:style => 'max-width: -webkit-fill-available'}
-      .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-        .team-item.bg-light.rounded.overflow-hidden
-          .team-img.position-relative.overflow-hidden
-            %img
-              = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-            .team-social
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-twitter.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-facebook-f.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-instagram.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-linkedin-in.fw-normal
-          .text-center.py-4
-            %h4.text-primary Название
-            %p.text-uppercase.m-0 Описание
-      .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.6s"}
-        .team-item.bg-light.rounded.overflow-hidden
-          .team-img.position-relative.overflow-hidden
-            %img
-              = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-            .team-social
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-twitter.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-facebook-f.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-instagram.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-linkedin-in.fw-normal
-          .text-center.py-4
-            %h4.text-primary Название
-            %p.text-uppercase.m-0 Описание
-      .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.9s"}
-        .team-item.bg-light.rounded.overflow-hidden
-          .team-img.position-relative.overflow-hidden
-            %img
-              = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-            .team-social
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-twitter.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-facebook-f.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-instagram.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-linkedin-in.fw-normal
-          .text-center.py-4
-            %h4.text-primary Название
-            %p.text-uppercase.m-0 Описание
-      .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-        .team-item.bg-light.rounded.overflow-hidden
-          .team-img.position-relative.overflow-hidden
-            %img
-              = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-            .team-social
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-twitter.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-facebook-f.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-instagram.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-linkedin-in.fw-normal
-          .text-center.py-4
-            %h4.text-primary Название
-            %p.text-uppercase.m-0 Описание
-      .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-        .team-item.bg-light.rounded.overflow-hidden
-          .team-img.position-relative.overflow-hidden
-            %img
-              = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-            .team-social
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-twitter.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-facebook-f.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-instagram.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-linkedin-in.fw-normal
-          .text-center.py-4
-            %h4.text-primary Название
-            %p.text-uppercase.m-0 Описание
-      .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-        .team-item.bg-light.rounded.overflow-hidden
-          .team-img.position-relative.overflow-hidden
-            %img
-              = image_pack_tag "team-1.jpg", class:"img-fluid w-100"
-            .team-social
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-twitter.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-facebook-f.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-instagram.fw-normal
-              %a.btn.btn-lg.btn-primary.btn-lg-square.rounded{:href => ""}
-                %i.fab.fa-linkedin-in.fw-normal
-          .text-center.py-4
-            %h4.text-primary Название
-            %p.text-uppercase.m-0 Описание
+  %h2.head-title Актуальные новости
+
+  .container-fluid
+    = render 'microposts/microposts'
   / Team End
   / Quote Start
   - if current_customer.present?

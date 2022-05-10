@@ -1,8 +1,7 @@
 = simple_form_for (@customer) do |f|
   = render 'shared/error_messages'
-  = f.input :name, class: 'form-control'
-  = f.input :email, class: 'form-control'
-  = f.input :cell, :required => true, class: 'form-control'
-  = f.input :password, class: 'form-control'
-  = f.input :password_confirmation, class: 'form-control'
-  = f.button :submit, "Create my account", class: "btn btn-primary"
+  = f.input :name, placeholder: 'Имя', class: 'form-control'
+  = f.input :email, placeholder: 'Почта', class: 'form-control'
+  = f.input :password, placeholder: 'Пароль', class: 'form-control'
+  = f.input :password_confirmation, placeholder: 'подтверждение пароля', class: 'form-control'
+  = f.button :submit, placeholder: "Зарегистрироваться", class: "btn btn-primary"

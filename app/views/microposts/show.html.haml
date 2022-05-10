@@ -1,0 +1,19 @@
+%p#notice= notice
+
+%p
+  %b Название:
+  = @micropost.title
+%p
+  %b Изображение:
+  = image_tag @micropost.image.url(:large), class: 'img-show' if @micropost.image?
+%p
+  %b Краткое содержание:
+  = @micropost.content
+%p
+  %b Полное содержание:
+  = @micropost.body
+
+
+= link_to 'Редактировать', edit_micropost_path(@micropost)
+\|
+= link_to 'Назад', microposts_path

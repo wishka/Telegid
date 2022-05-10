@@ -2,6 +2,7 @@ class BlogPagesController < ApplicationController
 
   def home
     @rooms = Room.where('id = id').limit(6)
+    @microposts = Micropost.all.limit(3)
   end
 
   def help

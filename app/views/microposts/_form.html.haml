@@ -1,0 +1,21 @@
+= form_for @micropost, html: {multipart: true} do |f|
+  - if @micropost.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@micropost.errors.count, "error")} prohibited this micropost from being saved:"
+      %ul
+        - @micropost.errors.full_messages.each do |message|
+          %li= message
+
+  .form-control
+    = f.text_field :title, placeholder: 'Название'
+  %br
+  .form-control
+    = f.text_field :content, placeholder: 'Краткое содержание'
+  %br
+  .form-control
+    = f.text_field :body, placeholder: 'Полное содержание'
+  %br
+  .form-control
+    = f.file_field :image
+  .actions
+    = f.submit 'Сохранить'

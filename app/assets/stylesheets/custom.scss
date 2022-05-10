@@ -532,7 +532,7 @@ h6,
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 25%;
+  width: 100%;
   @include box_sizing;
 }
 
@@ -739,4 +739,11 @@ table thead tr th {
     padding: 10px 0;
     border-bottom: 1px solid lightgray;
   }
+}
+.thumb {
+  float: left;
+  margin-right: 1em;
+}
+.head-title {
+  text-align: center;
 }

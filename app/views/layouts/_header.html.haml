@@ -22,7 +22,8 @@
                   %li= link_to "Сообщения", posts_path, class: "btn btn-outline-secondary"
                   %li= link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
                   - if current_customer.admin? && !current_customer?(@customer)
-                    = link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
+                    %li= link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
+                    %li= link_to "Посты", microposts_path, class: "btn btn-outline-secondary hid"
                   %li.divider
                   %li= link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
         - else
