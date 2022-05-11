@@ -26,13 +26,16 @@ class RoomsController < ApplicationController
   # POST /rooms or /rooms.json
   def create
     @room = Room.new(room_params)
-    @room.save
-    redirect_to request.referrer
+    if @room.save
+      redirect_to request.referrer
 
-    SendMessageJob.perform_later(@room)
+      SendMessageJob.perform_later(@room)
 
-    text = "Новое объявление: #{@room.name}"
-    TelegramMailer.send_group_message(text).deliver_now
+      text = "Новое объявление: #{@room.name}"
+      TelegramMailer.send_group_message(text).deliver_now
+    else
+      render 'new'
+    end
   end
 
   # PATCH/PUT /rooms/1 or /rooms/1.json

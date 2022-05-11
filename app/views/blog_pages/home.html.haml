@@ -68,26 +68,14 @@
       = form_tag results_path, method: :get, role: 'search' do
         = text_field_tag :query, params[:query], class: 'seacrhfrom'
         = submit_tag "Go!", name: nil, class: 'searchbtn'
-  / Full Screen Search Start
-  #searchModal.modal.fade{:tabindex => "-1"}
-    .modal-dialog.modal-fullscreen
-      .modal-content{:style => "background: rgba(9, 30, 62, .7);"}
-        .modal-header.border-0
-          %button.btn.bg-white.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
-        .modal-body.d-flex.align-items-center.justify-content-center
-          .input-group{:style => "max-width: 600px;"}
-            %input.form-control.bg-transparent.border-primary.p-3{:placeholder => "Type search keyword", :type => "text"}/
-            %button.btn.btn-primary.px-4
-              %i.bi.bi-search
 
-  / Full Screen Search End
-  / Team Start
+
   %h2.head-title Актуальные новости
 
   .container-fluid
     = render 'microposts/microposts'
-  / Team End
-  / Quote Start
+
+
   - if current_customer.present?
 
     /= link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"

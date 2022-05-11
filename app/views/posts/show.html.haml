@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Content:
+  %b Содержание:
   = @post.content
 %p
-  %b Customer:
+  %b Гость:
   = @post.customer.name
 %p
-  %b Room:
+  %b Объявление:
   = @post.room.name
 
-= link_to 'Edit', edit_post_path(@post)
+= link_to 'Редактировать', edit_post_path(@post)
 \|
-= link_to 'Back', posts_path
+= link_to 'Назад', posts_path

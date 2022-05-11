@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customer.where(blacklist: false)
+    @customers = Customer.all
   end
 
   def new
@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save
       @customer.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      notice = "Please check your email to activate your account."
       redirect_to root_url
     else
       render 'new'

@@ -1,5 +1,8 @@
 class Room < ApplicationRecord
   mount_uploader :image, ImageUploader
+  validates :name,  presence: true, length: { maximum: 50 }
+  validates :content,  presence: true
+  validates :image,  presence: true
   has_many :posts, dependent: :delete_all
   has_many :customers, through: :posts
   before_save   :downcase_name

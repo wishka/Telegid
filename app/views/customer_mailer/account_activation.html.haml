@@ -1,10 +1,10 @@
-%h1 New Blog
+%h1 Telegagid
 
 %p Привет,
   = @customer.name!
 
 %p
-Добро пожаловать в Учебное Приложение! Перейдите по ссылке для активации аккаунта:
+Добро пожаловать на Telegagid! Перейдите по ссылке для активации аккаунта:
 
 
 = link_to "Activate", edit_account_activation_url(@customer.activation_token,
