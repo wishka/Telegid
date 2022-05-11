@@ -15,3 +15,7 @@ ActiveStorage.start()
 
 import "../stylesheets/application.scss"
 const images = require.context('../images', true)
+
+$(document).ready( function() {
+$('.dropdown-menu').dropdown();
+});

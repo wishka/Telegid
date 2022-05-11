@@ -8,9 +8,12 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
-    @room = Room.find(params[:id])
     @rooms = Room.all
     render 'index'
+    if @room = Room.find(params[:id])
+    else
+      render 'new'
+    end
   end
 
   # GET /rooms/new

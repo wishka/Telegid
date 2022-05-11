@@ -21,8 +21,8 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save
       @customer.send_activation_email
-      notice = "Please check your email to activate your account."
-      redirect_to root_url
+      flash[:notice] = "Please check your email to activate your account."
+      redirect_to root_path
     else
       render 'new'
     end
@@ -44,7 +44,7 @@ class CustomersController < ApplicationController
   def destroy
     Customer.find(params[:id]).destroy
     flash[:success] = "Customer deleted"
-    redirect_to customers_rath
+    redirect_to customers_path
   end
 
   def following

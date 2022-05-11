@@ -1,0 +1,38 @@
+.container-fluid.bg-dark.px-5.d-block
+  .row.gx-0
+    .col-lg-4.text-center.text-lg-end
+      .d-inline-flex.align-items-center{:style => "height: 45px;"}
+
+      / Topbar End
+  %nav.navbar.navbar-expand-lg.navbar-dark.py-lg-0.mod
+    %a.navbar-brand.p-0{:href => root_path}
+      %h1
+        %i.fas.fa-user-tie
+        TelegaGid
+      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 30%;"}
+        - if logged_in?
+          %button.navbar-toggler{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
+            %span.fas.fa-bars
+          #navbarCollapse.collapse.navbar-collapse
+            .navbar-nav.ms-auto.py-0
+              .nav-item.dropdown
+              = link_to current_customer.name, current_customer, class: "btn btn-outline-secondary"
+              = link_to "Объявления",  rooms_path, class: "btn btn-outline-secondary"
+
+              %a.nav-link.dropdown-toggle{"data-bs-toggle" => "dropdown", :href => "#"}
+                %ul.dropdown-menu
+                  %li
+                    %a.dropdown-item= link_to "Сообщения", posts_path, class: "btn btn-outline-secondary"
+                  %li
+                    %a.dropdown-item= link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
+                  - if current_customer.admin? && !current_customer?(@customer)
+                    %li
+                      %a.dropdown-item= link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
+                    %li
+                      %a.dropdown-item= link_to "Посты", microposts_path, class: "btn btn-outline-secondary hid"
+                  %li
+                    %a.divider
+                  %li
+                    %a.dropdown-item= link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
+        - else
+          %li= link_to "Войти", login_path

@@ -1,4 +1,3 @@
-/ Topbar Start
 .container-fluid.bg-dark.px-5.d-block
   .row.gx-0
     .col-lg-4.text-center.text-lg-end
@@ -9,22 +8,36 @@
     %a.navbar-brand.p-0{:href => root_path}
       %h1
         %i.fas.fa-user-tie
-        Telegagid
-      %ul.nav.navbar-nav.navbar-right{:style => "margin-left: 30%;"}
-        - if logged_in?
+        TelegaGid
+    - if logged_in?
+      %button.navbar-toggler.navbar-right{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
+        %span.fas.fa-bars
+      #navbarCollapse.collapse.navbar-collapse
+        .navbar-nav.py-0
+          .nav-item.dropdown-menu
           %li
-            %li.dropdown
-              = link_to current_customer.name, current_customer, class: "btn btn-outline-secondary"
+            %a.dropdown-item
+              = link_to "Профиль", current_customer, class: "btn btn-outline-secondary"
+          %li
+            %a.dropdown-item
               = link_to "Объявления",  rooms_path, class: "btn btn-outline-secondary"
-
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                %ul.dropdown-menu
-                  %li.dropdown-item= link_to "Сообщения", posts_path, class: "btn btn-outline-secondary"
-                  %li.dropdown-item= link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
-                  - if current_customer.admin? && !current_customer?(@customer)
-                    %li.dropdown-item= link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
-                    %li.dropdown-item= link_to "Посты", microposts_path, class: "btn btn-outline-secondary hid"
-                  %li.divider
-                  %li.dropdown-item= link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
-        - else
-          %li= link_to "Войти", login_path
+          %li
+            %a.dropdown-item
+              = link_to "Сообщения", posts_path, class: "btn btn-outline-secondary"
+          %li
+            %a.dropdown-item
+              = link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
+          - if current_customer.admin? && !current_customer?(@customer)
+            %li
+              %a.dropdown-item
+                = link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
+            %li
+              %a.dropdown-item
+                = link_to "Посты", microposts_path, class: "btn btn-outline-secondary hid"
+          %li
+            %a.divider
+          %li
+            %a.dropdown-item
+              = link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
+    - else
+      %li= link_to "Войти", login_path
