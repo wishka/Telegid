@@ -4,8 +4,8 @@
 .container-fluid
   .row
     .col-3.rooms-sidebar
-      %b Создать новое объявление
-      = render 'form', room: Room.new
+      /%b Создать новое объявление
+      /= render 'form', room: Room.new
       %hr
       - @rooms.each do |room|
         .room-link
@@ -14,7 +14,8 @@
               .card-body
                 %span.name
                   = room.name
-                  = link_to 'Delete', room, method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to 'Удалить', room, method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to 'Редактировать', edit_room_path(room)
     .col-9
       - if @room.present?
         .chat-room

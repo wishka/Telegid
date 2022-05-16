@@ -1,0 +1,28 @@
+%h1 Телеграм-каналы
+
+%table
+  %thead
+    %tr
+      %th
+      %th Название
+      %th
+      %th Содержание
+      %th Перейти
+      %th
+      %th
+
+  %tbody
+    - @telechannels.each do |telechannel|
+      %tr
+        %td= image_pack_tag 'telelogo.svg.png', class: 'img-sm'
+        %td= telechannel.name
+        %td= image_tag telechannel.image.url(:thumb)
+        %td= telechannel.content
+        %td= link_to telechannel.links
+        %td= link_to 'Показать', telechannel
+        %td= link_to 'Редактировать', edit_telechannel_path(telechannel)
+        %td= link_to 'Удалить', telechannel, method: :delete, data: { confirm: 'Уверены?' }
+
+%br
+
+= link_to 'Новый канал', new_telechannel_path

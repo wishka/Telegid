@@ -22,6 +22,7 @@
 }
 body {
   background: linear-gradient(to right, pink, blue);
+  color: #000;
 }
 
 text {
@@ -758,4 +759,28 @@ table thead tr th {
 }
 .head-title {
   text-align: center;
+}
+#navbarDropdown {
+  padding: 0px !important;
+  color: #4fad55;
+  margin-left: 0px;
+  width: 150px;
+  height: 38px;
+}
+.btn {
+  width: 150px;
+}
+.navbar-nav .dropdown-menu {
+  margin-left: 0 !important;
+  background: #091e3e;
+}
+.dropdown-item {
+  color: #4fad55;
+}
+.navright {
+  margin-left: 35%;
+}
+.img-sm {
+  width: 50px;
+  height: 50px;
 }

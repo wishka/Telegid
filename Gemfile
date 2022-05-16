@@ -29,6 +29,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'searchkick'
 gem 'bootstrap-typeahead-rails'
+gem 'cancancan'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

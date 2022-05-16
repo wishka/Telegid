@@ -25,6 +25,20 @@ module SessionsHelper
     end
   end
 
+  def current_user
+
+    if (customer_id = session[:customer_id])
+      @current_user ||= Customer.find_by(id: customer_id)
+    elsif (customer_id = cookies.signed[:customer_id])
+      user = Customer.find_by(id: customer_id)
+      if customer && customer.authenticated?(:remember, cookies[:remember_token])
+        log_in customer
+        @current_user = user
+      end
+    end
+    user_id = customer_id
+  end
+
   def logged_in?
     !current_customer.nil?
   end

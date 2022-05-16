@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Название:
+  = @telechannel.name
+%p
+  %b Ссылка:
+  = @telechannel.links
+%p
+  %b Содержание:
+  = @telechannel.content
+%p
+  %b Картинка
+  = image_tag @telechannel.image.url(:large), class: 'img-sm' if @telechannel.image?
+
+= link_to 'Редактировать', edit_telechannel_path(@telechannel)
+\|
+= link_to 'Назад', telechannels_path

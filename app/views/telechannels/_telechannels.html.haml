@@ -1,0 +1,18 @@
+%table
+  %thead
+    %tr
+      %th
+      %th Название
+      %th Содержание
+      %th Перейти
+
+
+  %tbody
+    - @telechannels.each do |telechannel|
+      %tr
+        %td= image_pack_tag 'telelogo.svg.png', class: 'img-sm'
+        %td= telechannel.name
+        %td= telechannel.content
+        %td= link_to telechannel.links
+
+%br

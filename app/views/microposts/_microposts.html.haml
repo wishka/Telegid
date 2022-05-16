@@ -4,8 +4,6 @@
       %th
       %th Название
       %th Краткое содержание
-      %th
-      %th
 
   %tbody.clearfix
     - @microposts.each do |micropost|
@@ -13,5 +11,3 @@
         %td= image_tag micropost.image.url(:mid), class: 'img-thumnail thumb' if micropost.image?
         %td= micropost.title
         %td= link_to micropost.content, micropost
-        %td= link_to 'Редактировать', edit_micropost_path(micropost)
-        %td= link_to 'Удалить', micropost, method: :delete, data: { confirm: 'Уверены?' }

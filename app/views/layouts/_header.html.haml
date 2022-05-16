@@ -15,29 +15,29 @@
       #navbarCollapse.collapse.navbar-collapse
         .navbar-nav.py-0
           .nav-item.dropdown-menu
+          %li.nav-item.dropdown
+            %a#navbarDropdown.nav-link.dropdown-toggle.btn.btn-outline-success{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Навигация
+            .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+              %a.dropdown-item{:href => posts_path} Сообщения
+              %a.dropdown-item{:href => rooms_path} Объявления
+              %a.dropdown-item{:href => microposts_path} Посты
+              %a.dropdown-item{:href => telechannels_path} Каналы
+              .dropdown-divider
+              %a.dropdown-item{:href => 'find'} Поиск
           %li
-            %a.dropdown-item
-              = link_to "Профиль", current_customer, class: "btn btn-outline-secondary"
+            %a= link_to "Профиль", current_customer, class: "btn btn-outline-secondary"
+
           %li
-            %a.dropdown-item
-              = link_to "Объявления",  rooms_path, class: "btn btn-outline-secondary"
-          %li
-            %a.dropdown-item
-              = link_to "Сообщения", posts_path, class: "btn btn-outline-secondary"
-          %li
-            %a.dropdown-item
-              = link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
+            %a= link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
           - if current_customer.admin? && !current_customer?(@customer)
             %li
-              %a.dropdown-item
-                = link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
-            %li
-              %a.dropdown-item
-                = link_to "Посты", microposts_path, class: "btn btn-outline-secondary hid"
+              %a= link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
           %li
             %a.divider
           %li
-            %a.dropdown-item
-              = link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
+            %a= link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
     - else
-      %li= link_to "Войти", login_path
+      .navright
+        = link_to "Войти!", login_path
+        | #{link_to "Зарегистрироваться!", signup_path}

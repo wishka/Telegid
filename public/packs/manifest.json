@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-41f1c3af.css",
   "application.css.map": "/packs/css/application-41f1c3af.css.map",
-  "application.js": "/packs/js/application-05995d576353baa18547.js",
-  "application.js.map": "/packs/js/application-05995d576353baa18547.js.map",
+  "application.js": "/packs/js/application-3b3af360a62a36a986a3.js",
+  "application.js.map": "/packs/js/application-3b3af360a62a36a986a3.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-41f1c3af.css"
       ],
       "js": [
-        "/packs/js/application-05995d576353baa18547.js"
+        "/packs/js/application-3b3af360a62a36a986a3.js"
       ],
       "css.map": [
         "/packs/css/application-41f1c3af.css.map"
       ],
       "js.map": [
-        "/packs/js/application-05995d576353baa18547.js.map"
+        "/packs/js/application-3b3af360a62a36a986a3.js.map"
       ]
     },
     "waypoints": {
@@ -35,31 +35,10 @@
       ]
     }
   },
-  "media/images/about.jpg": "/packs/media/images/about-375ed93a3c75edb9ed80aa3c81c677a8.jpg",
-  "media/images/blog-1.jpg": "/packs/media/images/blog-1-5150f0b19ffe23a265194efde4715b54.jpg",
-  "media/images/blog-2.jpg": "/packs/media/images/blog-2-ea6300b3228592aaca85c71497a61df0.jpg",
-  "media/images/blog-3.jpg": "/packs/media/images/blog-3-b8d953c4371c38939cfe9b79a65236ce.jpg",
   "media/images/carousel-1.jpg": "/packs/media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg",
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
   "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
-  "media/images/feature.jpg": "/packs/media/images/feature-b8fa3a1d15793321bc06dd3c04b6a69e.jpg",
-  "media/images/team-1.jpg": "/packs/media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg",
-  "media/images/team-2.jpg": "/packs/media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg",
-  "media/images/team-3.jpg": "/packs/media/images/team-3-e665709987982790ed540a886c2118ba.jpg",
-  "media/images/testimonial-1.jpg": "/packs/media/images/testimonial-1-6c1e18bc9e206669b4a3cf505da20de7.jpg",
-  "media/images/testimonial-2.jpg": "/packs/media/images/testimonial-2-d99a5ca6260ec28a6aed1f02e6f1edf2.jpg",
-  "media/images/testimonial-3.jpg": "/packs/media/images/testimonial-3-27812fe3410affb0526b360ac1d9baa1.jpg",
-  "media/images/testimonial-4.jpg": "/packs/media/images/testimonial-4-1d8a1837cb0616b9a1c59de29d09955c.jpg",
-  "media/images/user.jpg": "/packs/media/images/user-86c8bfca017e69c36503fa6ba874e454.jpg",
-  "media/images/vendor-1.jpg": "/packs/media/images/vendor-1-c7968ab73fd6096f33f7d277c6045988.jpg",
-  "media/images/vendor-2.jpg": "/packs/media/images/vendor-2-ac5fe70b2c7cfc31f84f4eb652477397.jpg",
-  "media/images/vendor-3.jpg": "/packs/media/images/vendor-3-6581936e641e3ae3ca9ce11623db7dbe.jpg",
-  "media/images/vendor-4.jpg": "/packs/media/images/vendor-4-78c35201b36b25cf4ed42f309dd73b0d.jpg",
-  "media/images/vendor-5.jpg": "/packs/media/images/vendor-5-7a1abab49b25385fd98d45386fb64108.jpg",
-  "media/images/vendor-6.jpg": "/packs/media/images/vendor-6-b0fa6b0785119e43bf80d546e74c0dd7.jpg",
-  "media/images/vendor-7.jpg": "/packs/media/images/vendor-7-f378d166503b027b065e5858da2b9f98.jpg",
-  "media/images/vendor-8.jpg": "/packs/media/images/vendor-8-fdd05d32d3f8ee8f3b467db9dec43285.jpg",
-  "media/images/vendor-9.jpg": "/packs/media/images/vendor-9-f5c67c1eeae746cb66183b4409022c16.jpg",
+  "media/images/telelogo.svg.png": "/packs/media/images/telelogo.svg-3af5a5e050ec64eed595549a9bc11253.png",
   "waypoints.js": "/packs/js/waypoints-0aaed46018e615613b5a.js",
   "waypoints.js.map": "/packs/js/waypoints-0aaed46018e615613b5a.js.map",
   "wow.js": "/packs/js/wow-3f2c99b4bf9279beef0e.js",

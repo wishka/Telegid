@@ -69,14 +69,15 @@
         = text_field_tag :query, params[:query], class: 'seacrhfrom'
         = submit_tag "Go!", name: nil, class: 'searchbtn'
 
-
   %h2.head-title Актуальные новости
 
   .container-fluid
     = render 'microposts/microposts'
+  %br
+  %h2.head-title Популярные Телеграм-каналы
 
-
-  - if current_customer.present?
+  .container-fluid
+    = render 'telechannels/telechannels'
 
     /= link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"
     /= link_to "Send group message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=-634155082&text=group message", target: " _blank"
@@ -94,6 +95,3 @@
     /= params[:customername]
     /= params[:auth_date]
     /= params[:hash]
-
-  - else
-    = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"

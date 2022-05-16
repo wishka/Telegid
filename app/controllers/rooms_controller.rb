@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
+
   before_action :set_room, only: %i[ show edit update destroy ]
+
 
   # GET /rooms or /rooms.json
   def index
@@ -29,6 +31,7 @@ class RoomsController < ApplicationController
   # POST /rooms or /rooms.json
   def create
     @room = Room.new(room_params)
+    @room.customer_id = current_customer.id
     if @room.save
       redirect_to request.referrer
 
@@ -76,6 +79,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name, :content, :image)
+      params.require(:room).permit(:name, :content, :category, :image)
     end
 end

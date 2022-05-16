@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -12,6 +12,7 @@ class Customer < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_many :posts, dependent: :destroy
+  has_many :telechannels
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -20,7 +21,7 @@ class Customer < ApplicationRecord
                                    dependent:   :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
+  pg_search_scope :search_everywhere, against: [:name, :email]
 
   def Customer.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
