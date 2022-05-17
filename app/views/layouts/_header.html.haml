@@ -9,34 +9,29 @@
       %h1
         %i.fas.fa-user-tie
         TelegaGid
+    = form_tag results_path, method: :get, role: 'search' do
+      = text_field_tag :query, params[:query], class: 'seacrhfrom'
+      = submit_tag "Go!", name: nil, class: 'searchbtn'
     - if logged_in?
       %button.navbar-toggler.cntr{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
         %span.fas.fa-bars
       #navbarCollapse.collapse.navbar-collapse
-        .navbar-nav.py-0
+        .navbar-nav.py-0{:style => 'margin-left: 45%'}
           .nav-item.dropdown-menu
           %li.nav-item.dropdown
             %a#navbarDropdown.nav-link.dropdown-toggle.btn.btn-outline-success{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              Навигация
+              %i.far.fa-user
             .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+              %a.dropdown-item{:href => customer_path(current_customer)} Профиль
               %a.dropdown-item{:href => posts_path} Сообщения
               %a.dropdown-item{:href => rooms_path} Объявления
               %a.dropdown-item{:href => microposts_path} Посты
               %a.dropdown-item{:href => telechannels_path} Каналы
-              .dropdown-divider
               %a.dropdown-item{:href => 'find'} Поиск
-          %li
-            %a= link_to "Профиль", current_customer, class: "btn btn-outline-secondary"
-
-          %li
-            %a= link_to "Настройки", edit_customer_path(current_customer), class: "btn btn-outline-secondary"
-          - if current_customer.admin? && !current_customer?(@customer)
-            %li
-              %a= link_to "Пользователи", customers_path, class: "btn btn-outline-secondary hid"
-          %li
-            %a.divider
-          %li
-            %a= link_to "Выйти", logout_path, method: "delete", class: "btn btn-danger"
+              .dropdown-divider
+              %a.dropdown-item
+                %a#red= link_to "Выйти", logout_path, method: "delete"
+          /- if current_customer.admin? && !current_customer?(@customer)
     - else
       .navright
         = link_to "Войти!", login_path

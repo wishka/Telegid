@@ -11,3 +11,5 @@
         %td= image_tag micropost.image.url(:mid), class: 'img-thumnail thumb' if micropost.image?
         %td= micropost.title
         %td= link_to micropost.content, micropost
+
+= link_to 'Читать все', microposts_path, class: 'btn btn-lg btn-outline-primary', style: 'width: 100%; border: none'

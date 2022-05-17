@@ -2,11 +2,11 @@ class RoomsController < ApplicationController
 
   before_action :set_room, only: %i[ show edit update destroy ]
 
-
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.all
   end
+
 
   # GET /rooms/1 or /rooms/1.json
   def show

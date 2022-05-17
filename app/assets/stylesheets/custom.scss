@@ -774,7 +774,15 @@ table thead tr th {
   padding: 0px !important;
   color: #4fad55;
   margin-left: 0px;
-  width: 150px;
+  width: 45px;
+  height: 38px;
+  border: none;
+  @media(max-width: 900px) {
+    margin-left: 28%;
+  }
+}
+.usr-img {
+  width: 45px;
   height: 38px;
 }
 .btn {
@@ -793,4 +801,7 @@ table thead tr th {
 .img-sm {
   width: 50px;
   height: 50px;
+}
+#red {
+  margin-left: 15px;
 }

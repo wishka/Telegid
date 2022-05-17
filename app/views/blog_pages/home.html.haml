@@ -4,6 +4,7 @@
     %h2.head-title У нас вы можете разместить, продать
     %br
     %h2.head-title или найти канала, услугу или бота
+
   #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
     .carousel-inner
       .carousel-item.active
@@ -62,12 +63,8 @@
       %span.carousel-control-next-icon{"aria-hidden" => "true"}
       %span.visually-hidden Следующее
       / Navbar & Carousel End
-    %br
-      %h2.head-title Поиск по сайту
 
-      = form_tag results_path, method: :get, role: 'search' do
-        = text_field_tag :query, params[:query], class: 'seacrhfrom'
-        = submit_tag "Go!", name: nil, class: 'searchbtn'
+  %br
 
   %h2.head-title Актуальные новости
 

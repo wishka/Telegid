@@ -7,9 +7,17 @@
   %div
     = result.content.html_safe
   %hr/
-  
+
   %em= params[:query]
 - @search_results_telechannels.each do |result|
+  %h4
+    = link_to result.name, result
+  %div
+    = result.content.html_safe
+  %hr/
+
+  %em= params[:query]
+- @search_results_microposts.each do |result|
   %h4
     = link_to result.name, result
   %div
