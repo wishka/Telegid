@@ -16,7 +16,7 @@
       %tr
         %td= image_pack_tag 'telelogo.svg.png', class: 'img-sm'
         %td= telechannel.name
-        %td= image_tag telechannel.image.url(:thumb)
+        %td= image_tag telechannel.image.url(:thumb), class: 'img-sm' if telechannel.image?
         %td= telechannel.content
         %td= link_to telechannel.links
         %td= link_to 'Показать', telechannel

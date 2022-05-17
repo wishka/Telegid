@@ -1,7 +1,15 @@
 %h3
   Результаты поиска по запросу
   %em= params[:query]
-- @search_results.each do |result|
+- @search_results_rooms.each do |result|
+  %h4
+    = link_to result.name, result
+  %div
+    = result.content.html_safe
+  %hr/
+  
+  %em= params[:query]
+- @search_results_telechannels.each do |result|
   %h4
     = link_to result.name, result
   %div

@@ -251,7 +251,17 @@ h6,
 .mod {
   @media (max-width: 900px) {
     display: inline-block;
-    margin-left: -15%;
+    margin-left: 15%;
+  }
+}
+.cntr {
+  @media (max-width: 900px) {
+  margin-left: 35% !important;
+  }
+}
+.py-0 {
+  @media (max-width: 900px) {
+  margin-left: 10% !important;
   }
 }
 /*** Carousel ***/

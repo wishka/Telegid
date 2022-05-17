@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :cities
+  resources :countries
   root 'blog_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'

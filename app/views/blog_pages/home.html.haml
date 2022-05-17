@@ -22,7 +22,7 @@
               = link_to 'Читать', '/rooms/6'
       .carousel-item
         %img
-          = image_pack_tag "carousel-2.jpg", class:"w-100"
+          = image_pack_tag "carousel-1.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
@@ -36,7 +36,7 @@
               = link_to 'Читать', '/rooms/8'
       .carousel-item
         %img
-          = image_pack_tag "carousel-2.jpg", class:"w-100"
+          = image_pack_tag "carousel-1.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
@@ -50,7 +50,7 @@
               = link_to 'Читать', '/rooms/10'
       .carousel-item
         %img
-          = image_pack_tag "carousel-2.jpg", class:"w-100"
+          = image_pack_tag "carousel-1.jpg", class:"w-100"
         .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
           .p-1{:style => "max-width: 900px;"}
             %h3.display-4.text-white.mb-md-4.animated.zoomIn
@@ -63,7 +63,7 @@
       %span.visually-hidden Следующее
       / Navbar & Carousel End
     %br
-      %h2.head-title Поиск по объявлениям
+      %h2.head-title Поиск по сайту
 
       = form_tag results_path, method: :get, role: 'search' do
         = text_field_tag :query, params[:query], class: 'seacrhfrom'
@@ -75,7 +75,7 @@
     = render 'microposts/microposts'
   %br
   %h2.head-title Популярные Телеграм-каналы
-
+  %br
   .container-fluid
     = render 'telechannels/telechannels'
 

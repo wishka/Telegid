@@ -5,15 +5,15 @@
       %ul
         - @room.errors.full_messages.each do |message|
           %li= message
-  
+
   .form-group.mb-3
-    = f.select :category,["-> выбрать <-", "Купить", "Продать", "Найти"], class: 'form-control'
+    = f.select :route,["-> выбрать <-", "Купить", "Продать", "Найти"], class: 'form-control'
   .form-group.mb-3
-    = f.select :category,["-> выбрать <-", "Канал", "Бот", "Услуга"], class: 'form-control'
+    = f.select :cat_route,["-> выбрать <-", "Канал", "Бот", "Услуга"], class: 'form-control'
   .form-group.mb-3
     = f.select :city,["-> выбрать город <-", "Москва", "Санкт-Петербург", "Сочи", "Краснодар", "Самара", "Тольятти", "Ростов", "Новосибирск", "Новороссийск", "Крым", "Анапа", "Геленджик", "Уфа", "Красноярск", "Хабаровск", "Владивосток", "Владикавказ"]
   .form-group.mb-3
-    = f.select :category,["-> выбрать <-", "Администрирование", "Взаимопиар", "Создание и продвижение", "Комментарии", "Контент", "Лайки", "Накрутка"], class: 'form-control'
+    = f.select :subdir,["-> выбрать <-", "Администрирование", "Взаимопиар", "Создание и продвижение", "Комментарии", "Контент", "Лайки", "Накрутка"], class: 'form-control'
   .form-group.mb-3
     = f.label 'Название'
     = f.text_field :name, class: 'form-control'
