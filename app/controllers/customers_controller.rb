@@ -48,14 +48,14 @@ class CustomersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "Читаю"
     @customer  = Customer.find(params[:id])
     @customers = @customer.following
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "Меня читают"
     @customer  = Customer.find(params[:id])
     @customers = @customer.followers
     render 'show_follow'

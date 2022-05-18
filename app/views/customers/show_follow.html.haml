@@ -4,9 +4,9 @@
     %section.customer_info
       = @customer.name
       %h1= @customer.name
-      %span= link_to "view my profile", @customer
+      %span= link_to "мой профиль", @customer
       %span
-        %b Posts:
+        %b Сообщения:
         = @customer.posts.count
     %section.stats
       = render 'shared/stats'
