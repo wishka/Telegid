@@ -33,6 +33,9 @@
                 %a#red= link_to "Выйти", logout_path, method: "delete"
           /- if current_customer.admin? && !current_customer?(@customer)
     - else
-      .navright
-        = link_to "Войти!", login_path
-        | #{link_to "Зарегистрироваться!", signup_path}
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle.btn.btn-outline-success{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          %i.far.fa-user.navright
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{:href => login_path} Войти!
+          %a.dropdown-item{:href => signup_path} Зарегистрироваться!

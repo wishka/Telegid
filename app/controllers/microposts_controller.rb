@@ -3,7 +3,7 @@ class MicropostsController < ApplicationController
 
   # GET /microposts or /microposts.json
   def index
-    @microposts = Micropost.all
+    @pagy, @microposts = pagy(Micropost.all, items: 10)
   end
 
   # GET /microposts/1 or /microposts/1.json
