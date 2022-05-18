@@ -1,4 +1,11 @@
 class SearchController < ApplicationController
+  Room.reindex
+
+  rooms = Room.search()
+  rooms.each do |room|
+    puts room.name
+  end
+
     def self.search(query)
     __elasticsearch__.search(
       {

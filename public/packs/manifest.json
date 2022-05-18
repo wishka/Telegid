@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-41f1c3af.css",
   "application.css.map": "/packs/css/application-41f1c3af.css.map",
-  "application.js": "/packs/js/application-3b3af360a62a36a986a3.js",
-  "application.js.map": "/packs/js/application-3b3af360a62a36a986a3.js.map",
+  "application.js": "/packs/js/application-d9e56ba248be07d298fc.js",
+  "application.js.map": "/packs/js/application-d9e56ba248be07d298fc.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-41f1c3af.css"
       ],
       "js": [
-        "/packs/js/application-3b3af360a62a36a986a3.js"
+        "/packs/js/application-d9e56ba248be07d298fc.js"
       ],
       "css.map": [
         "/packs/css/application-41f1c3af.css.map"
       ],
       "js.map": [
-        "/packs/js/application-3b3af360a62a36a986a3.js.map"
+        "/packs/js/application-d9e56ba248be07d298fc.js.map"
       ]
     },
     "waypoints": {
@@ -39,6 +39,7 @@
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
   "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
   "media/images/telelogo.svg.png": "/packs/media/images/telelogo.svg-3af5a5e050ec64eed595549a9bc11253.png",
+  "media/images/user.png": "/packs/media/images/user-bbde05f9ab28dccf9dfa45b4c67e585b.png",
   "waypoints.js": "/packs/js/waypoints-0aaed46018e615613b5a.js",
   "waypoints.js.map": "/packs/js/waypoints-0aaed46018e615613b5a.js.map",
   "wow.js": "/packs/js/wow-3f2c99b4bf9279beef0e.js",
