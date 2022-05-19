@@ -3,13 +3,14 @@
 class Ability
   include CanCan::Ability
 
-      def initialize(customer)
-        #customer ||= Customer.new
-        #if customer.admin?
+      def initialize(user)
+        #user ||= User.new
+        #if user.admin?
         #  can :manage, Room
         #else
         #  can :manage, Room, customer_id: customer.id
         #  can :read, Room
+        #end
         #can :read, Room, published: true
 
         #return unless user.present?

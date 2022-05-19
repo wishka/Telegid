@@ -762,7 +762,7 @@ table thead tr th {
 .thumb {
   float: left;
   margin-right: 1em;
-  @media(max-width: 900px) {
+  @media(max-width: 844px) {
     display: contents;
     margin-top: 1em;
   }
@@ -773,7 +773,7 @@ table thead tr th {
 #navbarDropdown {
   padding: 0px !important;
   color: #4fad55;
-  margin-left: 0px;
+  margin-top: -10px;
   width: 45px;
   height: 38px;
   border: none;
@@ -794,9 +794,18 @@ table thead tr th {
 }
 .dropdown-item {
   color: #4fad55;
+  @media(max-width: 844px) {
+    margin-left: 0;
+  }
+}
+.dropdown-menu {
+  background-color: #091e3e !important;
 }
 .navright {
   margin-left: 15%;
+  @media(max-width: 844px) {
+    margin-left: 15%;
+  }
 }
 .img-sm {
   width: 50px;

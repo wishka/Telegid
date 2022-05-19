@@ -6,7 +6,6 @@ class RoomsController < ApplicationController
     @rooms = Room.all
   end
 
-
   # GET /rooms/1 or /rooms/1.json
   def show
     @rooms = Room.all
