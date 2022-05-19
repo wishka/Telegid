@@ -6,7 +6,7 @@
       %th
       %th Название
       %th Краткое содержание
-      %th 
+      %th
       %th
       %th
 
@@ -16,9 +16,10 @@
         %td= image_tag micropost.image.url(:thumb), class: 'img-thumnail thumb' if micropost.image?
         %td= micropost.title
         %td= link_to micropost.content, micropost
-        %td= link_to 'Редактировать', edit_micropost_path(micropost)
-        %td= link_to 'Удалить', micropost, method: :delete, data: { confirm: 'Уверены?' }
+        - if current_customer.admin? && !current_customer?(@customer)
+          %td= link_to 'Редактировать', edit_micropost_path(micropost)
+          %td= link_to 'Удалить', micropost, method: :delete, data: { confirm: 'Уверены?' }
 
 %br
 
-= link_to 'Новый пост', new_micropost_path
+= link_to 'Новый пост', new_micropost_path, class: 'btn btn-lg btn-outline-primary', style: 'width: 100%; border: none'

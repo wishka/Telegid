@@ -7,4 +7,5 @@
         | #{link_to post.customer.name, customer_path}
       .content
         = post.content
-        = link_to 'Удалить', post, method: :delete
+        - if post.customer_id == current_customer.id || current_customer.admin?
+          = link_to 'Удалить', post, method: :delete

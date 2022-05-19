@@ -20,9 +20,10 @@
         %td= telechannel.content
         %td= link_to telechannel.links
         %td= link_to 'Показать', telechannel
-        %td= link_to 'Редактировать', edit_telechannel_path(telechannel)
-        %td= link_to 'Удалить', telechannel, method: :delete, data: { confirm: 'Уверены?' }
+        - if current_customer.admin? && !current_customer?(@customer)
+          %td= link_to 'Редактировать', edit_telechannel_path(telechannel)
+          %td= link_to 'Удалить', telechannel, method: :delete, data: { confirm: 'Уверены?' }
 
 %br
 
-= link_to 'Новый канал', new_telechannel_path
+= link_to 'Новый канал', new_telechannel_path, class: 'btn btn-lg btn-outline-primary', style: 'width: 100%; border: none'

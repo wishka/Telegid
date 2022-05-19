@@ -14,8 +14,9 @@
               .card-body
                 %span.name
                   = room.name
-                  = link_to 'Удалить', room, method: :delete, data: { confirm: 'Are you sure?' }
-                  = link_to 'Редактировать', edit_room_path(room)
+                  - if room.customer_id == current_customer.id || current_customer.admin?
+                    = link_to 'Удалить', room, method: :delete, data: { confirm: 'Are you sure?' }
+                    = link_to 'Редактировать', edit_room_path(room)
     .col-9
       - if @room.present?
         .chat-room
