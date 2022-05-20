@@ -76,6 +76,11 @@
   .container-fluid
     = render 'telechannels/telechannels'
 
+  %h2.head-title Последние объявления
+  %br
+  .container-fluid
+    = render 'rooms/room'
+
     /= link_to "Send privat message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=1961648829&text=direct message", target: " _blank"
     /= link_to "Send group message", "https://api.telegram.org/bot5161299756:AAG28V_mJ5x7Qg8MwPcMMvw0Gc1ZIqMx_7U/sendMessage?chat_id=-634155082&text=group message", target: " _blank"
     /= button_to "Send group message via controller", blog_pages_group_message_path

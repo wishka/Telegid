@@ -1,7 +1,7 @@
 class BlogPagesController < ApplicationController
 
   def home
-    @rooms = Room.where('id = id').limit(6)
+    @rooms = Room.all.limit(6)
     @microposts = Micropost.all.limit(3)
     @telechannels = Telechannel.last(3)
   end
@@ -15,11 +15,10 @@ class BlogPagesController < ApplicationController
   def contact
   end
 
-  def price
+  def roomlist
+    render 'roomlist'
   end
 
-  def quote
-  end
 
   def group_message
     chat_id = -634155082

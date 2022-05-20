@@ -19,7 +19,11 @@ npm-debug.log
 /db/*.sqlite3
 /db/*.sqlite3-*
 
-# Ignore all logfiles and tempfiles.
+# ignore all logs
+*.log
+logs
+log
+log/
 /log/*
 /tmp/*
 !/log/.keep

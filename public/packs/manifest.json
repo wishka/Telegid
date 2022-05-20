@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-41f1c3af.css",
   "application.css.map": "/packs/css/application-41f1c3af.css.map",
-  "application.js": "/packs/js/application-d9e56ba248be07d298fc.js",
-  "application.js.map": "/packs/js/application-d9e56ba248be07d298fc.js.map",
+  "application.js": "/packs/js/application-3edcb68bfb1e2cbd5fc6.js",
+  "application.js.map": "/packs/js/application-3edcb68bfb1e2cbd5fc6.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-41f1c3af.css"
       ],
       "js": [
-        "/packs/js/application-d9e56ba248be07d298fc.js"
+        "/packs/js/application-3edcb68bfb1e2cbd5fc6.js"
       ],
       "css.map": [
         "/packs/css/application-41f1c3af.css.map"
       ],
       "js.map": [
-        "/packs/js/application-d9e56ba248be07d298fc.js.map"
+        "/packs/js/application-3edcb68bfb1e2cbd5fc6.js.map"
       ]
     },
     "waypoints": {
@@ -38,6 +38,9 @@
   "media/images/carousel-1.jpg": "/packs/media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg",
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
   "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
+  "media/images/team-1.jpg": "/packs/media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg",
+  "media/images/team-2.jpg": "/packs/media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg",
+  "media/images/team-3.jpg": "/packs/media/images/team-3-e665709987982790ed540a886c2118ba.jpg",
   "media/images/telelogo.svg.png": "/packs/media/images/telelogo.svg-3af5a5e050ec64eed595549a9bc11253.png",
   "media/images/user.png": "/packs/media/images/user-bbde05f9ab28dccf9dfa45b4c67e585b.png",
   "waypoints.js": "/packs/js/waypoints-0aaed46018e615613b5a.js",

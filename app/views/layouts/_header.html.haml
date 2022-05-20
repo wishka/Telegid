@@ -24,7 +24,8 @@
             .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
               %a.dropdown-item{:href => customer_path(current_customer)} Профиль
               %a.dropdown-item{:href => posts_path} Сообщения
-              %a.dropdown-item{:href => rooms_path} Объявления
+              %a.dropdown-item{:href => rooms_path} Активные чаты
+              %a.dropdown-item{:href => '../roomlist'} Объявления
               %a.dropdown-item{:href => microposts_path} Посты
               %a.dropdown-item{:href => telechannels_path} Каналы
               %a.dropdown-item{:href => '../find'} Поиск
