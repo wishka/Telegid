@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-41f1c3af.css",
   "application.css.map": "/packs/css/application-41f1c3af.css.map",
-  "application.js": "/packs/js/application-3edcb68bfb1e2cbd5fc6.js",
-  "application.js.map": "/packs/js/application-3edcb68bfb1e2cbd5fc6.js.map",
+  "application.js": "/packs/js/application-a4d56a3592bd7bc6fb87.js",
+  "application.js.map": "/packs/js/application-a4d56a3592bd7bc6fb87.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-41f1c3af.css"
       ],
       "js": [
-        "/packs/js/application-3edcb68bfb1e2cbd5fc6.js"
+        "/packs/js/application-a4d56a3592bd7bc6fb87.js"
       ],
       "css.map": [
         "/packs/css/application-41f1c3af.css.map"
       ],
       "js.map": [
-        "/packs/js/application-3edcb68bfb1e2cbd5fc6.js.map"
+        "/packs/js/application-a4d56a3592bd7bc6fb87.js.map"
       ]
     },
     "waypoints": {
@@ -38,6 +38,7 @@
   "media/images/carousel-1.jpg": "/packs/media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg",
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
   "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
+  "media/images/fire.jpg": "/packs/media/images/fire-897c8e4b1db07544820d42e4e2034a5d.jpg",
   "media/images/team-1.jpg": "/packs/media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg",
   "media/images/team-2.jpg": "/packs/media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg",
   "media/images/team-3.jpg": "/packs/media/images/team-3-e665709987982790ed540a886c2118ba.jpg",

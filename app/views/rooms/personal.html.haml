@@ -1,0 +1,19 @@
+- @rooms.each do |room|
+  .container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
+    .container.py-5
+      .row.g-5
+        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
+          .team-item.bg-light.rounded.overflow-hidden
+            .team-img.position-relative.overflow-hidden
+              %img.img-fluid.w-100
+                = image_tag room.image.url(:thumb), class: 'img-show' if room.image?
+            .text-center.py-4
+              %h4.text-primary
+              - if room.hot == true
+                = image_pack_tag 'fire.jpg', class: 'img-litle'
+                = link_to room.name, room
+              - else
+                = link_to room.name, room
+
+              %p.text-uppercase.m-0= room.content
+- pagy_bootstrap_nav(@pagy)

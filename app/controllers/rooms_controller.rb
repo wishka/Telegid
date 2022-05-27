@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms or /rooms.json
   def index
-    @rooms = Room.all
+    @pagy, @rooms = pagy(Room.all, items: 20)
   end
 
   # GET /rooms/1 or /rooms/1.json
@@ -70,6 +70,16 @@ class RoomsController < ApplicationController
     end
   end
 
+  def roomlist
+    @pagy, @rooms = pagy(Room.all, items: 20)
+    render 'roomlist'
+  end
+
+  def personal
+    @pagy, @rooms = pagy(Room.all, items: 20)
+    render 'personal'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
 
@@ -79,6 +89,9 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name, :content, :route, :cat_route, :subdir, :category, :image, :city, :option)
+      params.require(:room).permit(:name, :content, :route,
+                                   :cat_route, :subdir, :category,
+                                   :image, :city, :hot, :big_size,
+                                   :carousel, :free)
     end
 end

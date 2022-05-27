@@ -29,7 +29,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'searchkick'
 gem 'bootstrap-typeahead-rails'
-
+gem 'jquery-ui-rails'
 gem 'elastics'
 
 # Use Active Storage variant

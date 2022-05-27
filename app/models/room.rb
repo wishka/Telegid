@@ -76,6 +76,13 @@ class Room < ApplicationRecord
      )
    }
 
+   scope :with_customer_id, ->(customer_id) {
+      joins(:customer).where(
+       'customers.id like :customer_id',
+       customer_id: "%#{customer_id}%"
+      )
+    }
+
    def self.options_for_sorted_by
     [
       ["Route", "route_asc"],
@@ -86,9 +93,6 @@ class Room < ApplicationRecord
     ]
   end
 
-  def options
-    Room.options = {"1" => :hot, "2" => :big_size, "3" => :carousel, "4" => :free}
-  end
 
   private
 

@@ -504,13 +504,18 @@ h6,
 .blog-item .blog-img img  {
     transition: .5s;
     width: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
 }
 
 .team-item:hover .team-img img,
 .blog-item:hover .blog-img img {
     transform: scale(1.15);
 }
-
+.img-litle {
+  width: 55px;
+  height: 55px;
+}
 
 /*** Miscellaneous ***/
 @media (min-width: 991.98px) {
@@ -780,6 +785,7 @@ table thead tr th {
   border: none;
   @media(max-width: 900px) {
     margin-left: 28%;
+    margin-top: 10px;
   }
 }
 .usr-img {

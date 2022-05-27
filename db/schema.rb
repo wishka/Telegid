@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_17_023426) do
+ActiveRecord::Schema.define(version: 2022_05_25_070702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,6 +176,10 @@ ActiveRecord::Schema.define(version: 2022_05_17_023426) do
     t.string "city"
     t.string "subdir"
     t.string "option"
+    t.boolean "hot", default: false
+    t.boolean "big_size", default: false
+    t.boolean "carousel", default: false
+    t.boolean "free", default: false
   end
 
   create_table "telechannels", force: :cascade do |t|

@@ -11,7 +11,7 @@
       .form-group.mb-3
         = f.select :subdir,["-> выбрать <-", "Администрирование", "Взаимопиар", "Создание и продвижение", "Комментарии", "Контент", "Лайки", "Накрутка"], class: 'form-control'
   .form-group.mb-3
-    = f.select :route,["-> выбрать <-", "Купить", "Продать", "Найти"], class: 'form-control'
+    = f.select :route,["-> выбрать <-", "Купить", "Продать", "Найти", "Разместить"], class: 'form-control'
   .form-group.mb-3
     = f.select :city,["-> выбрать город <-", "Москва", "Санкт-Петербург", "Сочи", "Краснодар", "Самара", "Тольятти", "Ростов", "Новосибирск", "Новороссийск", "Крым", "Анапа", "Геленджик", "Уфа", "Красноярск", "Хабаровск", "Владивосток", "Владикавказ"]
   .form-group.mb-3
@@ -24,26 +24,26 @@
     = f.label 'Категория'
     = f.select :category,["-> выбрать категорию <-", "Авто/мото", "Авторский блог", "Аниме/Манга/Манха/Манхуа", "Афиша", "Бизнес", "Блогеры", "Видеоигры", "В мире животных", "Гороскоп и Таро", "Дети и родители", "Дизайн", "Для мужчин", "Для женщин", "Инвестиции", "Интернет технологии", "Искусство", "История",
       "Каталог каналов", "Кино", "Красота и уход", "Криптовалюта", "Культура и события", "Кулинария", "Литература", "Магазин", "Маркетинг и PR", "Мода и стиль", "Мотивация и саморазвитие", "Музыка", "Наука и  технологии", "Недвижимость", "Новости и СМИ", "Образование", "Подкасты", "Пошлое", "Психология", "Путешествия и туризм", "Работа и вакансии",
-      "Развлечения", "Религия и духовность", "Рукоделие", "Сервисы", "Скидки и акции", "Сливы", "Спорт", "Ставки и азартные игры", "Строительство и ремонт", "Трейдинг", "Фильмы и сериалы", "Хоббы", "Цитаты", "Экология", "Юмор", "18+", "SMM", "IT", "Gif Video"],
+      "Развлечения", "Религия и духовность", "Рукоделие", "Сервисы", "Скидки и акции", "Сливы", "Спорт", "Ставки и азартные игры", "Строительство и ремонт", "Трейдинг", "Фильмы и сериалы", "Хоббы", "Цитаты", "Экология", "Юмор", "18+", "SMM", "IT", "Gif Video", "Другое"],
       class: 'form-control'
   .form-group.mb-3
     = f.label 'Изображение'
     = f.file_field :image, class: 'form-control'
   .form-group.mb-3
-    = f.check_box :option, value: :hot, id: 'defaultCheck1', class: 'form-check-input'
-    %b= f.label :option, 'Поднять просмотры на 7 дней', class: 'form-check-label', for: 'defaultCheck1'
-    = f.label '(Делает ваше объявление более заметным по сравнению с другими)', class: 'form-check-label small', for: 'defaultCheck1'
+    = f.check_box :free, id: 'free', class: 'form-check-input'
+    %b= f.label :option, 'Free - без продвижения', class: 'form-check-label', for: 'free'
   .form-group.mb-3
-    = f.check_box :option, value: :big_size, id: 'defaultCheck2', class: 'form-check-input'
-    %b= f.label :option, 'XXL-размер', class: 'form-check-label', for: 'defaultCheck2'
-    = f.label '(Объявление в ленте выдачи будет крупнее, а рядом с ним появится подробное описание)', class: 'form-check-label small', for: 'defaultCheck2'
+    = f.check_box :hot, id: 'hot', class: 'form-check-input'
+    %b= f.label :hot, 'Поднять просмотры на 7 дней', class: 'form-check-label', for: 'hot'
+    = f.label '(Делает ваше объявление более заметным по сравнению с другими)', class: 'form-check-label small', for: 'hot'
   .form-group.mb-3
-    = f.check_box :option, value: :carousel, id: 'defaultCheck3', class: 'form-check-input'
-    %b= f.label :option, 'Карусель', class: 'form-check-label', for: 'defaultCheck3'
-    = f.label '(Размещение объявления в карусели на главной странице. Доступно для всех категорий)', class: 'form-check-label small', for: 'defaultCheck3'
+    = f.check_box :big_size, id: 'big_size', class: 'form-check-input'
+    %b= f.label :option, 'XXL-размер', class: 'form-check-label', for: 'big_size'
+    = f.label '(Объявление в ленте выдачи будет крупнее, а рядом с ним появится подробное описание)', class: 'form-check-label small', for: 'big_size'
   .form-group.mb-3
-    = f.check_box :option, value: :free, id: 'defaultCheck4', class: 'form-check-input'
-    %b= f.label :option, 'Free - без продвижения', class: 'form-check-label', for: 'defaultCheck4'
+    = f.check_box :carousel, id: 'carousel', class: 'form-check-input'
+    %b= f.label :option, 'Карусель', class: 'form-check-label', for: 'carousel'
+    = f.label '(Размещение объявления в карусели на главной странице. Доступно для всех категорий)', class: 'form-check-label small', for: 'carousel'
   %br
   .actions
     = f.submit 'Создать', class: 'btn btn-outline-primary btn-block', style: "width: 100%"

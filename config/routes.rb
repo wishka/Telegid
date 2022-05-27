@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get 'results', to: 'results#index', as: 'results'
   get 'search', to: 'results#index', as: 'search'
   get 'find' => 'blog_pages#search'
-  get 'roomlist' => 'blog_pages#roomlist'
+  get 'roomlist' => 'rooms#roomlist'
+  get 'personal' => 'rooms#personal'
 
   resources :customers do
     member do
