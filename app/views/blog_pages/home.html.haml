@@ -4,69 +4,28 @@
     %h2.head-title У нас вы можете разместить, продать
     %br
     %h2.head-title или найти канала, услугу или бота
+  - @carousel_rooms.each do |room|
+    #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
+      .carousel-inner
+        .carousel-item.active
+          %img
+            = image_tag room.image.url(:large), class:"w-100" if room.image?
+          .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+            .p-1{:style => "max-width: 900px;"}
+              %h3.display-4.text-white.mb-md-4.animated.zoomIn
+                = link_to 'Читать', room
 
-  #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
-    .carousel-inner
-      .carousel-item.active
-        %img
-          = image_pack_tag "carousel-1.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/1'
-      .carousel-item
-        %img
-          = image_pack_tag "carousel-2.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/6'
-      .carousel-item
-        %img
-          = image_pack_tag "carousel-1.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/7'
-      .carousel-item
-        %img
-          = image_pack_tag "carousel-2.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/8'
-      .carousel-item
-        %img
-          = image_pack_tag "carousel-1.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/9'
-      .carousel-item
-        %img
-          = image_pack_tag "carousel-2.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/10'
-      .carousel-item
-        %img
-          = image_pack_tag "carousel-1.jpg", class:"w-100"
-        .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-          .p-1{:style => "max-width: 900px;"}
-            %h3.display-4.text-white.mb-md-4.animated.zoomIn
-              = link_to 'Читать', '/rooms/1'
-    %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
-      %span.carousel-control-prev-icon{"aria-hidden" => "true"}
-      %span.visually-hidden Предыдущее
-    %button.carousel-control-next{"data-bs-slide" => "next", "data-bs-target" => "#header-carousel", :type => "button"}
-      %span.carousel-control-next-icon{"aria-hidden" => "true"}
-      %span.visually-hidden Следующее
-      / Navbar & Carousel End
+      %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
+        %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+        %span.visually-hidden Предыдущее
+      %button.carousel-control-next{"data-bs-slide" => "next", "data-bs-target" => "#header-carousel", :type => "button"}
+        %span.carousel-control-next-icon{"aria-hidden" => "true"}
+        %span.visually-hidden Следующее
+        / Navbar & Carousel End
 
   %br
 
-  %h2.head-title Актуальные новости
+  %h2.head-title Полезная информация
 
   .container-fluid
     = render 'microposts/microposts'

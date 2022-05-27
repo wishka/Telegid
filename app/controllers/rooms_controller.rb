@@ -76,7 +76,8 @@ class RoomsController < ApplicationController
   end
 
   def personal
-    @pagy, @rooms = pagy(Room.all, items: 20)
+    @rooms = Room.all
+    #@pagy, @rooms = pagy(Room.where(@rooms.customer_id = current_customer.id), items: 10)
     render 'personal'
   end
 

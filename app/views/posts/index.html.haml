@@ -1,3 +1,4 @@
+- provide(:title, 'Messages')
 %h1 Сообщения
 - if logged_in?
   - if current_customer.admin? && !current_customer?(@customer)

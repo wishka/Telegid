@@ -12,6 +12,8 @@
               - if room.hot == true
                 = image_pack_tag 'fire.jpg', class: 'img-litle'
                 = link_to room.name, room
+              - elsif room.big_size == true
+                = link_to room.name, room, class: 'big_size'
               - else
                 = link_to room.name, room
 
