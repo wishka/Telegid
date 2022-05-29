@@ -7,19 +7,36 @@
     #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
       .carousel-inner
         .carousel-item.active
-          %img
-            = image_tag @carousel_rooms_first.image.url(:large), class:"w-100" if @carousel_rooms_first.image?
-          .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-            .p-1{:style => "max-width: 900px;"}
-              %h3.display-4.text-white.mb-md-4.animated.zoomIn
-                = link_to 'Читать', @carousel_rooms_first
+          - if @carousel_rooms_first.present?
+            %img
+              = image_tag @carousel_rooms_first.image.url(:large), class:"w-100" if @carousel_rooms_first.image?
+            .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-1{:style => "max-width: 900px;"}
+                %h3.display-4.text-white.mb-md-4.animated.zoomIn
+                  = link_to 'Читать', @carousel_rooms_first
+          - else
+            %img
+              = image_pack_tag "carousel-1.jpg", class:"w-100"
+              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-1{:style => "max-width: 900px;"}
+                %h3.display-4.text-white.mb-md-4.animated.zoomIn
+                  = link_to 'Читать', '/rooms/1'
+
         .carousel-item
-          %img
-            = image_tag @carousel_rooms_last.image.url(:large), class:"w-100" if @carousel_rooms_last.image?
-          .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-            .p-1{:style => "max-width: 900px;"}
-              %h3.display-4.text-white.mb-md-4.animated.zoomIn
-                = link_to 'Читать', @carousel_rooms_last
+          - if @carousel_rooms_last.present?
+            %img
+              = image_tag @carousel_rooms_last.image.url(:large), class:"w-100" if @carousel_rooms_last.image?
+            .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-1{:style => "max-width: 900px;"}
+                %h3.display-4.text-white.mb-md-4.animated.zoomIn
+                  = link_to 'Читать', @carousel_rooms_last
+          - else
+            %img
+              = image_pack_tag "carousel-1.jpg", class:"w-100"
+              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-1{:style => "max-width: 900px;"}
+                %h3.display-4.text-white.mb-md-4.animated.zoomIn
+                  = link_to 'Читать', '/rooms/1'
       %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
         %span.carousel-control-prev-icon{"aria-hidden" => "true"}
         %span.visually-hidden Предыдущее
