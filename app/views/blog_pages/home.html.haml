@@ -8,14 +8,14 @@
       .carousel-inner
         .carousel-item.active
           %img
-            = image_tag @carousel_rooms_first.image.url(:large), class:"w-100" if @carousel_rooms_first.image.present? || @carousel_rooms_first.present?
+            = image_tag @carousel_rooms_first.image.url(:large), class:"w-100"
           .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
             .p-1{:style => "max-width: 900px;"}
               %h3.display-4.text-white.mb-md-4.animated.zoomIn
                 = link_to 'Читать', @carousel_rooms_first
         .carousel-item
           %img
-            = image_tag @carousel_rooms_last.image.url(:large), class:"w-100" if @carousel_rooms_last.image.present? || @carousel_rooms_last.present?
+            = image_tag @carousel_rooms_last.image.url(:large), class:"w-100"
           .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
             .p-1{:style => "max-width: 900px;"}
               %h3.display-4.text-white.mb-md-4.animated.zoomIn
