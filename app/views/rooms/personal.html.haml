@@ -1,19 +1,28 @@
 - provide(:title, 'Personal messages')
-- @rooms.each do |room|
-  .container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
-    .container.py-5
-      .row.g-5
-        .col-lg-4.wow.slideInUp{"data-wow-delay" => "0.3s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img.img-fluid.w-100
-                = image_tag room.image.url(:thumb), class: 'img-show' if room.image?
-            .text-center.py-4
-              %h4.text-primary
-              - if room.hot == true
-                = image_pack_tag 'fire.jpg', class: 'img-litle'
-                = link_to room.name, room
-              - else
-                = link_to room.name, room
 
-              %p.text-uppercase.m-0= room.content
+%h1 Мои объявления
+#room-id{"data-room-id" => @room.try(:id)}
+#customer-id{"data-customer-id" => current_customer.id}
+.container-fluid
+  .row
+    .col-9
+      %hr
+      #filterrific_results
+        %table.filter
+          %tr
+            %th
+            %th Название
+            %th Категория
+            %th Дата создания
+            %th
+            %th
+            %hr
+          - @rooms.each do |room|
+            %tr
+              %td= image_tag room.image.url(:thumb), class: 'img-show' if room.image?
+              %td= link_to room.name, room
+              %td= room.category
+              %td= room.created_at.to_date
+              - if room.customer_id == current_customer.id || current_customer.admin?
+                %td= link_to 'Редактировать', edit_room_path(room)
+                %td= link_to 'Удалить', room, method: :delete, data: { confirm: 'Are you sure?' }

@@ -8,8 +8,4 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
-
-  def current_user
-    @current_user = @current_customer
-  end
 end

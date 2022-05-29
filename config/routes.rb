@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   post 'blog_pages/send_message', to: 'blog_pages#send_message', as: 'send_message'
   get 'results', to: 'results#index', as: 'results'
   get 'search', to: 'results#index', as: 'search'
-  get 'find' => 'blog_pages#search'
   get 'roomlist' => 'rooms#roomlist'
   get 'personal' => 'rooms#personal'
 

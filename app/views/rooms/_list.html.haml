@@ -3,21 +3,21 @@
 #customer-id{"data-customer-id" => current_customer.id}
 .container-fluid
   .row
-    .col-3.rooms-sidebar
-      /%b Создать новое объявление
-      /= render 'form', room: Room.new
+    .col-9
       %hr
-      - @rooms.each do |room|
-        .room-link
-          = link_to room do
-            .card.mb-2.room-card
-              .card-body
-                %span.name
-                  - if room.hot == true
-                    = image_pack_tag 'fire.jpg', class: 'img-litle'
-                    = link_to room.name, room
-                  - else
-                    = link_to room.name, room
-                    = room.name
-                    = link_to 'Удалить', room, method: :delete, data: { confirm: 'Are you sure?' }
-                    = link_to 'Редактировать', edit_room_path(room)
+      #filterrific_results
+        %table.filter
+          %tr
+            %th Название
+            %th Что именно
+            %th Город
+            %th Категория
+            %th Дата создания
+            %hr
+          - @rooms.each do |room|
+            %tr
+              %td= link_to(room.name, room_path(room))
+              %td= room.route
+              %td= room.city
+              %td= room.category
+              %td= room.created_at.to_date

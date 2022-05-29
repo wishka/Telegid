@@ -10,18 +10,15 @@ class Room < ApplicationRecord
   pg_search_scope :search_everywhere, against: [:name, :content]
 
   filterrific(
-    default_filter_params: { sorted_by: "created_at_desc" },
-    available_filters: [
-      :sorted_by,
-      :search_query,
-      :with_room_route,
-      :with_room_cat_route,
-      :with_room_city,
-      :with_room_category,
-      :with_room_subdir,
-      :with_created_at_gte,
-    ],
-  )
+    :default_filter_params => { },
+    :available_filters => %w[
+      sorted_by
+      with_room_route
+      with_room_city
+      search_query
+      with_room_category
+      with_created_at_gte
+    ])
 
   scope :sorted_by, ->(sort_option) {
     # extract the sort direction from the param value.
@@ -42,57 +39,52 @@ class Room < ApplicationRecord
   }
 
   scope :with_room_route, ->(room_route) {
-      joins(:room).where(
+      where(
        'rooms.route like :room_route',
        room_route: "%#{room_route}%"
       )
     }
 
-   scope :with_room_cat_route, ->(room_cat_route) {
-     joins(:room).where(
-      'room.cat_route like :room_cat_route',
-      room_cat_route: "%#{room_cat_route}%"
-     )
-   }
-
    scope :with_room_city, ->(room_city) {
-     joins(:room).where(
-      'room.city like :room_city',
+     where(
+      'rooms.city like :room_city',
       room_city: "%#{room_city}%"
      )
    }
 
    scope :with_room_category, ->(room_category) {
-     joins(:room).where(
-      'room.category like :room_category',
+     where(
+      'rooms.category like :room_category',
       room_category: "%#{room_category}%"
      )
    }
 
-   scope :with_room_subdir, ->(room_subdir) {
-     joins(:room).where(
-      'room.subdir like :room_subdir',
-      room_subdir: "%#{room_subdir}%"
-     )
-   }
-
-   scope :with_customer_id, ->(customer_id) {
-      joins(:customer).where(
-       'customers.id like :customer_id',
-       customer_id: "%#{customer_id}%"
-      )
-    }
-
    def self.options_for_sorted_by
     [
-      ["Route", "route_asc"],
-      ["Route", "route_desk"],
-      ["Creation date (newest first)", "created_at_desc"],
-      ["Creation date (oldest first)", "created_at_asc"],
-      ["Category", "cat_route_asc"],
+      ["Дата создания (сначала новые)", "created_at_desc"],
+      ["Дата создания (сначала старые)", "created_at_asc"],
+      ["Категория а-я", "category_asc"],
+      ["Категория я-а", "category_desc"]
     ]
   end
 
+  def self.route_for_select
+    rooms = Room.arel_table
+    # order('LOWER(name)').map { |e| [e.name, e.id] }
+    order(rooms[:route].lower).pluck(:route).uniq
+  end
+
+  def self.city_for_select
+    rooms = Room.arel_table
+    # order('LOWER(name)').map { |e| [e.name, e.id] }
+    order(rooms[:city].lower).pluck(:city).uniq
+  end
+
+  def self.category_for_select
+    rooms = Room.arel_table
+    # order('LOWER(name)').map { |e| [e.name, e.id] }
+    order(rooms[:category].lower).pluck(:category).uniq
+  end
 
   private
 

@@ -71,13 +71,43 @@ class RoomsController < ApplicationController
   end
 
   def roomlist
-    @pagy, @rooms = pagy(Room.all, items: 20)
-    render 'roomlist'
+    @filterrific = initialize_filterrific(
+       Room.all,
+       params[:filterrific],
+       select_options: {
+        sorted_by: Room.options_for_sorted_by,
+        with_room_route: Room.route_for_select,
+        with_room_city: Room.city_for_select,
+        with_room_category: Room.category_for_select
+       },
+       persistence_id: "shared_key",
+       default_filter_params: {
+       },
+       available_filters: [:sorted_by,
+                           :search_query,
+                           :with_room_route,
+                           :with_room_city,
+                           :with_room_category],
+       sanitize_params: true,
+       ) || return
+
+    @rooms = @filterrific.find
+
+    @pagy, @rooms = pagy(@filterrific.find)
+
+    respond_to do |format|
+      format.html
+    end
+
+    rescue ActiveRecord::RecordNotFound => e
+     # There is an issue with the persisted param_set. Reset it.
+     puts "Had to reset filterrific params: #{e.message}"
+     redirect_to(reset_filterrific_url(format: :html)) && return
+
   end
 
   def personal
-    @rooms = Room.all
-    #@pagy, @rooms = pagy(Room.where(@rooms.customer_id = current_customer.id), items: 10)
+    @rooms = Room.joins(:customer).where(customer_id: current_customer.id)
     render 'personal'
   end
 

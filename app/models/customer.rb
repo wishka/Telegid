@@ -104,6 +104,10 @@ class Customer < ApplicationRecord
     following.include?(other_customer)
   end
 
+  def self.options_for_select
+    order("LOWER(name)").map { |e| [e.name, e.id] }
+  end
+
   private
 
     def downcase_email

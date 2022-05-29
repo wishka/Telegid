@@ -6,3 +6,4 @@
 //= link animate.min.css
 //= link owl.carousel.css
 //= link owl.carousel.min.css
+//= link filterrific/filterrific-spinner.gif

@@ -71,7 +71,7 @@ class CustomersController < ApplicationController
     def logged_in_customer
       unless logged_in?
         store_location
-        flash[:danger] = "Please log in."
+        flash[:danger] = "Войдите или зарегистрируйтесь."
         redirect_to login_url
       end
     end

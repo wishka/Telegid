@@ -1,7 +1,8 @@
 class BlogPagesController < ApplicationController
 
   def home
-    @carousel_rooms = Room.where(carousel: 'true')
+    @carousel_rooms_first = Room.where(carousel: 'true').first
+    @carousel_rooms_last = Room.where(carousel: 'true').last
     @rooms = Room.where(hot: 'true')
     @microposts = Micropost.all.limit(3)
     @telechannels = Telechannel.last(3)
