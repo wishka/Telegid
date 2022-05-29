@@ -1,8 +1,11 @@
 class BlogPagesController < ApplicationController
 
   def home
-    @carousel_rooms_first = Room.where(carousel: 'true').first if present?
-    @carousel_rooms_last = Room.where(carousel: 'true').last if present?
+    if @carousel_rooms_first = Room.where(carousel: 'true').first.present? ||
+      @carousel_rooms_last = Room.where(carousel: 'true').last.present?
+    else
+      redirect_to root_path
+    end
     @rooms = Room.where(hot: 'true')
     @microposts = Micropost.all.limit(3)
     @telechannels = Telechannel.last(3)
