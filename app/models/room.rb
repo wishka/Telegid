@@ -13,6 +13,7 @@ class Room < ApplicationRecord
     :default_filter_params => { },
     :available_filters => %w[
       sorted_by
+      with_room_cat_route
       with_room_route
       with_room_city
       search_query
@@ -37,6 +38,13 @@ class Room < ApplicationRecord
       raise(ArgumentError, "Invalid sort option: #{sort_option.inspect}")
     end
   }
+
+  scope :with_room_cat_route, ->(room_cat_route) {
+      where(
+       'rooms.cat_route like :room_cat_route',
+       room_cat_route: "%#{room_cat_route}%"
+      )
+    }
 
   scope :with_room_route, ->(room_route) {
       where(
@@ -68,6 +76,18 @@ class Room < ApplicationRecord
     ]
   end
 
+  def self.cat_route_for_select
+    rooms = Room.arel_table
+    # order('LOWER(name)').map { |e| [e.name, e.id] }
+    order(rooms[:cat_route].lower).pluck(:cat_route).uniq
+  end
+
+  def self.subdir_for_select
+    rooms = Room.arel_table
+    # order('LOWER(name)').map { |e| [e.name, e.id] }
+    order(rooms[:subdir].lower).pluck(:subdir).uniq
+  end
+
   def self.route_for_select
     rooms = Room.arel_table
     # order('LOWER(name)').map { |e| [e.name, e.id] }
@@ -88,9 +108,13 @@ class Room < ApplicationRecord
 
   private
 
+  def self.sweep(time = 30.days)
+    where("created_at < ?", time.ago.to_s(:db)).delete_all
+    text = "Объявление: #{@room.name} будет удалено сегодня"
+    TelegramMailer.send_group_message(text).deliver_now
+  end
+
   def downcase_name
     self.name = name.downcase
   end
-
-
 end

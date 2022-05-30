@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   get 'customers/new'
   get 'help'    =>  'blog_pages#help'
+  get 'favorites'    =>  'blog_pages#favorites'
   get 'about'   =>  'blog_pages#about'
   get 'contact' =>  'blog_pages#contact'
   get 'signup'  =>  'customers#new'

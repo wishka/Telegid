@@ -7,6 +7,12 @@
   .row
     .col-md-3
       .form-group
+        = f.select :with_room_cat_route,
+                    @filterrific.select_options[:with_room_cat_route],
+                    { :include_blank => 'Что ищем?' },
+                    { :class => 'form-control' }
+    .col-md-3
+      .form-group
         = f.select :with_room_route,
                     @filterrific.select_options[:with_room_route],
                     { :include_blank => 'Что именно' },

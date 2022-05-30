@@ -17,6 +17,9 @@ class BlogPagesController < ApplicationController
   def contact
   end
 
+  def favorites
+  end
+
   def group_message
     chat_id = -634155082
     text = "Hi all!"

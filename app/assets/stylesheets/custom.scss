@@ -706,8 +706,10 @@ table thead tr th {
     width: 10%;
   }
 }
-.filter {
-  width: 100%;
+.filter .fo{
+  @media (max-width: 900px) {
+    font-size: 0.7rem;
+  }
 }
 .stats {
   overflow: auto;

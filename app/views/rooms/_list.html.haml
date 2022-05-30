@@ -6,18 +6,20 @@
     .col-9
       %hr
       #filterrific_results
-        %table.filter
-          %tr
-            %th Название
-            %th Что именно
-            %th Город
-            %th Категория
-            %th Дата создания
+        %table.filter.fo
+          %tr.fo
+            %th.fo Название
+            %th.fo Что ищем?
+            %th.fo Что именно
+            %th.fo Город
+            %th.fo Категория
+            %th.fo Дата создания
             %hr
           - @rooms.each do |room|
-            %tr
-              %td= link_to(room.name, room_path(room))
-              %td= room.route
-              %td= room.city
-              %td= room.category
-              %td= room.created_at.to_date
+            %tr.fo
+              %td.fo= link_to(room.name, room_path(room))
+              %td.fo= room.cat_route
+              %td.fo= room.route
+              %td.fo= room.city
+              %td.fo= room.category
+              %td.fo= room.created_at.to_date

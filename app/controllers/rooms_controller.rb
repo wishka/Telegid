@@ -76,6 +76,7 @@ class RoomsController < ApplicationController
        params[:filterrific],
        select_options: {
         sorted_by: Room.options_for_sorted_by,
+        with_room_cat_route: Room.cat_route_for_select,
         with_room_route: Room.route_for_select,
         with_room_city: Room.city_for_select,
         with_room_category: Room.category_for_select
@@ -85,6 +86,7 @@ class RoomsController < ApplicationController
        },
        available_filters: [:sorted_by,
                            :search_query,
+                           :with_room_cat_route,
                            :with_room_route,
                            :with_room_city,
                            :with_room_category],
