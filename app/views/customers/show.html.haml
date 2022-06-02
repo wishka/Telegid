@@ -4,12 +4,12 @@
     %section.customer_info
       %h1
       %p= gravatar_for @customer
-      %p Имя:
-      %b= @customer.name
-      %p Email
-      %b= @customer.email
-      %p Телефон
-      %b= @customer.cell
+      %b
+        %i.fas.fa-solid.fa-user= @customer.name
+      %i.fas.fa-solid.fa-envelope
+        = @customer.email
+      %b
+        %i.fas.fa-regular.fa-circle-phone= @customer.cell
 
 %section.stats= render 'shared/stats'
 .col-md-8

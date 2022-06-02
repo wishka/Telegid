@@ -71,14 +71,15 @@ Rails.application.configure do
   host = 'telegagid.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
+  :port           => '587',
+  :address        => 'smtp.mailgun.org',
+  :user_name      => 'postmaster@sandbox9a0a3976169045a79f079e9c4394c477.mailgun.org',
+  :password       => '75aee5276b86687aa3520d02aec45ce1-27a562f9-80315288',
+  :domain         => 'telegagid.herokuapp.com',
+  :authentication => :plain,
   }
+  ActionMailer::Base.delivery_method = :smtp
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

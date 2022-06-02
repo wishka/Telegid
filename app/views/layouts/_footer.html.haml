@@ -7,11 +7,15 @@
             %h1.m-0.text-white
               %i.fas.fa-user-tie.me-2>
               Telegagid
-          %p.mt-3.mb-4 Lorem diam sit erat dolor elitr et, diam lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd eos duo.
-          %form{:action => "post"}
+          %p.mt-3.mb-4 Если у Вас есть какие-либо вопросы или пожелания, Вы можете отправить сообщение администратору в форме ниже
+          = form_tag send_message_path, method: :post do
             .input-group
-              %input.form-control.border-white.p-3{:placeholder => "Почта", :type => "text"}/
-              %button.btn.btn-dark Отправить
+              = text_field_tag :content, nil, required: true, class: "form-control", style: "border-white p-3"
+              %button.btn.btn-dark= "Отправить"
+              /= form_tag send_message_path, method: :post do
+              /  = text_field_tag :content, nil, required: true
+              /  %hr
+              /  = submit_tag "Say hello"
       .col-lg-8.col-md-6
         .row.gx-5
           .col-lg-4.col-md-12.pt-0.pt-lg-5.mb-5
@@ -24,7 +28,7 @@
               %a.text-light.mb-2{:href => about_path}
                 %i.bi.bi-arrow-right.text-primary.me-2>
                 О нас
-              %a.text-light.mb-2{:href => "#team"}
+              %a.text-light.mb-2{:href => "../roomlist"}
                 %i.bi.bi-arrow-right.text-primary.me-2>
                 Объявления
               %a.text-light.mb-2{:href => telechannels_path}

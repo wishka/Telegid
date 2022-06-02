@@ -39,6 +39,21 @@ class Room < ApplicationRecord
     end
   }
 
+  scope :search_query, ->(query) {
+    return nil  if query.blank?
+    terms = query.downcase.split(/\s+/)
+    terms = terms.map { |e|
+      (e.tr("*", "%") + "%").gsub(/%+/, "%")
+    }
+    num_or_conds = 2
+    where(
+      terms.map { |_term|
+        "(LOWER(rooms.name) LIKE ? OR LOWER(rooms.content) LIKE ?)"
+      }.join(" AND "),
+      *terms.map { |e| [e] * num_or_conds }.flatten,
+    )
+  }
+
   scope :with_room_cat_route, ->(room_cat_route) {
       where(
        'rooms.cat_route like :room_cat_route',

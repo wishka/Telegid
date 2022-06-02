@@ -7,6 +7,10 @@
   .row
     .col-md-3
       .form-group
+        = f.text_field(:search_query,
+          class: 'filterrific-periodically-observed form-control')
+    .col-md-3
+      .form-group
         = f.select :with_room_cat_route,
                     @filterrific.select_options[:with_room_cat_route],
                     { :include_blank => 'Что ищем?' },
