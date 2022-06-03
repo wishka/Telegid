@@ -4,12 +4,11 @@
     %section.customer_info
       %h1
       %p= gravatar_for @customer
-      %b
-        %i.fas.fa-solid.fa-user= @customer.name
-      %i.fas.fa-solid.fa-envelope
-        = @customer.email
-      %b
-        %i.fas.fa-regular.fa-circle-phone= @customer.cell
+      %i.fas.fa-solid.fa-user= @customer.name
+      %i.fas.fa-solid.fa-envelope= @customer.email
+      .em profile id:
+      %i= @customer.id
+      %i.fas.fa-regular.fa-circle-phone= @customer.cell
 
 %section.stats= render 'shared/stats'
 .col-md-8
@@ -22,3 +21,20 @@
     %h3
     = link_to 'Сообщения', post_path(@customer)
     (#{@customer.posts.count})
+.col-md-8
+  - if @customer.reviews.any?
+    %h3
+    = link_to 'Отзывы', reviews_path
+    (#{@customer.reviews.count})
+%table.user_table
+  %thead
+    %tr
+      %th Кол-во звезд
+      %th Содержание
+      %th
+  %tbody
+    - @reviews.each do |review|
+      %tr
+        %td= review.stars
+        %td.text-over= review.content
+        %td= link_to 'Показать', review

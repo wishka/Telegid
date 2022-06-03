@@ -1,0 +1,24 @@
+%h1 Все отзывы
+%table
+  %thead
+    %tr
+      %th Кол-во звезд
+      %th ID профиля
+      %th Содержание
+      %th
+      %th
+      %th
+
+  %tbody
+    - @reviews.each do |review|
+      %tr
+        %td= review.stars
+        %td= link_to review.customer_id, customer_path("#{review.customer_id}")
+        %td.text-over= review.content
+        %td= link_to 'Показать', review
+        %td= link_to 'Редактировать', edit_review_path(review)
+        %td= link_to 'Удалить', review, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'Новый отзыв', new_review_path

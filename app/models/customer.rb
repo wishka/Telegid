@@ -14,6 +14,7 @@ class Customer < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :telechannels
+  has_many :reviews
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy

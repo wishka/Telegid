@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Звезды:
+  = @review.stars
+%p
+  %b Содержание:
+  = @review.content
+
+= link_to 'Редактировать', edit_review_path(@review)
+\|
+= link_to 'Назад', reviews_path
