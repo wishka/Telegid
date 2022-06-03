@@ -71,10 +71,10 @@ Rails.application.configure do
   host = 'telegagid.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-  :port           => '587',
-  :address        => 'smtp.mailgun.org',
-  :user_name      => 'postmaster@sandbox9a0a3976169045a79f079e9c4394c477.mailgun.org',
-  :password       => '75aee5276b86687aa3520d02aec45ce1-27a562f9-80315288',
+  :port           => ENV['MAILGUN_SMTP_PORT'],
+  :address        => ENV['MAILGUN_SMTP_SERVER'],
+  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
   :domain         => 'telegagid.herokuapp.com',
   :authentication => :plain,
   }
