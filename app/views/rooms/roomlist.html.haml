@@ -13,7 +13,8 @@
       .form-group
         = f.select :with_room_cat_route,
                     @filterrific.select_options[:with_room_cat_route],
-                    {include_blank: true, prompt: "Что ищем?"}, class: 'form-control'
+                    { :include_blank => "Что ищем?" }, 
+                    { :class => 'form-control' }
     .col-md-3
       .form-group
         = f.select :with_room_route,
