@@ -253,14 +253,24 @@ h6,
     display: inline-block;
     margin-left: 15%;
   }
+  @media (max-width: 700px) {
+    display: inline-block;
+    margin-left: 15%;
+  }
 }
 .cntr {
   @media (max-width: 900px) {
   margin-left: 35% !important;
   }
+  @media (max-width: 700px) {
+  margin-left: 35% !important;
+  }
 }
 .py-0 {
   @media (max-width: 900px) {
+  margin-left: 10% !important;
+  }
+  @media (max-width: 700px) {
   margin-left: 10% !important;
   }
 }
@@ -547,12 +557,6 @@ h6,
     padding-left: 10px;
 }
 
-@media (min-width: 767.98px) {
-    .footer-about {
-        margin-bottom: -75px;
-    }
-}
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -658,6 +662,24 @@ input, textarea, select, .uneditable-input {
       left: 10%;
     }
   }
+  @media (max-width: 700px) {
+    .chat-box {
+      margin-top: -40%;
+      position: absolute;
+      bottom: auto;
+      width: 75%;
+      left: 10%;
+    }
+  }
+  @media (max-width: 597px) {
+    .chat-box {
+      margin-top: -40%;
+      position: absolute;
+      bottom: auto;
+      width: 75%;
+      left: 10%;
+    }
+  }
 }
 .card.no-outline {
   border: none;
@@ -692,6 +714,18 @@ input, textarea, select, .uneditable-input {
       margin-top: 30px;
     }
   }
+  @media (max-width: 700px) {
+    display: contents;
+    .room-card {
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 597px) {
+    display: contents;
+    .room-card {
+      margin-top: 30px;
+    }
+  }
 }
 body {
   ::-webkit-scrollbar{
@@ -706,8 +740,11 @@ table thead tr th {
     width: 10%;
   }
 }
-.filter .fo{
+.filter {
   @media (max-width: 900px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 700px) {
     font-size: 0.7rem;
   }
 }
@@ -776,6 +813,10 @@ table thead tr th {
     display: contents;
     margin-top: 1em;
   }
+  @media(max-width: 644px) {
+    display: contents;
+    margin-top: 1em;
+  }
 }
 .head-title {
   text-align: center;
@@ -788,6 +829,10 @@ table thead tr th {
   height: 38px;
   border: none;
   @media(max-width: 900px) {
+    margin-left: 28%;
+    margin-top: 10px;
+  }
+  @media(max-width: 700px) {
     margin-left: 28%;
     margin-top: 10px;
   }

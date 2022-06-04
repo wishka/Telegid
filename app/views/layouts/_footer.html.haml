@@ -7,7 +7,7 @@
             %h1.m-0.text-white
               %i.fas.fa-user-tie.me-2>
               Telegagid
-          %p.mt-3.mb-4 Если у Вас есть какие-либо вопросы или пожелания, Вы можете отправить сообщение администратору в форме ниже
+          %p.mt-3.mb-4 Для размещения канала/бота/услуги в каруселе на главной странице сайта, просто напишите нашему менеджеру и получите полный рекламный прайс
           = form_tag send_message_path, method: :post do
             .input-group
               = text_field_tag :content, nil, required: true, class: "form-control", style: "border-white p-3"

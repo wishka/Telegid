@@ -14,8 +14,6 @@
             %th Название
             %th Категория
             %th Дата создания
-            %th
-            %th
             %hr
           - @rooms.each do |room|
             %tr
@@ -23,6 +21,3 @@
               %td= link_to room.name, room
               %td= room.category
               %td= room.created_at.to_date
-              - if room.customer_id == current_customer.id || current_customer.admin?
-                %td= link_to 'Редактировать', edit_room_path(room)
-                %td= link_to 'Удалить', room, method: :delete, data: { confirm: 'Are you sure?' }

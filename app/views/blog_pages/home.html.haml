@@ -2,38 +2,21 @@
 .container.center
   %h4.ad-head.text-black.text-uppercase.mb-3
     %h2.head-title У нас вы можете найти, разместить, продать
-    %br
     %h2.head-title или купить канал, чат, бота или даже услугу
     #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
       .carousel-inner
         .carousel-item.active
-          - if @carousel_rooms_first.present?
-            %img
-              = image_tag @carousel_rooms_first.image.url(:large), class:"w-100" if @carousel_rooms_first.image?
+          %img
+            = image_pack_tag "carousel-1.jpg", class:"w-100"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-              .p-1{:style => "max-width: 900px;"}
-                %h3.display-4.text-white.mb-md-4.animated.zoomIn
-                  = link_to 'Читать', @carousel_rooms_first
-          - else
-            %img
-              = image_pack_tag "carousel-1.jpg", class:"w-100"
-              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
               .p-1{:style => "max-width: 900px;"}
                 %h3.display-4.text-white.mb-md-4.animated.zoomIn
                   = link_to 'Читать', '/rooms/1'
 
         .carousel-item
-          - if @carousel_rooms_last.present?
-            %img
-              = image_tag @carousel_rooms_last.image.url(:large), class:"w-100" if @carousel_rooms_last.image?
+          %img
+            = image_pack_tag "carousel-1.jpg", class:"w-100"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-              .p-1{:style => "max-width: 900px;"}
-                %h3.display-4.text-white.mb-md-4.animated.zoomIn
-                  = link_to 'Читать', @carousel_rooms_last
-          - else
-            %img
-              = image_pack_tag "carousel-1.jpg", class:"w-100"
-              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
               .p-1{:style => "max-width: 900px;"}
                 %h3.display-4.text-white.mb-md-4.animated.zoomIn
                   = link_to 'Читать', '/rooms/1'
@@ -46,16 +29,34 @@
         / Navbar & Carousel End
 
   %br
+  %h2.head-title Создать новое объявление
+  %br
+  .container-fluid
+    = render 'rooms/form'
+  %br
 
+
+  .container-fluid.bg-dark.text-light.mt-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
+    .container
+      .row
+        .col-lg-12.col-md-12.footer-about
+          .d-flex.flex-column.justify-content-center.text-center.h-100.bg-primary.p-4
+            %a.navbar-brand{:href => root_path}
+              %h1.text-white
+                %i.fas.fa-user-tie.me-2
+                Telegagid
+            %p.mt-3.mb-4 Для размещения канала/бота/услуги в каруселе на главной странице сайта, просто напишите нашему менеджеру и получите полный рекламный прайс
+            = form_tag send_message_path, method: :post do
+              .input-group
+                = text_field_tag :content, nil, required: true, class: "form-control", style: "border-white p-3"
+                %button.btn.btn-dark= "Отправить"
+  %br
   %h2.head-title Полезная информация
 
   .container-fluid
     = render 'microposts/microposts'
   %br
-  %h2.head-title Популярные Телеграм-каналы
-  %br
-  .container-fluid
-    = render 'telechannels/telechannels'
+
 
   %h2.head-title Последние объявления
   %br
