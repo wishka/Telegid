@@ -31,6 +31,7 @@ gem 'searchkick'
 gem 'bootstrap-typeahead-rails'
 gem 'jquery-ui-rails'
 gem 'elastics'
+gem 'mailgun_rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
