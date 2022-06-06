@@ -6,16 +6,16 @@
         - @micropost.errors.full_messages.each do |message|
           %li= message
 
-  .form-control
-    = f.text_field :title, placeholder: 'Название'
+  .form-group
+    = f.text_field :title, placeholder: 'Название', class: "form-control"
   %br
-  .form-control
-    = f.text_field :content, placeholder: 'Краткое содержание'
+  .form-group
+    = f.text_field :content, placeholder: 'Краткое содержание', class: "form-control"
   %br
-  .form-control
-    = f.text_field :body, placeholder: 'Полное содержание'
+  .form-group
+    = f.text_field :body, placeholder: 'Полное содержание', class: "form-control"
   %br
-  .form-control
-    = f.file_field :image
+  .form-group
+    = f.file_field :image, class: "form-control"
   .actions
-    = f.submit 'Сохранить'
+    = f.submit 'Сохранить', class: "form-control"

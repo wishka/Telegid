@@ -28,10 +28,12 @@
         / Navbar & Carousel End
 
   %br
-  %h2.head-title Создать новое объявление
+  %h2.head-title Поиск по сайту
   %br
   .container-fluid
-    = render 'rooms/form'
+    = form_tag results_path, method: :get, role: 'search' do
+      = text_field_tag :query, params[:query], placeholder: "Поиск...", class: 'seacrhfrom'
+      = submit_tag "Go!", name: nil, class: 'searchbtn'
   %br
 
 

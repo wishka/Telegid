@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @posts = @customer.posts
-    @reviews = Review.all.limit(6)
+    @reviews = Review.where(customer_id: current_customer.id)
   end
 
   def index
