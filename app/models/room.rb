@@ -4,6 +4,7 @@ class Room < ApplicationRecord
   validates :content,  presence: true
   has_many :posts, dependent: :delete_all
   has_many :customers, through: :posts
+  has_many :cities
   belongs_to :customer
   before_save   :downcase_name
   include PgSearch

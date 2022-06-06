@@ -28,7 +28,7 @@
               %a.dropdown-item{:href => posts_path} Сообщения (#{@current_customer.posts.count})
               %a.dropdown-item{:href => microposts_path} Полезные статьи
               %a.dropdown-item{:href => reviews_path} Отзывы
-              %a.dropdown-item{:href => '../roomlist'} Поиск
+              %a.dropdown-item{:href => '../roomlist'} Поиск/Новое объявление
               .dropdown-divider
               %a.dropdown-item
                 %a#red= link_to "Выйти", logout_path, method: "delete"

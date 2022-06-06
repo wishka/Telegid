@@ -63,7 +63,7 @@ class Customer < ApplicationRecord
 
   # Отправляет электронное письмо для активации.
   def send_activation_email
-    CustomerMailer.account_activation(self).deliver_now
+    CustomerMailer.account_activation(self).deliver
   end
 
   # Устанавливает атрибуты для сброса пароля.
