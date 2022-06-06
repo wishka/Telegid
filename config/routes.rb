@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :cities
   resources :reviews
   root 'blog_pages#home'
   get 'password_resets/new'
