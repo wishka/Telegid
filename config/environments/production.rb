@@ -73,9 +73,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   :port           => '587',
   :address        => 'smtp.mailgun.org',
-  :user_name      => "wishka@telegagid.herokuapp.com",
+  :user_name      => ENV['MAILGUN_SMTP_USERNAME'],
   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'telegagid.herokuapp.com',
+  :domain         => ENV['MAILGUN_SMTP_DOMAIN'],
   :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
