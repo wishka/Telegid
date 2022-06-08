@@ -70,7 +70,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :cloudmailin
   config.action_mailer.default_url_options = { host: 'telegagid.herokuapp.com' }
   config.action_mailer.smtp_settings = {
-    :address => ENV['CLOUDMAILIN_FORWARD_ADDRESS'],
+    :address => '3221fd3ca0f2bd00148e@cloudmailin.net',
     :port => 587,
     :enable_starttls_auto => true,
     :user_name => ENV['CLOUDMAILIN_USERNAME'],
