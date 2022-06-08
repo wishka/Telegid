@@ -41,14 +41,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
 
-    config.action_mailer.smtp_settings = {
-      :address => ENV['CLOUDMAILIN_HOST'],
-      :port => 587,
-      :enable_starttls_auto => true,
-      :user_name => ENV['CLOUDMAILIN_USERNAME'],
-      :password => ENV['CLOUDMAILIN_PASSWORD'],
-      :authentication => :plain
-    }
+  config.action_mailer.smtp_settings = {
+    :address => ENV['CLOUDMAILIN_FORWARD_ADDRESS'],
+    :port => 587,
+    :enable_starttls_auto => true,
+    :user_name => ENV['CLOUDMAILIN_USERNAME'],
+    :password => ENV['CLOUDMAILIN_SECRET'],
+    :authentication => :plain
+  }
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

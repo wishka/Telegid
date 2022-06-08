@@ -69,7 +69,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :cloudmailin
   config.action_mailer.default_url_options = { host: 'telegagid.herokuapp.com' }
-
+  config.action_mailer.smtp_settings.symbolize_keys = {
+    :address => ENV['CLOUDMAILIN_FORWARD_ADDRESS'],
+    :port => 587,
+    :enable_starttls_auto => true,
+    :user_name => ENV['CLOUDMAILIN_USERNAME'],
+    :password => ENV['CLOUDMAILIN_SECRET'],
+    :authentication => :plain
+  }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
