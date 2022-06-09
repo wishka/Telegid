@@ -17,15 +17,17 @@
 = link_to 'Изменить информацию', edit_customer_path
 
 .col-md-8
-  - if @customer.posts.any?
+  - if @customer.rooms.any?
     %h3
-    = link_to 'Сообщения', post_path(@customer)
-    (#{@customer.posts.count})
+    = link_to 'Объявления', room_path(@customer)
+    (#{@customer.rooms.count})
 .col-md-8
   - if @customer.reviews.any?
     %h3
     = link_to 'Отзывы', reviews_path
     (#{@customer.reviews.count})
+%br
+	
 %table.user_table
   %thead
     %tr
@@ -38,3 +40,4 @@
         %td= review.stars
         %td.text-over= review.content
         %td= link_to 'Показать', review
+%br

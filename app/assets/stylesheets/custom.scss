@@ -523,8 +523,8 @@ h6,
     transform: scale(1.15);
 }
 .img-litle {
-  width: 55px;
-  height: 55px;
+  width: 35px;
+  height: 35px;
 }
 
 /*** Miscellaneous ***/
@@ -734,8 +734,8 @@ body {
   -ms-overflow-style: none;
 }
 
-table thead tr th {
-  width: 15%;
+table thead tr th td {
+  width: 1% !important;
   &.act {
     width: 10%;
   }
@@ -788,6 +788,25 @@ table thead tr th {
 .img-show {
   display: block;
   margin-bottom: 2em;
+  margin-top: 15px;
+  @media(max-width: 844px) {
+    width: 75%;
+  }
+  @media(max-width: 644px) {
+    width: 75%;
+  }
+}
+.img-s-show {
+  display: block;
+  margin-left: 5%;
+  margin-bottom: 2em;
+  margin-top: 15px;
+  @media(max-width: 844px) {
+    width: 300px;
+  }
+  @media(max-width: 644px) {
+    width: 250px;
+  }
 }
 .gravatar {
   float: left;
@@ -878,13 +897,20 @@ table thead tr th {
   text-decoration: bold;
 }
 .text-over {
-  overflow: hidden;
   text-overflow: ellipsis;
   display: -moz-box;
   -moz-box-orient: vertical;
-  display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  line-clamp: 3;
-  box-orient: vertical;
+}
+.room-view {
+  width: 33%;
+  background-color: black;
+  color: wheat;
+  border: 2px solid white;
+  text-align: left;
+  @media(max-width: 844px) {
+    flex: 1 2 auto;
+    width: 45%;
+  }
 }

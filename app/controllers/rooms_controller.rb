@@ -113,6 +113,10 @@ class RoomsController < ApplicationController
     render 'personal'
   end
 
+  def single_show
+    @room = Room.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
 
@@ -124,7 +128,7 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:name, :content, :route,
                                    :cat_route, :subdir, :link, :category,
-                                   :image, :city, :hot, :big_size,
+                                   :image, :city, :price, :hot, :big_size,
                                    :carousel, :free)
     end
 end

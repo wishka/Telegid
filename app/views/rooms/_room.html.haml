@@ -1,20 +1,20 @@
-- @rooms.each do |room|
-  .container-fluid.py-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
-    .container.py-5
-      .row.g-5
-        .col-md-3.wow.slideInUp{"data-wow-delay" => "0.3s"}
-          .team-item.bg-light.rounded.overflow-hidden
-            .team-img.position-relative.overflow-hidden
-              %img.img-fluid.w-100
-                = image_tag room.image.url(:thumb), class: 'img-show' if room.image?
-            .text-center.py-4
-              %h4.text-primary
-              - if room.hot == true
-                = image_pack_tag 'fire.jpg', class: 'img-litle'
-                = link_to room.name, room
-              - elsif room.big_size == true
-                = link_to room.name, room, class: 'big_size'
-              - else
-                = link_to room.name, room
-
-              %p.text-uppercase.m-0= room.content
+.row
+  - @rooms.each do |room|
+    .col-md-4.room-view
+      = image_tag room.image.url(:thumb), class: 'img-show' if room.image?
+      %h4.text-primary
+      - if room.hot == true
+        = image_pack_tag 'flame.ico', class: 'img-litle'
+        = link_to room.name, single_show_path(room)
+      - elsif room.big_size == true
+        = link_to room.name, single_show_path(room), class: 'big_size'
+      - else
+        = link_to room.name, single_show_path(room)
+      - if room.city == "Не имеет значение"
+        .d-none= room.city
+      - else
+        %p.m-0= room.city
+      %p.m-0= room.content
+      %p.m-0= room.price
+      %p.m-0= room.created_at.to_date
+%br

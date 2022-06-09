@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'search', to: 'results#index', as: 'search'
   get 'roomlist' => 'rooms#roomlist'
   get 'personal' => 'rooms#personal'
+  get 'single_show', to: 'rooms#single_show'
 
   resources :customers do
     member do

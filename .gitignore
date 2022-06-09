@@ -24,6 +24,7 @@ npm-debug.log
 logs
 log
 log/
+log/development.log
 /log/*
 /tmp/*
 !/log/.keep
@@ -33,6 +34,7 @@ log/
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+tmp/cache/*
 
 # Ignore uploaded files in development.
 /storage/*

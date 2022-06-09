@@ -1,0 +1,25 @@
+- provide(:title, "Объявление № #{@room.id}")
+%p#notice= notice
+
+%p= image_tag @room.image.url(:large), class: 'img-s-show' if @room.image?
+%p
+  %h2= @room.name
+%p
+  .small Ссылка:
+  %b= @room.link if @room.link?
+%p
+  .small Город:
+  %b= @room.city
+%p
+  .small Категория:
+  %b= @room.category
+%p
+  .small Цена:
+  %b= @room.price if @room.price?
+%p
+  .small Описание:
+  %b= @room.content
+
+= link_to 'Назад', root_path, class: 'btn btn-primary btn-block'
+= link_to 'Написать', room_path(@room), class: 'btn btn-success btn-block'
+%br

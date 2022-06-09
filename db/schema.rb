@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_05_222008) do
+ActiveRecord::Schema.define(version: 2022_06_09_184121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 2022_06_05_222008) do
     t.boolean "carousel", default: false
     t.boolean "free", default: false
     t.string "link"
+    t.float "price"
   end
 
   create_table "telechannels", force: :cascade do |t|

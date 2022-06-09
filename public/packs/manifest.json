@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-41f1c3af.css",
   "application.css.map": "/packs/css/application-41f1c3af.css.map",
-  "application.js": "/packs/js/application-4da818556d484edaab21.js",
-  "application.js.map": "/packs/js/application-4da818556d484edaab21.js.map",
+  "application.js": "/packs/js/application-945cde2d7493589add5a.js",
+  "application.js.map": "/packs/js/application-945cde2d7493589add5a.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-41f1c3af.css"
       ],
       "js": [
-        "/packs/js/application-4da818556d484edaab21.js"
+        "/packs/js/application-945cde2d7493589add5a.js"
       ],
       "css.map": [
         "/packs/css/application-41f1c3af.css.map"
       ],
       "js.map": [
-        "/packs/js/application-4da818556d484edaab21.js.map"
+        "/packs/js/application-945cde2d7493589add5a.js.map"
       ]
     },
     "waypoints": {
@@ -39,6 +39,7 @@
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
   "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
   "media/images/fire.jpg": "/packs/media/images/fire-897c8e4b1db07544820d42e4e2034a5d.jpg",
+  "media/images/flame.ico": "/packs/media/images/flame-cc046afa443ee418cc5c09d328e58181.ico",
   "media/images/team-1.jpg": "/packs/media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg",
   "media/images/team-2.jpg": "/packs/media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg",
   "media/images/team-3.jpg": "/packs/media/images/team-3-e665709987982790ed540a886c2118ba.jpg",
