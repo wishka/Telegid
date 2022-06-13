@@ -22,6 +22,14 @@ Rails.application.routes.draw do
   get 'personal' => 'rooms#personal'
   get 'single_show', to: 'rooms#single_show'
 
+  #get "/client_token" do
+  #  gateway.client_token.generate
+  #end
+  #post "/checkout" do
+  #  nonce_from_the_client = params[:payment_method_nonce]
+    # Use payment method nonce here...
+  #end
+
   resources :customers do
     member do
       get :following, :followers
@@ -35,4 +43,5 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :relationships,       only: [:create, :destroy]
   resources :incoming_mails, only: [:create]
+
 end
