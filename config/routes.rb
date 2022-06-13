@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'search', to: 'results#index', as: 'search'
   get 'roomlist' => 'rooms#roomlist'
   get 'personal' => 'rooms#personal'
-  get 'single_show', to: 'rooms#single_show'
+  get 'single_show/:id', to: 'rooms#single_show', as: 'single_show'
 
   #get "/client_token" do
   #  gateway.client_token.generate

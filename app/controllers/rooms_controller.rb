@@ -114,7 +114,7 @@ class RoomsController < ApplicationController
   end
 
   def single_show
-    @room = Room.find_by(params[:id])
+    @room = Room.find_by(id: params[:id])
   end
 
   private
