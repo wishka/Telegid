@@ -11,7 +11,7 @@
     = f.select :subdir,["Администрирование", "Взаимопиар", "Создание и продвижение", "Комментарии", "Контент", "Лайки", "Накрутка"], {prompt: "Категория услуг"}, class: 'form-control'
   #other_blocks_first
     .form-group.mb-3
-      = f.select :route,["Купить", "Продать"], {prompt: "- Тип объявления -"}, class: 'form-control'
+      = f.select :route,["Купить", "Продать", "Разместить"], {prompt: "- Тип объявления -"}, class: 'form-control'
     .form-group.mb-3
       = f.select :city,["Не имеет значение", "Абаза", "Абакан", "Абан","Абатский","Абдулино","Абезь","Абинск",
         "Абрамцево","Абрау-Дюрсо","Абый","Аган","Агаповка","Агвали","Агеево","Агинское","Агрыз","Адамовка",
@@ -291,7 +291,7 @@
       = f.text_field :content, placeholder: "Описание", class: 'form-control'
   #other_blocks_last
     .form-group.mb-3
-      = f.text_field :price, placeholder: "Цена", class: 'form-control'
+      = f.text_field :price, placeholder: "Min Цена продажи или рекламы", class: 'form-control'
     .form-group.mb-3
       = f.label 'Изображение'
       = f.file_field :image, class: 'form-control'
