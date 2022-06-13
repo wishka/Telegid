@@ -9,7 +9,7 @@
     = f.select :cat_route,[ "Канал", "Чат", "Бот", "Услуга"], {prompt: "- Что размещаем? -"}, class: 'form-control'
   .form-group.mb-3
     = f.select :subdir,["Администрирование", "Взаимопиар", "Создание и продвижение", "Комментарии", "Контент", "Лайки", "Накрутка"], {prompt: "Категория услуг"}, class: 'form-control'
-  #other_blocks
+  #other_blocks_first
     .form-group.mb-3
       = f.select :route,["Купить", "Продать"], {prompt: "- Тип объявления -"}, class: 'form-control'
     .form-group.mb-3
@@ -276,7 +276,7 @@
         "Южно-Уральск", "Юкаменское", "Юрга", "Юргамыш", "Юрибей", "Юрино", "Юрла", "Юрьев-Польский", "Юрьевец", "Юрья",
         "Юрюзань", "Юста", "Юсьва", "Юхнов", "Ягодное", "Ядрин", "Ядрино", "Яковлевка", "Якутск", "Якшур-Бодья", "Ялуторовск",
         "Яльчики", "Янаул", "Янтиково", "Яр", "Яр-Сале", "Яранск", "Яренск", "Ярково", "Ярославль", "Ярцево", "Ясногорск",
-        "Ясный", "Яхрома", "Яшалта", "Яшкино", "Яшкуль", "Яя"], {prompt: "- выбрать город -"}, class: 'form-control'
+        "Ясный", "Яхрома", "Яшалта", "Яшкино", "Яшкуль", "Яя"], {prompt: "- Город -"}, class: 'form-control'
     .form-group.mb-3
       = f.text_field :name, placeholder: "Введите название", class: 'form-control'
     .form-group.mb-3
@@ -285,9 +285,11 @@
       = f.select :category,["Авто/мото", "Авторский блог", "Аниме/Манга/Манха/Манхуа", "Афиша", "Бизнес", "Блогеры", "Видеоигры", "В мире животных", "Гороскоп и Таро", "Дети и родители", "Дизайн", "Для мужчин", "Для женщин", "Инвестиции", "Интернет технологии", "Искусство", "История",
         "Каталог каналов", "Кино", "Красота и уход", "Криптовалюта", "Культура и события", "Кулинария", "Литература", "Магазин", "Маркетинг и PR", "Мода и стиль", "Мотивация и саморазвитие", "Музыка", "Наука и  технологии", "Недвижимость", "Новости и СМИ", "Образование", "Подкасты", "Пошлое",
         "Психология", "Путешествия и туризм", "Работа и вакансии", "Развлечения", "Религия и духовность", "Рукоделие", "Сервисы", "Скидки и акции", "Сливы", "Спорт", "Ставки и азартные игры", "Строительство и ремонт", "Трейдинг", "Фильмы и сериалы", "Хоббы",
-        "Цитаты", "Экология", "Юмор", "18+", "SMM", "IT", "Gif Video", "Другое"], {prompt: "- выбрать категорию -"}, class: 'form-control'
+        "Цитаты", "Экология", "Юмор", "18+", "SMM", "IT", "Gif Video", "Другое"], {prompt: "- Категория -"}, class: 'form-control'
+  #another_blocks
     .form-group.mb-3
-      = f.text_field :content, placeholder: "Описание объявления", class: 'form-control'
+      = f.text_field :content, placeholder: "Описание", class: 'form-control'
+  #other_blocks_last
     .form-group.mb-3
       = f.text_field :price, placeholder: "Цена", class: 'form-control'
     .form-group.mb-3
@@ -318,7 +320,8 @@
   const roomSubdirSelect = document.querySelector('#room_subdir')
   const roomCatRouteSelect = document.querySelector('#room_cat_route')
   const roomServicesSelect = document.querySelector('#room_services')
-  const otherBlocks = document.querySelector('#other_blocks')
+  const otherBlocksFirst = document.querySelector('#other_blocks_first')
+  const otherBlocksLast = document.querySelector('#other_blocks_last')
   roomCatRouteSelect.addEventListener('change', (e) => {
     if (e.target.value == 'Канал' || e.target.value == 'Бот' || e.target.value == 'Чат') {
       roomSubdirSelect.classList.add('d-none')
@@ -328,8 +331,10 @@
   })
   roomCatRouteSelect.addEventListener('change', (e) => {
     if (e.target.value == 'Услуга') {
-      otherBlocks.classList.add('d-none')
+      otherBlocksFirst.classList.add('d-none')
+      otherBlocksLast.classList.add('d-none')
     } else {
-      otherBlocks.classList.remove('d-none')
+      otherBlocksFirst.classList.remove('d-none')
+      otherBlocksLast.classList.remove('d-none')
     }
   })
