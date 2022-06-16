@@ -27,8 +27,9 @@
               %a.dropdown-item{:href => favorites_path} Избранное
               %a.dropdown-item{:href => posts_path} Сообщения (#{@current_customer.posts.count})
               %a.dropdown-item{:href => microposts_path} Полезные статьи
+              %a.dropdown-item{:href => payment_method_path} Ожидают оплаты (#{@current_customer.rooms.count})
               %a.dropdown-item{:href => reviews_path} Отзывы
-              %a.dropdown-item{:href => '../roomlist'} Поиск/Новое объявление
+              %a.dropdown-item{:href => '../roomlist'} Поиск/Создать
               .dropdown-divider
               %a.dropdown-item
                 %a#red= link_to "Выйти", logout_path, method: "delete"

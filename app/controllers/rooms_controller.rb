@@ -32,8 +32,10 @@ class RoomsController < ApplicationController
     @room.customer_id = current_customer.id
 
     if @room.save
-      redirect_to @room
-
+      if @room.hot?
+        redirect_to payment_method_path
+      end
+        redirect_to @room
       SendMessageJob.perform_later(@room)
 
       text = "Новое объявление: #{@room.name}"
@@ -115,6 +117,10 @@ class RoomsController < ApplicationController
 
   def single_show
     @room = Room.find_by(id: params[:id])
+  end
+
+  def payment_method
+    @rooms = Room.where(hot: true)
   end
 
   private

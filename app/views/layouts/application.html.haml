@@ -24,6 +24,9 @@
     %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
     %script{:crossorigin => "anonymous", :integrity => "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", :src => "https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"}
     %script{:crossorigin => "anonymous", :integrity => "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", :src => "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"}
+    / JS for Pay and braintree
+    %script{:src => "https://js.stripe.com/v3"}
+    = tag.meta name: "stripe-key", content: Pay::Stripe.public_key
 
     %link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous")/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'

@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -67,14 +67,14 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :cloudmailin
-  config.action_mailer.default_url_options = { host: 'telegagid.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'telegagid@heroku.trustifi.com' }
   config.action_mailer.smtp_settings = {
-    :address => '3221fd3ca0f2bd00148e@cloudmailin.net',
+    :address => ENV'[TRUSTIFI_URL]',
     :port => 587,
     :enable_starttls_auto => true,
-    :user_name => ENV['CLOUDMAILIN_USERNAME'],
-    :password => ENV['CLOUDMAILIN_SECRET'],
+    :user_name => ENV['TRUSTIFI_KEY'],
+    :password => ENV['TRUSTIFI_SECRET'],
     :authentication => :plain
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

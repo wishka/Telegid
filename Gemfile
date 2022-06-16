@@ -30,10 +30,29 @@ gem 'bootstrap-typeahead-rails'
 gem 'jquery-ui-rails'
 gem 'braintree'
 gem 'dotenv-rails'
-
+gem 'active_model_serializers'
+gem 'ancestry'
+gem 'breadcrumbs_on_rails'
+gem 'coffee-rails'
+gem 'doorkeeper'
+gem 'meta-tags'
+gem 'oj'
+gem 'oj_mimic_json'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'pundit'
+gem 'uglifier', '>= 1.3.0'
+gem 'activemerchant'
+gem "pay", "~> 3.0"
+gem "stripe", "~> 6.0"
+gem "paddle_pay", "~> 0.2"
+gem "receipts", "~> 2.0"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem "sidekiq", "~> 6.5"
+gem "sidekiq_utils"
+gem "sidekiq-cron"
+gem 'sidekiq-scheduler'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "haml-rails", "~> 2.0"
@@ -48,6 +67,13 @@ gem 'httparty'
 gem 'redis'
 
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_bot'
+  gem 'pry'
+  gem 'rails-controller-testing'
+  gem 'rb-readline'
+  gem 'rspec-json_expectations'
+  gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -79,7 +105,6 @@ group :test do
   gem 'webdrivers'
   gem 'guard-rails'
   gem 'rspec'
-  gem 'rspec-rails', '~> 4.0.0.beta3'
   gem 'shoulda', '~> 4.0'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'database_cleaner'

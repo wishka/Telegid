@@ -1,0 +1,8 @@
+- provide(:title, 'Страница оплаты')
+%h2 Ожидают оплаты:
+
+- @rooms.each do |room|
+  = link_to room.name
+  = link_to 'Оплатить', payment_method_path, class: 'btn btn-sm btn-outline-primary'
+  %br
+%br

@@ -21,14 +21,7 @@ Rails.application.routes.draw do
   get 'roomlist' => 'rooms#roomlist'
   get 'personal' => 'rooms#personal'
   get 'single_show/:id', to: 'rooms#single_show', as: 'single_show'
-
-  #get "/client_token" do
-  #  gateway.client_token.generate
-  #end
-  #post "/checkout" do
-  #  nonce_from_the_client = params[:payment_method_nonce]
-    # Use payment method nonce here...
-  #end
+  get 'payment_method' => 'rooms#payment_method'
 
   resources :customers do
     member do
