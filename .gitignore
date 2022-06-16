@@ -4,7 +4,8 @@ master.key
 credentials.yml.enc
 
 # Node build artifacts
-
+.env
+credentials:edit
 npm-debug.log
 # See https://help.github.com/articles/ignoring-files for more about ignoring files.
 #
