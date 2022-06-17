@@ -912,6 +912,9 @@ table thead tr th td {
   @media(max-width: 844px) {
     flex: 1 2 auto;
     width: 45%;
+    .btn {
+      width: 130px;
+    }
   }
 }
 .hidden {
@@ -919,4 +922,11 @@ table thead tr th td {
 }
 .flash {
   color: green;
+}
+.truncate {
+  margin: 0;
+  -webkit-line-clamp: 2; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden;
 }

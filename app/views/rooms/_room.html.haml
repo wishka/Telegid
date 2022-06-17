@@ -14,7 +14,7 @@
         .d-none= room.city
       - else
         %p.m-0= room.city
-      %p.m-0= room.content
+      %p.truncate.m-0= room.content
       %p.m-0= room.price
       %p.m-0= room.created_at.to_date
       = link_to 'Посмотреть', single_show_path(room), class: 'btn btn-primary btn-block'
