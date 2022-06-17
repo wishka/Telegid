@@ -32,10 +32,11 @@ class RoomsController < ApplicationController
     @room.customer_id = current_customer.id
 
     if @room.save
-      if @room.hot?
-        redirect_to payment_method_path
-      end
-        redirect_to @room
+      redirect_to @room
+        if @room.hot?
+          flash[:notice] = "Успешно. Перейдите на страницу оплаты!"
+        end
+
       SendMessageJob.perform_later(@room)
 
       text = "Новое объявление: #{@room.name}"
