@@ -32,9 +32,9 @@ gem 'braintree'
 gem 'dotenv-rails'
 gem 'active_model_serializers'
 gem 'ancestry'
-gem 'breadcrumbs_on_rails'
+
 gem 'coffee-rails'
-gem 'doorkeeper'
+
 gem 'meta-tags'
 gem 'oj'
 gem 'oj_mimic_json'
@@ -65,6 +65,9 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'httparty'
 gem 'redis'
+gem 'mailgun-ruby'
+gem 'mail'
+gem 'rest-client'
 
 group :development, :test do
   gem 'database_cleaner'

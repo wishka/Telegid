@@ -1,7 +1,7 @@
 .DS_Store
 .browserslistrc
 master.key
-credentials.yml.enc
+config/credentials.yml.enc
 
 # Node build artifacts
 .env

@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
+
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -40,15 +40,6 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
-
-  config.action_mailer.smtp_settings = {
-    :address => ENV['CLOUDMAILIN_FORWARD_ADDRESS'],
-    :port => 587,
-    :enable_starttls_auto => true,
-    :user_name => ENV['CLOUDMAILIN_USERNAME'],
-    :password => ENV['CLOUDMAILIN_SECRET'],
-    :authentication => :plain
-  }
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
