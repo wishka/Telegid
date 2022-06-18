@@ -33,7 +33,7 @@
   .container-fluid
     = form_tag results_path, method: :get, role: 'search' do
       = text_field_tag :query, params[:query], placeholder: "Поиск...", class: 'seacrhfrom'
-      = submit_tag "Go!", name: nil, class: 'searchbtn'
+      = submit_tag "Искать!", name: nil, class: 'searchbtn'
   %br
   %p= link_to "Разместить", new_room_path, class: "btn btn-outline-primary", style: 'width: 100%; border: none'
 
@@ -64,7 +64,7 @@
   .container-fluid
     = render 'rooms/room'
 
-    
+
     /= button_to "Send group message via controller", blog_pages_group_message_path
     /= button_to "Send private message via controller", blog_pages_privat_message_path
 

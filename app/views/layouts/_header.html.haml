@@ -11,7 +11,7 @@
         TelegaGid
     = form_tag results_path, method: :get, role: 'search' do
       = text_field_tag :query, params[:query], placeholder: "Поиск...", class: 'seacrhfrom'
-      = submit_tag "Go!", name: nil, class: 'searchbtn'
+      = submit_tag "Искать!", name: nil, class: 'searchbtn'
     - if logged_in?
       %button.navbar-toggler.cntr{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
         %span.fas.fa-bars
@@ -35,9 +35,6 @@
                 %a#red= link_to "Выйти", logout_path, method: "delete"
           /- if current_customer.admin? && !current_customer?(@customer)
     - else
-      %li.nav-item.dropdown
-        %a#navbarDropdown.nav-link.dropdown-toggle.btn.btn-outline-success{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-          %i.far.fa-user.navright
-        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          %a.dropdown-item{:href => login_path} Войти!
-          %a.dropdown-item{:href => signup_path} Зарегистрироваться!
+      .nav-item
+        %a{:href => login_path, :class => 'btn btn-outline-primary'} Войти!
+        %a{:href => signup_path, :class => 'btn btn-outline-primary'} Регистрация!
