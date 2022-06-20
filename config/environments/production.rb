@@ -66,18 +66,20 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.default_url_options = { host: 'telegagid@heroku.mailgun.com' }
-  ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'telegagid.herokuapp.com',
-    :authentication => :plain,
+  host = 'https://telegagid.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    tls: true,
+    address: "smtp.yandex.ru",
+    port: 465,
+    domain: "yandex.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: 'rouckes@yandex.ru',
+    password: 'wofdjmwrcqhdtwhq'
   }
-ActionMailer::Base.delivery_method = :smtp
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
