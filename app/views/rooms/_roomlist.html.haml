@@ -1,0 +1,43 @@
+
+%h2.head-title Поиск по объявлениям
+%br
+%p= link_to "Разместить", new_room_path, class: "btn btn-outline-primary", style: 'width: 100%; border: none'
+- puts @filterrific.inspect
+= form_for_filterrific @filterrific do |f|
+  .row
+    .col-md-3
+      .form-group
+        = f.text_field(:search_query,
+          class: 'filterrific-periodically-observed form-control')
+    .col-md-3
+      .form-group
+        = f.select :with_room_cat_route,
+                    @filterrific.select_options[:with_room_cat_route],
+                    { :include_blank => "Что ищем?" },
+                    { :class => 'form-control' }
+    .col-md-3
+      .form-group
+        = f.select :with_room_route,
+                    @filterrific.select_options[:with_room_route],
+                    { :include_blank => 'Тип объявления' },
+                    { :class => 'form-control' }
+    .col-md-3
+      .form-group
+        = f.select :with_room_city,
+                    @filterrific.select_options[:with_room_city],
+                    { :include_blank => 'Город' },
+                    { :class => 'form-control' }
+    .col-md-3
+      .form-group
+        = f.select :with_room_category,
+                    @filterrific.select_options[:with_room_category],
+                    { :include_blank => 'Категория' },
+                    { :class => 'form-control' }
+
+
+    %p= f.submit "Показать", class: "btn btn-outline-success", style: 'width: 100%; border: none'
+
+    %p= link_to('Сбросить фильтры',reset_filterrific_url, class: "btn btn-outline-primary", style: 'width: 100%; border: none')
+    = render_filterrific_spinner
+
+#results= render :partial => 'rooms/list', :locals => { :rooms => @rooms }

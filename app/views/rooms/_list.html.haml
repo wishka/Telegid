@@ -3,25 +3,27 @@
 #customer-id{"data-customer-id" => current_customer.id}
 .container-fluid
   .row
-    .col-9
+    .col-12
       %hr
-      #filterrific_results
-        %table.filter
-          %tr
-            %th Название
-            %th Что ищем?
-            %th Что именно
-            %th Город
-            %th Категория
-            %th Дата создания
-            %hr
+        .row#filterrific_results
           - @rooms.each do |room|
-            %tr
-              %td= link_to(room.name, room_path(room))
-              %td= room.cat_route
-              %td= room.route
-              %td= room.city
-              %td= room.category
-              %td= room.created_at.to_date
-%br
-	
+            .col-md-4.room-view
+              = image_tag room.image.url(:thumb), class: 'img-show' if room.image?
+              %h4.text-primary
+              - if room.hot == true
+                = image_pack_tag 'flame.ico', class: 'img-litle'
+                = link_to room.name, single_show_path(room)
+              - elsif room.big_size == true
+                = link_to room.name, single_show_path(room), class: 'big_size'
+              - else
+                = link_to room.name, single_show_path(room)
+              - if room.city == "Не имеет значение"
+                .d-none= room.city
+              - else
+                %p.m-0= room.city
+              %p.truncate.m-0= room.content
+              %p.m-0= room.price
+              %p.m-0= room.created_at.to_date
+              = link_to 'Посмотреть', single_show_path(room), class: 'btn btn-primary btn-block'
+              = link_to 'Написать', room_path(room), class: 'btn btn-success btn-block'
+        %br

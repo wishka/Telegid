@@ -10,8 +10,8 @@
         %i.fas.fa-user-tie
         TelegaGid
     = form_tag results_path, method: :get, role: 'search' do
-      = text_field_tag :query, params[:query], placeholder: "Поиск...", class: 'seacrhfrom'
-      = submit_tag "Искать!", name: nil, class: 'searchbtn'
+      = text_field_tag :query, params[:query], placeholder: "Поиск по ключевому слову...", class: 'seacrhfrom'
+      = submit_tag "Искать!", name: nil, class: 'searchbtn', style: 'font-size: 0.7rem'
     - if logged_in?
       %button.navbar-toggler.cntr{"data-bs-target" => "#navbarCollapse", "data-bs-toggle" => "collapse", :type => "button"}
         %span.fas.fa-bars

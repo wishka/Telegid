@@ -5,8 +5,10 @@
       %h1
       %p= gravatar_for @customer
       %i.fas.fa-solid.fa-user= @customer.name
+      %br
       %i.fas.fa-solid.fa-envelope= @customer.email
-      .em profile id:
+      %br
+      %i.em profile id:
       %i= @customer.id
       %i.fas.fa-regular.fa-circle-phone= @customer.cell
 
@@ -27,17 +29,17 @@
     = link_to 'Отзывы', reviews_path
     (#{@customer.reviews.count})
 %br
-	
-%table.user_table
+
+%table.ut
   %thead
     %tr
-      %th Кол-во звезд
-      %th Содержание
+      %th Рейтинг
+      %th.ut Содержание
       %th
   %tbody
     - @reviews.each do |review|
       %tr
         %td= review.stars
-        %td.text-over= review.content
+        %td.ut.text-over= review.content
         %td= link_to 'Показать', review
 %br

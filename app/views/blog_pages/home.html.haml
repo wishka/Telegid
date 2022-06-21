@@ -31,9 +31,7 @@
   %h2.head-title Поиск по сайту
   %br
   .container-fluid
-    = form_tag results_path, method: :get, role: 'search' do
-      = text_field_tag :query, params[:query], placeholder: "Поиск...", class: 'seacrhfrom'
-      = submit_tag "Искать!", name: nil, class: 'searchbtn'
+    = render 'rooms/roomlist'
   %br
   %p= link_to "Разместить", new_room_path, class: "btn btn-outline-primary", style: 'width: 100%; border: none'
 
