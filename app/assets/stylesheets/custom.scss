@@ -247,6 +247,7 @@ h6,
 }
 .mod {
   margin-left: 7%;
+  width: 100%;
 }
 .mod {
   @media (max-width: 900px) {
@@ -771,15 +772,22 @@ table thead tr th td {
   }
 }
 .seacrhfrom {
-  width: 70%;
+  width: 65%;
   height: 45px;
+  font-size: 0.7rem;
   background: lightcyan;
   border: #084fdc29;
   border-radius: 15px 5px 5px 15px;
+  @media (max-width: 900px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 0.7rem;
+  }
 }
 .searchbtn {
   border-radius: 5px 15px 15px 5px;
-  width: 25%;
+  width: 30%;
   height: 45px;
   background: deepskyblue;
   font-family: cursive;
@@ -929,4 +937,8 @@ table thead tr th td {
   display: -webkit-box; /* Включаем флексбоксы */
   -webkit-box-orient: vertical; /* Вертикальная ориентация */
   overflow: hidden;
+}
+.ut {
+  width: 35%;
+  text-align: center;
 }
