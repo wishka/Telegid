@@ -68,6 +68,8 @@ gem 'redis'
 gem 'mailgun-ruby'
 gem 'mail'
 gem 'rest-client'
+gem 'cloud_payments'
+gem 'faraday'
 
 group :development, :test do
   gem 'database_cleaner'
