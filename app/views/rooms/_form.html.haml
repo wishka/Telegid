@@ -302,17 +302,17 @@
       = f.check_box :hot, id: 'hot', class: 'form-check-input'
       %b= f.label :hot, 'Поднять просмотры на 7 дней', class: 'form-check-label', for: 'hot'
       = f.label '(Делает ваше объявление более заметным по сравнению с другими)', class: 'form-check-label small', for: 'hot'
-  -# .form-group.mb-3
-  -#   = f.check_box :big_size, id: 'big_size', class: 'form-check-input'
-  -#   %b= f.label :option, 'XXL-размер', class: 'form-check-label', for: 'big_size'
-  -#   = f.label '(Объявление в ленте выдачи будет крупнее, а рядом с ним появится подробное описание)', class: 'form-check-label small', for: 'big_size'
-  -# .form-group.mb-3
-  -#   = f.check_box :carousel, id: 'carousel', class: 'form-check-input'
-  -#   %b= f.label :option, 'Карусель', class: 'form-check-label', for: 'carousel'
-  -#   = f.label '(Размещение объявления в карусели на главной странице. Доступно для всех категорий)', class: 'form-check-label small', for: 'carousel'
+    -# .form-group.mb-3
+    -#   = f.check_box :big_size, id: 'big_size', class: 'form-check-input'
+    -#   %b= f.label :option, 'XXL-размер', class: 'form-check-label', for: 'big_size'
+    -#   = f.label '(Объявление в ленте выдачи будет крупнее, а рядом с ним появится подробное описание)', class: 'form-check-label small', for: 'big_size'
+    .form-group.mb-3
+      = f.check_box :carousel, id: 'carousel', class: 'form-check-input'
+      %b= f.label :option, 'Карусель', class: 'form-check-label', for: 'carousel'
+      = f.label :option, '(Размещение объявления в карусели на главной странице. Доступно для всех категорий)', class: 'form-check-label small', for: 'carousel'
   %br
   .actions
-    = f.submit 'Создать', class: 'btn btn-outline-primary btn-block', style: "width: 100%"
+    = f.submit 'Создать', class: 'btn btn-outline-dark btn-block', style: "width: 100%"
 
 
 :javascript

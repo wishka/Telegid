@@ -5,17 +5,53 @@
     #header-carousel.carousel.slide.carousel-fade{"data-bs-ride" => "carousel"}
       .carousel-inner
         .carousel-item.active
-          %img
-            = image_pack_tag "carousel-1.jpg", class:"w-100"
+          - if @carousel_rooms_first.present?
+            %img
+              = image_tag @carousel_rooms_first.image.url(:large), class:"carousel-img" if @carousel_rooms_first.image?
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+            .p-1{:style => "max-width: 200px;"}
+              %h5.mb-md-4.animated.zoomIn.content-block
+                %b= @carousel_rooms_first.name
+                %em= @carousel_rooms_first.content
+                = link_to @carousel_rooms_first.link, @carousel_rooms_first.link
+          - else
+            %img
+              = image_pack_tag "carousel-1.jpg", class:"w-100"
+              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
               .p-1{:style => "max-width: 900px;"}
                 %h3.display-4.text-white.mb-md-4.animated.zoomIn
                   = link_to 'Читать', '/rooms/1'
-
         .carousel-item
-          %img
-            = image_pack_tag "carousel-1.jpg", class:"w-100"
+          - if @carousel_rooms_second.present?
+            %img
+              = image_tag @carousel_rooms_second.image.url(:large), class:"carousel-img" if @carousel_rooms_second.image?
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+            .p-1{:style => "max-width: 200px;"}
+              %h5.mb-md-4.animated.zoomIn.content-block
+                %b= @carousel_rooms_second.name
+                %em= @carousel_rooms_second.content
+                = link_to @carousel_rooms_second.link, @carousel_rooms_second.link
+          - else
+            %img
+              = image_pack_tag "carousel-1.jpg", class:"w-100"
+              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-1{:style => "max-width: 900px;"}
+                %h3.display-4.text-white.mb-md-4.animated.zoomIn
+                  = link_to 'Читать', '/rooms/1'
+        .carousel-item
+          - if @carousel_rooms_last.present?
+            %img
+              = image_tag @carousel_rooms_last.image.url(:large), class:"carousel-img" if @carousel_rooms_last.image?
+            .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+            .p-1{:style => "max-width: 200px;"}
+              %h5.mb-md-4.animated.zoomIn.content-block
+                %b= @carousel_rooms_last.name
+                %em= @carousel_rooms_last.content
+                = link_to @carousel_rooms_last.link, @carousel_rooms_last.link
+          - else
+            %img
+              = image_pack_tag "carousel-1.jpg", class:"w-100"
+              .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
               .p-1{:style => "max-width: 900px;"}
                 %h3.display-4.text-white.mb-md-4.animated.zoomIn
                   = link_to 'Читать', '/rooms/1'
@@ -27,13 +63,11 @@
         %span.visually-hidden Следующее
         / Navbar & Carousel End
 
-  %br
-  %h2.head-title Поиск по сайту
+
   %br
   .container-fluid
     = render 'rooms/roomlist'
-  %br
-  %p= link_to "Разместить", new_room_path, class: "btn btn-outline-primary", style: 'width: 100%; border: none'
+
 
   .container-fluid.bg-dark.text-light.mt-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
     .container
@@ -49,18 +83,21 @@
               .input-group
                 = text_field_tag :content, nil, required: true, class: "form-control", style: "border-white p-3"
                 %button.btn.btn-dark= "Отправить"
-  %br
-  %h2.head-title Полезная информация
 
-  .container-fluid
-    = render 'microposts/microposts'
-  %br
 
 
   %h2.head-title Последние объявления
   %br
   .container-fluid
     = render 'rooms/room'
+  %br
+
+  %h2.head-title Полезная информация
+
+  .container-fluid
+    = render 'microposts/microposts'
+  %br
+
 
 
     /= button_to "Send group message via controller", blog_pages_group_message_path

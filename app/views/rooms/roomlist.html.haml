@@ -1,7 +1,7 @@
 
 %h2.head-title Поиск по объявлениям
 %br
-%p= link_to "Разместить", new_room_path, class: "btn btn-outline-primary", style: 'width: 100%; border: none'
+%p= link_to "Разместить", new_room_path, class: "btn btn-lg btn-outline-dark", style: 'width: 100%; border: none'
 - puts @filterrific.inspect
 = form_for_filterrific @filterrific do |f|
   .row
@@ -35,9 +35,9 @@
                     { :class => 'form-control' }
 
 
-    %p= f.submit "Показать", class: "btn btn-outline-success", style: 'width: 100%; border: none'
+    %p= f.submit "Показать", class: "btn btn-lg btn-outline-dark", style: 'width: 100%; border: none'
 
-    %p= link_to('Сбросить фильтры',reset_filterrific_url, class: "btn btn-outline-primary", style: 'width: 100%; border: none')
+    %p= link_to('Сбросить фильтры',reset_filterrific_url, class: "btn btn-lg btn-outline-danger", style: 'width: 100%; border: none')
     = render_filterrific_spinner
 
 #results= render :partial => 'rooms/list', :locals => { :rooms => @rooms }
