@@ -1,21 +1,21 @@
 {
   "application.css": "/packs/css/application-41f1c3af.css",
   "application.css.map": "/packs/css/application-41f1c3af.css.map",
-  "application.js": "/packs/js/application-945cde2d7493589add5a.js",
-  "application.js.map": "/packs/js/application-945cde2d7493589add5a.js.map",
+  "application.js": "/packs/js/application-1570bc4c948dcd4133de.js",
+  "application.js.map": "/packs/js/application-1570bc4c948dcd4133de.js.map",
   "entrypoints": {
     "application": {
       "css": [
         "/packs/css/application-41f1c3af.css"
       ],
       "js": [
-        "/packs/js/application-945cde2d7493589add5a.js"
+        "/packs/js/application-1570bc4c948dcd4133de.js"
       ],
       "css.map": [
         "/packs/css/application-41f1c3af.css.map"
       ],
       "js.map": [
-        "/packs/js/application-945cde2d7493589add5a.js.map"
+        "/packs/js/application-1570bc4c948dcd4133de.js.map"
       ]
     },
     "waypoints": {
@@ -35,14 +35,13 @@
       ]
     }
   },
+  "media/images/1.jpeg": "/packs/media/images/1-d173645610f4e3db95fb1fa43d7c86c6.jpeg",
+  "media/images/2.jpeg": "/packs/media/images/2-96cb5b3533784f2fcd978f79aab0ad1a.jpeg",
+  "media/images/3.jpeg": "/packs/media/images/3-d14805466cf1fee66ed492be1c14106c.jpeg",
   "media/images/carousel-1.jpg": "/packs/media/images/carousel-1-0c731fe6459d52f225d364272c58e535.jpg",
   "media/images/carousel-2.jpg": "/packs/media/images/carousel-2-db3e259e426669353c8b444421c3b2d1.jpg",
   "media/images/favicon.ico": "/packs/media/images/favicon-6a71225a367a07a57234ded763e8d4b0.ico",
-  "media/images/fire.jpg": "/packs/media/images/fire-897c8e4b1db07544820d42e4e2034a5d.jpg",
   "media/images/flame.ico": "/packs/media/images/flame-cc046afa443ee418cc5c09d328e58181.ico",
-  "media/images/team-1.jpg": "/packs/media/images/team-1-8f07804b87ff7d08644e076a76903c8b.jpg",
-  "media/images/team-2.jpg": "/packs/media/images/team-2-a56401fe6b75b6c7b44c9f1c39c4f5c6.jpg",
-  "media/images/team-3.jpg": "/packs/media/images/team-3-e665709987982790ed540a886c2118ba.jpg",
   "media/images/telelogo.svg.png": "/packs/media/images/telelogo.svg-3af5a5e050ec64eed595549a9bc11253.png",
   "media/images/user.png": "/packs/media/images/user-bbde05f9ab28dccf9dfa45b4c67e585b.png",
   "waypoints.js": "/packs/js/waypoints-0aaed46018e615613b5a.js",

@@ -38,13 +38,13 @@ Room.create!(name: "Зарядка для ума",
              content: "Регулярные тренировки мозга позволяют ему работать
              четко и отлаженно на протяжении всей жизни.",
              link: "https://t.me/zaryadkauma",
-             image: "",
+             image: "1.jpeg",
              carousel: true)
 Room.create!(name: "Learn English",
             city: "Не имеет значение",
             content: "Книги на английском для взрослых и детей.",
             link: "https://t.me/fairytaleseng",
-            image: "",
+            image: "3.jpeg",
             carousel: true)
 Room.create!(name: "Крутая мама",
              city: "Не имеет значение",
@@ -52,5 +52,5 @@ Room.create!(name: "Крутая мама",
              использованием цветной бумаги , пластилина , картона,
              природных материалов и много другого. Скучать не придется.",
              link: "https://t.me/mamakrutayaa",
-             image: "",
+             image: "2.jpeg",
              carousel: true)

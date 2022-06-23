@@ -135,7 +135,8 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:name, :content, :route,
                                    :cat_route, :subdir, :link, :category,
-                                   :image, :city, :price, :hot, :big_size,
+                                   :image, :image_cache, :remote_image_url,
+                                   :city, :price, :hot, :big_size,
                                    :carousel, :free)
     end
 end

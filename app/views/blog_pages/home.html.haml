@@ -7,7 +7,7 @@
         .carousel-item.active
           - if @carousel_rooms_first.present?
             %img
-              = image_tag @carousel_rooms_first.image.url(:large), class:"carousel-img" if @carousel_rooms_first.image?
+              = image_pack_tag '1.jpeg', class:"carousel-img"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
             .p-1{:style => "max-width: 200px;"}
               %h5.mb-md-4.animated.zoomIn.content-block
@@ -24,7 +24,7 @@
         .carousel-item
           - if @carousel_rooms_second.present?
             %img
-              = image_tag @carousel_rooms_second.image.url(:large), class:"carousel-img" if @carousel_rooms_second.image?
+              = image_pack_tag '2.jpeg', class:"carousel-img"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
             .p-1{:style => "max-width: 200px;"}
               %h5.mb-md-4.animated.zoomIn.content-block
@@ -41,7 +41,7 @@
         .carousel-item
           - if @carousel_rooms_last.present?
             %img
-              = image_tag @carousel_rooms_last.image.url(:large), class:"carousel-img" if @carousel_rooms_last.image?
+              = image_pack_tag '3.jpeg', class:"carousel-img"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
             .p-1{:style => "max-width: 200px;"}
               %h5.mb-md-4.animated.zoomIn.content-block

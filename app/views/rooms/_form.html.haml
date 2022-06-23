@@ -295,6 +295,10 @@
     .form-group.mb-3
       = f.label 'Изображение'
       = f.file_field :image, class: 'form-control'
+      = f.hidden_field :image_cache
+      -# %h4 Или добавьте ссылку на изображение
+      -# = image_tag(@room.image_url) if @room.image?
+      -# = f.text_field :remote_image_url
     .form-group.mb-3
       = f.check_box :free, id: 'free', class: 'form-check-input'
       %b= f.label :option, 'Free - без продвижения', class: 'form-check-label', for: 'free'
