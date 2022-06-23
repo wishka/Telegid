@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :reviews
+  get 'payments/new'
+  get 'subscription/new'
   root 'blog_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resources :reviews
   resources :posts
   resources :rooms
   resources :microposts

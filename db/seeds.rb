@@ -33,3 +33,24 @@ following = customers[2..50]
 followers = customers[3..40]
 following.each { |followed| customer.follow(followed) }
 followers.each { |follower| follower.follow(customer) }
+Room.create!(name: "Зарядка для ума",
+             city: "Не имеет значение",
+             content: "Регулярные тренировки мозга позволяют ему работать
+             четко и отлаженно на протяжении всей жизни.",
+             link: "https://t.me/zaryadkauma",
+             image: "",
+             carousel: true)
+Room.create!(name: "Learn English",
+            city: "Не имеет значение",
+            content: "Книги на английском для взрослых и детей.",
+            link: "https://t.me/fairytaleseng",
+            image: "",
+            carousel: true)
+Room.create!(name: "Крутая мама",
+             city: "Не имеет значение",
+             content: "У нас  крутые мастер классы с
+             использованием цветной бумаги , пластилина , картона,
+             природных материалов и много другого. Скучать не придется.",
+             link: "https://t.me/mamakrutayaa",
+             image: "",
+             carousel: true)

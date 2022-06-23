@@ -1,0 +1,69 @@
+%form.decor{:method => "post", :name => "form"}
+  .form-left-decoration
+  .form-right-decoration
+  .circle
+  .form-inner
+    %h3 Оплата опции Hot!
+    %input#myname{:placeholder => "Имя", :type => "text"}/
+    %input#lastName{:placeholder => "Фамилия", :type => "text"}/
+    %input#email{:placeholder => "Email - обязательно", :required => "", :type => "email"}/
+    %input#price{:required => "", :type => "hidden", :value => 50}/
+    %textarea#coment{:placeholder => "Ваш комментарий по желанию", :rows => "3"}
+    %input#recurrent{:type => "button", :value => "Продливать ежемесячно? - Нет", :style => 'font-size: 1rem'}/
+    %input#elem{:type => "button", :value => "Оплатить"}/
+
+:javascript
+  recurrent.onclick = () => swit();
+
+  this.swit = function () {
+   var statusYES = 'Продливать ежемесячно? - Да';
+   var statusNO = 'Продливать ежемесячно? - Нет';
+   if (document.getElementById("recurrent").value == statusNO) {document.getElementById("recurrent").value = statusYES;}
+   else {document.getElementById("recurrent").value = statusNO;}
+   };
+
+
+   elem.onclick = () => pay();
+
+  this.pay = function () {
+   var widget = new cp.CloudPayments();
+  var myname = document.getElementById("myname").value;
+  var lastName = document.getElementById("lastName").value;
+  var email = document.getElementById("email").value;
+  var price = document.getElementById("price").value;
+  var coment = document.getElementById("coment").value;
+  var recurrent = document.getElementById("recurrent").value;
+  if (email == '') {email ='my@mail.ru'} // в случае если не указали почту, но захотели поддерживать ежемесячно, указываем левый email
+
+  var data ={};
+  if (recurrent == 'Поддерживать ежемесячно? - Да') {data.cloudPayments ={recurrent:{interval:'Month',period:1} } }
+
+
+
+
+
+      widget.pay('auth', // или 'charge'
+          { //options
+              publicId: 'test_api_00000000000000000000002', //id из личного кабинета
+              description: myname + ',спасибо!' , //назначение
+              amount: parseInt(price), //сумма
+              currency: 'RUB', //валюта
+              invoiceId: '1234567', //номер заказа  (необязательно)
+              accountId: email, //идентификатор плательщика (необязательно)
+              skin: "mini", //дизайн виджета (необязательно)
+  			email:email,
+              data: data
+          },
+          {
+              onSuccess: function (options) { // success
+                  //действие при успешной оплате
+              },
+              onFail: function (reason, options) { // fail
+                  //действие при неуспешной оплате
+              },
+              onComplete: function (paymentResult, options) { //Вызывается как только виджет получает от api.cloudpayments ответ с результатом транзакции.
+                  //например вызов вашей аналитики Facebook Pixel
+              }
+          }
+      )
+  };
