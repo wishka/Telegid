@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms or /rooms.json
   def index
-    @pagy, @rooms = pagy(Room.all, items: 20)
+    @pagy, @rooms = pagy(Room.all, items: 18)
   end
 
   # GET /rooms/1 or /rooms/1.json
@@ -112,7 +112,7 @@ class RoomsController < ApplicationController
   end
 
   def personal
-    @rooms = Room.joins(:customer).where(customer_id: current_customer.id)
+    @pagy, @rooms = pagy(Room.joins(:customer).where(customer_id: current_customer.id))
     render 'personal'
   end
 
@@ -121,7 +121,7 @@ class RoomsController < ApplicationController
   end
 
   def payment_method
-    @rooms = Room.where(hot: true)
+    @pagy, @rooms = pagy(Room.where(hot: true))
   end
 
   private

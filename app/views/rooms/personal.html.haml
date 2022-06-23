@@ -1,6 +1,7 @@
 - provide(:title, 'Personal messages')
 
 %h1 Мои объявления
+= raw pagy_bootstrap_nav(@pagy).html_safe
 #room-id{"data-room-id" => @room.try(:id)}
 #customer-id{"data-customer-id" => current_customer.id}
 .container-fluid
@@ -21,3 +22,4 @@
               %td= link_to room.name, room
               %td= room.category
               %td= room.created_at.to_date
+= raw pagy_bootstrap_nav(@pagy).html_safe

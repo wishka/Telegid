@@ -1,6 +1,6 @@
 - provide(:title, 'Post list')
 %h1 Список постов
-
+= raw pagy_bootstrap_nav(@pagy).html_safe
 %table
   %thead
     %tr
@@ -22,5 +22,5 @@
           %td= link_to 'Удалить', micropost, method: :delete, data: { confirm: 'Уверены?' }
 
 %br
-
+= raw pagy_bootstrap_nav(@pagy).html_safe
 = link_to 'Новый пост', new_micropost_path, class: 'btn btn-lg btn-outline-primary', style: 'width: 100%; border: none'

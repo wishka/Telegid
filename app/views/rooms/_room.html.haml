@@ -20,3 +20,4 @@
       = link_to 'Посмотреть', single_show_path(room), class: 'btn btn-primary btn-block'
       = link_to 'Написать', room_path(room), class: 'btn btn-success btn-block'
 %br
+= raw pagy_bootstrap_nav(@pagy).html_safe

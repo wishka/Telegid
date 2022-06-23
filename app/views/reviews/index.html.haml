@@ -1,4 +1,5 @@
 %h1 Все отзывы
+= raw pagy_bootstrap_nav(@pagy).html_safe
 %table.clearfix
   %thead
     %tr
@@ -20,5 +21,5 @@
         %td= link_to 'Удалить', review, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
+= raw pagy_bootstrap_nav(@pagy).html_safe
 = link_to 'Новый отзыв', new_review_path

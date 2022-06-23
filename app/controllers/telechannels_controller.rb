@@ -3,7 +3,7 @@ class TelechannelsController < ApplicationController
 
   # GET /telechannels or /telechannels.json
   def index
-    @telechannels = Telechannel.all
+    @pagy, @telechannels = pagy(Telechannel.all)
   end
 
   # GET /telechannels/1 or /telechannels/1.json
