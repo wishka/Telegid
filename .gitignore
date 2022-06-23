@@ -30,6 +30,7 @@ log/development.log
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+cert.pem
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
