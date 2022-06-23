@@ -9,6 +9,8 @@
     = f.select :cat_route,[ "Канал", "Чат", "Бот", "Услуга"], {prompt: "- Что размещаем? -"}, class: 'form-control'
   .form-group.mb-3
     = f.select :subdir,["Администрирование", "Взаимопиар", "Создание и продвижение", "Комментарии", "Контент", "Лайки", "Накрутка"], {prompt: "Категория услуг"}, class: 'form-control'
+  .form-group.mb-3
+    = f.select :followers,["< 100", "от 100 до 1000", "> 1000"], {prompt: "Количество подписчиков"}, class: 'form-control'
   #other_blocks_first
     .form-group.mb-3
       = f.select :route,["Купить", "Продать", "Разместить"], {prompt: "- Тип объявления -"}, class: 'form-control'
@@ -322,6 +324,7 @@
 :javascript
   const roomRouteSelect = document.querySelector('#room_route')
   const roomSubdirSelect = document.querySelector('#room_subdir')
+  const roomFollowersSelect = document.querySelector('#room_followers')
   const roomCatRouteSelect = document.querySelector('#room_cat_route')
   const otherBlocksFirst = document.querySelector('#other_blocks_first')
   const otherBlocksLast = document.querySelector('#other_blocks_last')
@@ -339,5 +342,12 @@
     } else {
       otherBlocksFirst.classList.remove('d-none')
       otherBlocksLast.classList.remove('d-none')
+    }
+  })
+  roomCatRouteSelect.addEventListener('change', (e) => {
+    if (e.target.value == 'Бот' || e.target.value == 'Услуга') {
+      roomFollowersSelect.classList.add('d-none')
+    } else {
+      roomFollowersSelect.classList.remove('d-none')
     }
   })

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_130531) do
+ActiveRecord::Schema.define(version: 2022_06_23_203227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -269,6 +269,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_130531) do
     t.boolean "free", default: false
     t.string "link"
     t.float "price"
+    t.string "followers"
   end
 
   create_table "telechannels", force: :cascade do |t|
