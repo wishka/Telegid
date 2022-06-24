@@ -9,11 +9,13 @@
             %img
               = image_pack_tag '1.jpeg', class:"carousel-img"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-            .p-1{:style => "max-width: 200px;"}
+            .p-1{:style => "max-width: 400px;"}
               %h5.mb-md-4.animated.zoomIn.content-block
+                = image_pack_tag '1.jpeg', class:"carousel-img-mini"
                 %b= @carousel_rooms_first.name
-                %em= @carousel_rooms_first.content
-                = link_to @carousel_rooms_first.link, @carousel_rooms_first.link
+                = image_pack_tag '1.jpeg', class:"carousel-img-mini"
+                %em.truncate-carousel= @carousel_rooms_first.content
+                .carousel-link= link_to @carousel_rooms_first.link, @carousel_rooms_first.link
           - else
             %img
               = image_pack_tag "carousel-1.jpg", class:"w-100"
@@ -26,11 +28,13 @@
             %img
               = image_pack_tag '2.jpeg', class:"carousel-img"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-            .p-1{:style => "max-width: 200px;"}
+            .p-1{:style => "max-width: 400px;"}
               %h5.mb-md-4.animated.zoomIn.content-block
+                = image_pack_tag '2.jpeg', class:"carousel-img-mini"
                 %b= @carousel_rooms_second.name
-                %em= @carousel_rooms_second.content
-                = link_to @carousel_rooms_second.link, @carousel_rooms_second.link
+                = image_pack_tag '2.jpeg', class:"carousel-img-mini"
+                %em.truncate-carousel= @carousel_rooms_second.content
+                .carousel-link= link_to @carousel_rooms_second.link, @carousel_rooms_second.link
           - else
             %img
               = image_pack_tag "carousel-1.jpg", class:"w-100"
@@ -43,11 +47,13 @@
             %img
               = image_pack_tag '3.jpeg', class:"carousel-img"
             .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
-            .p-1{:style => "max-width: 200px;"}
+            .p-1{:style => "max-width: 400px;"}
               %h5.mb-md-4.animated.zoomIn.content-block
+                = image_pack_tag '3.jpeg', class:"carousel-img-mini"
                 %b= @carousel_rooms_last.name
-                %em= @carousel_rooms_last.content
-                = link_to @carousel_rooms_last.link, @carousel_rooms_last.link
+                = image_pack_tag '3.jpeg', class:"carousel-img-mini"
+                %em.truncate-carousel= @carousel_rooms_last.content
+                .carousel-link= link_to @carousel_rooms_last.link, @carousel_rooms_last.link
           - else
             %img
               = image_pack_tag "carousel-1.jpg", class:"w-100"
@@ -55,6 +61,7 @@
               .p-1{:style => "max-width: 900px;"}
                 %h3.display-4.text-white.mb-md-4.animated.zoomIn
                   = link_to 'Читать', '/rooms/1'
+
       %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#header-carousel", :type => "button"}
         %span.carousel-control-prev-icon{"aria-hidden" => "true"}
         %span.visually-hidden Предыдущее
