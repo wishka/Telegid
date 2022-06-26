@@ -22,4 +22,5 @@
               %td= link_to room.name, room
               %td= room.category
               %td= room.created_at.to_date
+%hr
 = raw pagy_bootstrap_nav(@pagy).html_safe

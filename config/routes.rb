@@ -29,6 +29,9 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resource :blacklist, only: %i[show destroy] do
+    resources :items, only: %i[create destroy]
+  end
   resources :reviews
   resources :posts
   resources :rooms

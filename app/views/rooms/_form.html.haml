@@ -320,7 +320,6 @@
   .actions
     = f.submit 'Создать', class: 'btn btn-outline-dark btn-block', style: "width: 100%"
 
-
 :javascript
   const roomRouteSelect = document.querySelector('#room_route')
   const roomSubdirSelect = document.querySelector('#room_subdir')
@@ -328,6 +327,7 @@
   const roomCatRouteSelect = document.querySelector('#room_cat_route')
   const otherBlocksFirst = document.querySelector('#other_blocks_first')
   const otherBlocksLast = document.querySelector('#other_blocks_last')
+  
   roomCatRouteSelect.addEventListener('change', (e) => {
     if (e.target.value == 'Канал' || e.target.value == 'Бот' || e.target.value == 'Чат') {
       roomSubdirSelect.classList.add('d-none')
