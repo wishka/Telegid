@@ -73,8 +73,10 @@
 
   %br
   .container-fluid
-    = render 'rooms/roomlist'
-
+    = form_tag results_path, method: :get, role: 'search' do
+      = text_field_tag :query, params[:query], placeholder: "Поиск по ключевому слову...", class: 'seacrhfrom'
+      = submit_tag "Искать!", name: nil, class: 'searchbtn', style: 'font-size: 0.7rem'
+      
 
   .container-fluid.bg-dark.text-light.mt-5.wow.fadeInUp{"data-wow-delay" => "0.1s"}
     .container
